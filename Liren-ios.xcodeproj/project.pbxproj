@@ -1,0 +1,442 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		49A8247F16633E07004D358E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49A8247E16633E07004D358E /* UIKit.framework */; };
+		49A8248116633E07004D358E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49A8248016633E07004D358E /* Foundation.framework */; };
+		49A8248316633E07004D358E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49A8248216633E07004D358E /* CoreGraphics.framework */; };
+		49A8248916633E07004D358E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 49A8248716633E07004D358E /* InfoPlist.strings */; };
+		49A8248B16633E07004D358E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 49A8248A16633E07004D358E /* main.m */; };
+		49A8248F16633E07004D358E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 49A8248E16633E07004D358E /* AppDelegate.m */; };
+		49A8249116633E07004D358E /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 49A8249016633E07004D358E /* Default.png */; };
+		49A8249316633E07004D358E /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 49A8249216633E07004D358E /* Default@2x.png */; };
+		49A8249516633E07004D358E /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 49A8249416633E07004D358E /* Default-568h@2x.png */; };
+		49A8249D16633E07004D358E /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49A8249C16633E07004D358E /* SenTestingKit.framework */; };
+		49A8249E16633E07004D358E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49A8247E16633E07004D358E /* UIKit.framework */; };
+		49A8249F16633E07004D358E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49A8248016633E07004D358E /* Foundation.framework */; };
+		49A824A716633E07004D358E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 49A824A516633E07004D358E /* InfoPlist.strings */; };
+		49A824AA16633E07004D358E /* Liren_iosTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 49A824A916633E07004D358E /* Liren_iosTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		49A824A016633E07004D358E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 49A8247116633E06004D358E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 49A8247916633E06004D358E;
+			remoteInfo = "Liren-ios";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		49A8247A16633E06004D358E /* Liren-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Liren-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		49A8247E16633E07004D358E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		49A8248016633E07004D358E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		49A8248216633E07004D358E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		49A8248616633E07004D358E /* Liren-ios-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Liren-ios-Info.plist"; sourceTree = "<group>"; };
+		49A8248816633E07004D358E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		49A8248A16633E07004D358E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		49A8248C16633E07004D358E /* Liren-ios-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Liren-ios-Prefix.pch"; sourceTree = "<group>"; };
+		49A8248D16633E07004D358E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		49A8248E16633E07004D358E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		49A8249016633E07004D358E /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		49A8249216633E07004D358E /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		49A8249416633E07004D358E /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		49A8249B16633E07004D358E /* Liren-iosTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Liren-iosTests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		49A8249C16633E07004D358E /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		49A824A416633E07004D358E /* Liren-iosTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Liren-iosTests-Info.plist"; sourceTree = "<group>"; };
+		49A824A616633E07004D358E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		49A824A816633E07004D358E /* Liren_iosTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Liren_iosTests.h; sourceTree = "<group>"; };
+		49A824A916633E07004D358E /* Liren_iosTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Liren_iosTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		49A8247716633E06004D358E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				49A8247F16633E07004D358E /* UIKit.framework in Frameworks */,
+				49A8248116633E07004D358E /* Foundation.framework in Frameworks */,
+				49A8248316633E07004D358E /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		49A8249716633E07004D358E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				49A8249D16633E07004D358E /* SenTestingKit.framework in Frameworks */,
+				49A8249E16633E07004D358E /* UIKit.framework in Frameworks */,
+				49A8249F16633E07004D358E /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		49A8246F16633E06004D358E = {
+			isa = PBXGroup;
+			children = (
+				49A8248416633E07004D358E /* Liren-ios */,
+				49A824A216633E07004D358E /* Liren-iosTests */,
+				49A8247D16633E07004D358E /* Frameworks */,
+				49A8247B16633E06004D358E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		49A8247B16633E06004D358E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				49A8247A16633E06004D358E /* Liren-ios.app */,
+				49A8249B16633E07004D358E /* Liren-iosTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		49A8247D16633E07004D358E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				49A8247E16633E07004D358E /* UIKit.framework */,
+				49A8248016633E07004D358E /* Foundation.framework */,
+				49A8248216633E07004D358E /* CoreGraphics.framework */,
+				49A8249C16633E07004D358E /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		49A8248416633E07004D358E /* Liren-ios */ = {
+			isa = PBXGroup;
+			children = (
+				49A8248D16633E07004D358E /* AppDelegate.h */,
+				49A8248E16633E07004D358E /* AppDelegate.m */,
+				49A8248516633E07004D358E /* Supporting Files */,
+			);
+			path = "Liren-ios";
+			sourceTree = "<group>";
+		};
+		49A8248516633E07004D358E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				49A8248616633E07004D358E /* Liren-ios-Info.plist */,
+				49A8248716633E07004D358E /* InfoPlist.strings */,
+				49A8248A16633E07004D358E /* main.m */,
+				49A8248C16633E07004D358E /* Liren-ios-Prefix.pch */,
+				49A8249016633E07004D358E /* Default.png */,
+				49A8249216633E07004D358E /* Default@2x.png */,
+				49A8249416633E07004D358E /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		49A824A216633E07004D358E /* Liren-iosTests */ = {
+			isa = PBXGroup;
+			children = (
+				49A824A816633E07004D358E /* Liren_iosTests.h */,
+				49A824A916633E07004D358E /* Liren_iosTests.m */,
+				49A824A316633E07004D358E /* Supporting Files */,
+			);
+			path = "Liren-iosTests";
+			sourceTree = "<group>";
+		};
+		49A824A316633E07004D358E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				49A824A416633E07004D358E /* Liren-iosTests-Info.plist */,
+				49A824A516633E07004D358E /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		49A8247916633E06004D358E /* Liren-ios */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 49A824AD16633E07004D358E /* Build configuration list for PBXNativeTarget "Liren-ios" */;
+			buildPhases = (
+				49A8247616633E06004D358E /* Sources */,
+				49A8247716633E06004D358E /* Frameworks */,
+				49A8247816633E06004D358E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Liren-ios";
+			productName = "Liren-ios";
+			productReference = 49A8247A16633E06004D358E /* Liren-ios.app */;
+			productType = "com.apple.product-type.application";
+		};
+		49A8249A16633E07004D358E /* Liren-iosTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 49A824B016633E07004D358E /* Build configuration list for PBXNativeTarget "Liren-iosTests" */;
+			buildPhases = (
+				49A8249616633E07004D358E /* Sources */,
+				49A8249716633E07004D358E /* Frameworks */,
+				49A8249816633E07004D358E /* Resources */,
+				49A8249916633E07004D358E /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				49A824A116633E07004D358E /* PBXTargetDependency */,
+			);
+			name = "Liren-iosTests";
+			productName = "Liren-iosTests";
+			productReference = 49A8249B16633E07004D358E /* Liren-iosTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		49A8247116633E06004D358E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0450;
+				ORGANIZATIONNAME = com.thoughtworks.liren;
+			};
+			buildConfigurationList = 49A8247416633E06004D358E /* Build configuration list for PBXProject "Liren-ios" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 49A8246F16633E06004D358E;
+			productRefGroup = 49A8247B16633E06004D358E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				49A8247916633E06004D358E /* Liren-ios */,
+				49A8249A16633E07004D358E /* Liren-iosTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		49A8247816633E06004D358E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				49A8248916633E07004D358E /* InfoPlist.strings in Resources */,
+				49A8249116633E07004D358E /* Default.png in Resources */,
+				49A8249316633E07004D358E /* Default@2x.png in Resources */,
+				49A8249516633E07004D358E /* Default-568h@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		49A8249816633E07004D358E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				49A824A716633E07004D358E /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		49A8249916633E07004D358E /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		49A8247616633E06004D358E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				49A8248B16633E07004D358E /* main.m in Sources */,
+				49A8248F16633E07004D358E /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		49A8249616633E07004D358E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				49A824AA16633E07004D358E /* Liren_iosTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		49A824A116633E07004D358E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 49A8247916633E06004D358E /* Liren-ios */;
+			targetProxy = 49A824A016633E07004D358E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		49A8248716633E07004D358E /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				49A8248816633E07004D358E /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		49A824A516633E07004D358E /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				49A824A616633E07004D358E /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		49A824AB16633E07004D358E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		49A824AC16633E07004D358E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		49A824AE16633E07004D358E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Liren-ios/Liren-ios-Prefix.pch";
+				INFOPLIST_FILE = "Liren-ios/Liren-ios-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		49A824AF16633E07004D358E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Liren-ios/Liren-ios-Prefix.pch";
+				INFOPLIST_FILE = "Liren-ios/Liren-ios-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		49A824B116633E07004D358E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Liren-ios.app/Liren-ios";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Liren-ios/Liren-ios-Prefix.pch";
+				INFOPLIST_FILE = "Liren-iosTests/Liren-iosTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		49A824B216633E07004D358E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Liren-ios.app/Liren-ios";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Liren-ios/Liren-ios-Prefix.pch";
+				INFOPLIST_FILE = "Liren-iosTests/Liren-iosTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		49A8247416633E06004D358E /* Build configuration list for PBXProject "Liren-ios" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				49A824AB16633E07004D358E /* Debug */,
+				49A824AC16633E07004D358E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		49A824AD16633E07004D358E /* Build configuration list for PBXNativeTarget "Liren-ios" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				49A824AE16633E07004D358E /* Debug */,
+				49A824AF16633E07004D358E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		49A824B016633E07004D358E /* Build configuration list for PBXNativeTarget "Liren-iosTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				49A824B116633E07004D358E /* Debug */,
+				49A824B216633E07004D358E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 49A8247116633E06004D358E /* Project object */;
+}
