@@ -1,8 +1,8 @@
 .DS_Store
 *.swp
 *~.nib
-AwayDay2012.xcodeproj/project.xcworkspace/xcuserdata/*
-AwayDay2012.xcodeproj/xcuserdata/*
+Liren-ios.xcodeproj/project.xcworkspace/xcuserdata/*
+Liren-ios.xcodeproj/xcuserdata/*
 build/
 *.pbxuser
 *.perspective
