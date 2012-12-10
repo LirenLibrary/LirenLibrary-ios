@@ -23,7 +23,7 @@
     // Override point for customization after application launch.
     
     if (self.scanViewController == nil) {
-        ScanViewController *svc = [[ScanViewController alloc] initWithNibName:@"scanViewController" bundle:nil];
+        ScanViewController *svc = [[ScanViewController alloc] initWithNibName:@"ScanViewController" bundle:nil];
         self.scanViewController = svc;
         [svc release];
     }

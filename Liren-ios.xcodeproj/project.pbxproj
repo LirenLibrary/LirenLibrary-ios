@@ -10,6 +10,7 @@
 		490349D71671E06E0000C083 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 490349D61671E06E0000C083 /* CoreMedia.framework */; };
 		490349D91671E0720000C083 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 490349D81671E0720000C083 /* CoreVideo.framework */; };
 		490349DB1671E07E0000C083 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 490349DA1671E07E0000C083 /* ImageIO.framework */; };
+		494FFFD1167606A400C7748D /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 494FFFD0167606A400C7748D /* AVFoundation.framework */; };
 		49A8247F16633E07004D358E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49A8247E16633E07004D358E /* UIKit.framework */; };
 		49A8248116633E07004D358E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49A8248016633E07004D358E /* Foundation.framework */; };
 		49A8248316633E07004D358E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49A8248216633E07004D358E /* CoreGraphics.framework */; };
@@ -224,6 +225,7 @@
 		490349D61671E06E0000C083 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		490349D81671E0720000C083 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		490349DA1671E07E0000C083 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		494FFFD0167606A400C7748D /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		49A8247A16633E06004D358E /* Liren-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Liren-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		49A8247E16633E07004D358E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		49A8248016633E07004D358E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -626,6 +628,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				494FFFD1167606A400C7748D /* AVFoundation.framework in Frameworks */,
 				B69397E31675F43B0022A04A /* QuartzCore.framework in Frameworks */,
 				490349DB1671E07E0000C083 /* ImageIO.framework in Frameworks */,
 				490349D91671E0720000C083 /* CoreVideo.framework in Frameworks */,
@@ -660,7 +663,6 @@
 		49A8246F16633E06004D358E = {
 			isa = PBXGroup;
 			children = (
-				B69397E21675F43B0022A04A /* QuartzCore.framework */,
 				4903478D1671E0300000C083 /* SDK */,
 				49A8248416633E07004D358E /* Liren-ios */,
 				49A824A216633E07004D358E /* Liren-iosTests */,
@@ -681,6 +683,8 @@
 		49A8247D16633E07004D358E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				494FFFD0167606A400C7748D /* AVFoundation.framework */,
+				B69397E21675F43B0022A04A /* QuartzCore.framework */,
 				490349DA1671E07E0000C083 /* ImageIO.framework */,
 				490349D81671E0720000C083 /* CoreVideo.framework */,
 				490349D61671E06E0000C083 /* CoreMedia.framework */,
@@ -1751,19 +1755,24 @@
 		49A824AE16633E07004D358E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Liren-ios/Liren-ios-Prefix.pch";
+				GCC_VERSION = "";
 				INFOPLIST_FILE = "Liren-ios/Liren-ios-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(FRANK_LIBRARY_SEARCH_PATHS)",
 					"\"$(SRCROOT)/Liren-ios/ZBarSDK\"",
 				);
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"$(FRANK_LDFLAGS)",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				VALID_ARCHS = "armv7s armv7";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1771,14 +1780,19 @@
 		49A824AF16633E07004D358E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Liren-ios/Liren-ios-Prefix.pch";
+				GCC_VERSION = "";
 				INFOPLIST_FILE = "Liren-ios/Liren-ios-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Liren-ios/ZBarSDK\"",
 				);
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				VALID_ARCHS = "armv7s armv7";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
