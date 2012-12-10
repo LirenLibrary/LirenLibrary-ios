@@ -13,6 +13,7 @@
 - (void)dealloc
 {
     [_window release];
+    [_scanViewController release];
     [super dealloc];
 }
 
@@ -20,6 +21,18 @@
 {
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     // Override point for customization after application launch.
+    
+    if (self.scanViewController == nil) {
+        ScanViewController *svc = [[ScanViewController alloc] initWithNibName:@"scanViewController" bundle:nil];
+        self.scanViewController = svc;
+        [svc release];
+    }
+    
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:self.scanViewController];
+    [self.window setRootViewController:nav];
+    [nav autorelease];
+
+    
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;

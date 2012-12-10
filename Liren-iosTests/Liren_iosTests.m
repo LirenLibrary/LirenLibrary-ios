@@ -7,6 +7,7 @@
 //
 
 #import "Liren_iosTests.h"
+#import "AppDelegate.h"
 
 @implementation Liren_iosTests
 
@@ -28,5 +29,7 @@
 {
     STFail(@"Unit tests are not implemented yet in Liren-iosTests");
 }
+
+
 
 @end

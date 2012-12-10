@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ScanViewController.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-
+@property (nonatomic, retain) ScanViewController *scanViewController;
 @end
