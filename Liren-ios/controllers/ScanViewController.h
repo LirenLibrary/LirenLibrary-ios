@@ -12,10 +12,11 @@
 #import "ZXResult.h"
 #import "ZXCaptureDelegate.h"
 #import <QuartzCore/QuartzCore.h>
-
+#import "DataExchangeDelegate.h"
 
 @interface ScanViewController : UIViewController
 @property(nonatomic, retain) NSString *lastBarCode;
 @property(nonatomic, retain) ZXCapture *capture;
+@property(nonatomic, assign) NSObject<DataExchangeDelegate> *dataExchangeDelegate;
 
 @end
