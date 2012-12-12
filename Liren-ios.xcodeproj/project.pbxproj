@@ -226,6 +226,7 @@
 		490349D81671E0720000C083 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		490349DA1671E07E0000C083 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		494FFFD0167606A400C7748D /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		49A47FB116781E5F00CEA398 /* DataExchangeDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataExchangeDelegate.h; sourceTree = "<group>"; };
 		49A8247A16633E06004D358E /* Liren-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Liren-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		49A8247E16633E07004D358E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		49A8248016633E07004D358E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -660,6 +661,14 @@
 			name = SDK;
 			sourceTree = "<group>";
 		};
+		49A47FAF16781E2C00CEA398 /* delegates */ = {
+			isa = PBXGroup;
+			children = (
+				49A47FB116781E5F00CEA398 /* DataExchangeDelegate.h */,
+			);
+			name = delegates;
+			sourceTree = "<group>";
+		};
 		49A8246F16633E06004D358E = {
 			isa = PBXGroup;
 			children = (
@@ -699,6 +708,7 @@
 		49A8248416633E07004D358E /* Liren-ios */ = {
 			isa = PBXGroup;
 			children = (
+				49A47FAF16781E2C00CEA398 /* delegates */,
 				B69397DD1675E0480022A04A /* controllers */,
 				49A8248D16633E07004D358E /* AppDelegate.h */,
 				49A8248E16633E07004D358E /* AppDelegate.m */,
