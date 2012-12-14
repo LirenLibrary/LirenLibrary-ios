@@ -12,6 +12,6 @@
 
 @protocol DataExchangeDelegate <NSObject>
 
--(void)exchangeDatePut:(NSObject *)dataObject;
+-(void)putExchangedData:(NSObject *)dataObject;
 
 @end

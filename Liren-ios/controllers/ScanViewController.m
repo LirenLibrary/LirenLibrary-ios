@@ -58,6 +58,9 @@
     }
     
     self.lastBarCode = result.text;
+    if (self.dataExchangeDelegate != nil) {
+        [self.dataExchangeDelegate putExchangedData:self.lastBarCode];
+    }
 }
 
 @end
