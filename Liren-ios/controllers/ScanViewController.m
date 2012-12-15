@@ -36,7 +36,7 @@
     self.capture.delegate = self;
     self.capture.rotation = 90.0f;
     self.capture.camera = self.capture.back;
-    self.capture.layer.frame = self.view.bounds;
+    self.capture.layer.frame = CGRectMake(60.0f, 100.0f, 200.0f, 150.0f);
     [self.view.layer addSublayer:self.capture.layer];
     [self.capture start];
 }
