@@ -17,21 +17,28 @@
     [super dealloc];
 }
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-{
-    self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
-    // Override point for customization after application launch.
-    
+- (void)initScanViewController
+{   
     if (self.scanViewController == nil) {
         ScanViewController *svc = [[ScanViewController alloc] initWithNibName:@"ScanViewController" bundle:nil];
         self.scanViewController = svc;
         [svc release];
     }
-    
+}
+
+- (void)initUINavigationController
+{
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:self.scanViewController];
     [self.window setRootViewController:nav];
     [nav autorelease];
+}
 
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{
+    self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
+    
+    [self initScanViewController];
+    [self initUINavigationController];
     
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
