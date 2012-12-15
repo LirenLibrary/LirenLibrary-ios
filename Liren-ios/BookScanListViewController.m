@@ -53,11 +53,6 @@
         [q release];
     }
     [self.queue setMaxConcurrentOperationCount:10];
-    
-//    Book *b=[[Book alloc] init];
-//    [b setBookSN:@"9787111352211"];
-//    [self addBook:b];
-//    [b release];
 }
 
 #pragma mark - UI method
@@ -87,14 +82,22 @@
         }
     }
     if(!find){
-        [self.bookList addObject:book];
         [self getBookDetail:book];
+    }else{
+        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"错误" message:@"你已经扫描过这本书了" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+        [alert show];
+        [alert release];
     }
 
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return [self.bookList count];
+}
+
+- (void) deleteBook:(int) index{
+    [self.bookList removeObjectAtIndex:index];
+    [self.tableView reloadData];
 }
 
 - (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -105,7 +108,18 @@
     }
     NSUInteger row = [indexPath row];
     cell.textLabel.text = [[self.bookList objectAtIndex:row]bookName];
+    
     return cell;
+}
+
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath{
+    return YES;
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
+    if(editingStyle==UITableViewCellEditingStyleDelete){
+        [self deleteBook:indexPath.row];
+    }
 }
 
 - (void) getBookDetail:(Book *) book{
@@ -120,9 +134,14 @@
             NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
             if([json valueForKey:@"msg"]==nil){
                 book.bookName = [json valueForKey:@"title"];
+                [self.bookList addObject:book];
                 NSLog(@"Find Book:%@", book.bookName);
             }else{
                 book.bookName = @"没找到";
+                UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"错误" message:@"没有找到这本书" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+                [alert show];
+                [alert release];
+                
                 NSLog(@"Find Book:%@", book.bookName);
             }
             [self.tableView reloadData];

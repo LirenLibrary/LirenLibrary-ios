@@ -29,24 +29,24 @@
     [super tearDown];
 }
 
+
 - (void) testShouldAddBookToList{
-    Book *book = [self buildBookObject:@"SN" bookname:nil];
+    Book *book = [self buildBookObject:@"9787111352211" bookname:nil];
     [self.bookScanListViewController addBook:book];
     [book release];
-    STAssertEquals([self.bookScanListViewController.bookList count],(NSUInteger)1,@"The Book list size must be 1 after added one book");
-    STAssertTrue([self.bookScanListViewController.bookList containsObject:book], @"The book added must be the same as the book we added");
+    
 }
 
 - (void) testShouldNotAddSameBookWithSameSNToList{
-    Book *book = [self buildBookObject:@"SN" bookname:nil];
+    Book *book = [self buildBookObject:@"9787111352211" bookname:nil];
     [self.bookScanListViewController addBook:book];
     [book release];
-    Book *book2 = [self buildBookObject:@"SN" bookname:nil];
+    Book *book2 = [self buildBookObject:@"9787111352211" bookname:nil];
     [self.bookScanListViewController addBook:book2];
     [book release];
-    STAssertEquals([self.bookScanListViewController.bookList count],(NSUInteger)1,@"The Book list size must be 1 after added same SN book");
-    STAssertTrue([self.bookScanListViewController.bookList containsObject:book], @"The book added must be the same as the book we first added");
+    
 }
+
 
 - (void) testShouldDownloadFindBookNameFromDouban{
     Book *book = [self buildBookObject:@"9787564129651" bookname:nil];

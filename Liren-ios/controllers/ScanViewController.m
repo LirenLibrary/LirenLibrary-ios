@@ -64,10 +64,6 @@
 
 - (void)captureResult:(ZXCapture *)capture result:(ZXResult *)result {
     NSLog(@"%@", result.text);
-    if ([result.text isEqualToString:self.lastBarCode]) {
-        return;
-    }
-    
     self.lastBarCode = result.text;
     if (self.dataExchangeDelegate != nil) {
         [self.dataExchangeDelegate putExchangedData:self.lastBarCode];
