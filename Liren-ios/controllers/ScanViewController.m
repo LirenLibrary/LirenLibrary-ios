@@ -2,7 +2,7 @@
 //  ScanViewController.m
 //  Liren-ios
 //
-//  Created by mobile_cd_mini on 12/10/12.
+//  Created by Kewei & Yi on 12/10/12.
 //  Copyright (c) 2012 com.thoughtworks.liren. All rights reserved.
 //
 
@@ -39,10 +39,6 @@
     self.capture.layer.frame = self.view.bounds;
     [self.view.layer addSublayer:self.capture.layer];
     [self.capture start];
-    
-    
-    
-    // Do any additional setup after loading the view from its nib.
 }
 
 - (void)didReceiveMemoryWarning

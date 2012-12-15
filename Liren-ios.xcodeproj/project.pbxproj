@@ -10,6 +10,8 @@
 		490349D71671E06E0000C083 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 490349D61671E06E0000C083 /* CoreMedia.framework */; };
 		490349D91671E0720000C083 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 490349D81671E0720000C083 /* CoreVideo.framework */; };
 		490349DB1671E07E0000C083 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 490349DA1671E07E0000C083 /* ImageIO.framework */; };
+		4945F496167C09D800BA2516 /* libOCMock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4945F495167C09D800BA2516 /* libOCMock.a */; };
+		4945F4A0167C0B7700BA2516 /* libOCMock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4945F498167C0B7700BA2516 /* libOCMock.a */; };
 		494FFFD1167606A400C7748D /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 494FFFD0167606A400C7748D /* AVFoundation.framework */; };
 		49A8247F16633E07004D358E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49A8247E16633E07004D358E /* UIKit.framework */; };
 		49A8248116633E07004D358E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49A8248016633E07004D358E /* Foundation.framework */; };
@@ -225,6 +227,14 @@
 		490349D61671E06E0000C083 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		490349D81671E0720000C083 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		490349DA1671E07E0000C083 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		4945F495167C09D800BA2516 /* libOCMock.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libOCMock.a; path = OCMock/libOCMock.a; sourceTree = "<group>"; };
+		4945F498167C0B7700BA2516 /* libOCMock.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libOCMock.a; sourceTree = "<group>"; };
+		4945F49A167C0B7700BA2516 /* NSNotificationCenter+OCMAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNotificationCenter+OCMAdditions.h"; sourceTree = "<group>"; };
+		4945F49B167C0B7700BA2516 /* OCMArg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMArg.h; sourceTree = "<group>"; };
+		4945F49C167C0B7700BA2516 /* OCMConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMConstraint.h; sourceTree = "<group>"; };
+		4945F49D167C0B7700BA2516 /* OCMock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMock.h; sourceTree = "<group>"; };
+		4945F49E167C0B7700BA2516 /* OCMockObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMockObject.h; sourceTree = "<group>"; };
+		4945F49F167C0B7700BA2516 /* OCMockRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMockRecorder.h; sourceTree = "<group>"; };
 		494FFFD0167606A400C7748D /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		49A47FB116781E5F00CEA398 /* DataExchangeDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataExchangeDelegate.h; sourceTree = "<group>"; };
 		49A8247A16633E06004D358E /* Liren-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Liren-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -629,6 +639,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4945F496167C09D800BA2516 /* libOCMock.a in Frameworks */,
 				494FFFD1167606A400C7748D /* AVFoundation.framework in Frameworks */,
 				B69397E31675F43B0022A04A /* QuartzCore.framework in Frameworks */,
 				490349DB1671E07E0000C083 /* ImageIO.framework in Frameworks */,
@@ -647,6 +658,7 @@
 				49A8249D16633E07004D358E /* SenTestingKit.framework in Frameworks */,
 				49A8249E16633E07004D358E /* UIKit.framework in Frameworks */,
 				49A8249F16633E07004D358E /* Foundation.framework in Frameworks */,
+				4945F4A0167C0B7700BA2516 /* libOCMock.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -656,9 +668,32 @@
 		4903478D1671E0300000C083 /* SDK */ = {
 			isa = PBXGroup;
 			children = (
+				4945F497167C0B7700BA2516 /* OCMock */,
 				B6F89D2C1671E2F800BB9AAA /* ZXingObjC */,
 			);
 			name = SDK;
+			sourceTree = "<group>";
+		};
+		4945F497167C0B7700BA2516 /* OCMock */ = {
+			isa = PBXGroup;
+			children = (
+				4945F498167C0B7700BA2516 /* libOCMock.a */,
+				4945F499167C0B7700BA2516 /* OCMock */,
+			);
+			path = OCMock;
+			sourceTree = "<group>";
+		};
+		4945F499167C0B7700BA2516 /* OCMock */ = {
+			isa = PBXGroup;
+			children = (
+				4945F49A167C0B7700BA2516 /* NSNotificationCenter+OCMAdditions.h */,
+				4945F49B167C0B7700BA2516 /* OCMArg.h */,
+				4945F49C167C0B7700BA2516 /* OCMConstraint.h */,
+				4945F49D167C0B7700BA2516 /* OCMock.h */,
+				4945F49E167C0B7700BA2516 /* OCMockObject.h */,
+				4945F49F167C0B7700BA2516 /* OCMockRecorder.h */,
+			);
+			path = OCMock;
 			sourceTree = "<group>";
 		};
 		49A47FAF16781E2C00CEA398 /* delegates */ = {
@@ -692,6 +727,7 @@
 		49A8247D16633E07004D358E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4945F495167C09D800BA2516 /* libOCMock.a */,
 				494FFFD0167606A400C7748D /* AVFoundation.framework */,
 				B69397E21675F43B0022A04A /* QuartzCore.framework */,
 				490349DA1671E07E0000C083 /* ImageIO.framework */,
@@ -1765,17 +1801,25 @@
 		49A824AE16633E07004D358E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: xuehai zeng (U284U92R2M)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: xuehai zeng (U284U92R2M)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_OPTIMIZATION_LEVEL = s;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Liren-ios/Liren-ios-Prefix.pch";
 				GCC_VERSION = "";
+				"HEADER_SEARCH_PATHS[arch=*]" = "\"$(SRCROOT)/OCMock\"";
 				INFOPLIST_FILE = "Liren-ios/Liren-ios-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(FRANK_LIBRARY_SEARCH_PATHS)",
 					"\"$(SRCROOT)/Liren-ios/ZBarSDK\"",
+					"\"$(SRCROOT)/OCMock\"",
+				);
+				"LIBRARY_SEARCH_PATHS[arch=*]" = (
+					"$(inherited)",
+					"$(FRANK_LIBRARY_SEARCH_PATHS)",
+					"\"$(SRCROOT)/Liren-ios/ZBarSDK\"",
+					"\"$(SRCROOT)/OCMock\"",
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
@@ -1783,8 +1827,8 @@
 					"$(FRANK_LDFLAGS)",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "737B7011-F879-4671-B912-23310A255B94";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "737B7011-F879-4671-B912-23310A255B94";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				VALID_ARCHS = "armv7s armv7";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1793,7 +1837,7 @@
 		49A824AF16633E07004D358E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				GCC_OPTIMIZATION_LEVEL = s;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Liren-ios/Liren-ios-Prefix.pch";
@@ -1802,9 +1846,11 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Liren-ios/ZBarSDK\"",
+					"\"$(SRCROOT)/OCMock\"",
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				VALID_ARCHS = "armv7s armv7";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1821,6 +1867,20 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Liren-ios/Liren-ios-Prefix.pch";
 				INFOPLIST_FILE = "Liren-iosTests/Liren-iosTests-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/OCMock\"",
+				);
+				OTHER_LDFLAGS = (
+					"-force_load",
+					"\"$(SRCROOT)/OCMock/libOCMock.a\"",
+					"-ObjC",
+				);
+				"OTHER_LDFLAGS[arch=*]" = (
+					"-force_load",
+					"\"$(SRCROOT)/OCMock/libOCMock.a\"",
+					"-ObjC",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
@@ -1838,6 +1898,15 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Liren-ios/Liren-ios-Prefix.pch";
 				INFOPLIST_FILE = "Liren-iosTests/Liren-iosTests-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/OCMock\"",
+				);
+				OTHER_LDFLAGS = (
+					"-force_load",
+					"\"$(SRCROOT)/OCMock/libOCMock.a\"",
+					"-ObjC",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;

@@ -27,7 +27,7 @@
 
 - (void)testExample
 {
-    STFail(@"Unit tests are not implemented yet in Liren-iosTests");
+    //STFail(@"Unit tests are not implemented yet in Liren-iosTests");
 }
 
 
