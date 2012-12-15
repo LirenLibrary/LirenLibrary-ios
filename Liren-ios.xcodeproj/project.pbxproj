@@ -12,6 +12,7 @@
 		490349DB1671E07E0000C083 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 490349DA1671E07E0000C083 /* ImageIO.framework */; };
 		4945F496167C09D800BA2516 /* libOCMock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4945F495167C09D800BA2516 /* libOCMock.a */; };
 		4945F4A0167C0B7700BA2516 /* libOCMock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4945F498167C0B7700BA2516 /* libOCMock.a */; };
+		4945F4A4167C2BDF00BA2516 /* MacAddressUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 4945F4A3167C2BDF00BA2516 /* MacAddressUtil.m */; };
 		494FFFD1167606A400C7748D /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 494FFFD0167606A400C7748D /* AVFoundation.framework */; };
 		49A8247F16633E07004D358E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49A8247E16633E07004D358E /* UIKit.framework */; };
 		49A8248116633E07004D358E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49A8248016633E07004D358E /* Foundation.framework */; };
@@ -235,6 +236,8 @@
 		4945F49D167C0B7700BA2516 /* OCMock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMock.h; sourceTree = "<group>"; };
 		4945F49E167C0B7700BA2516 /* OCMockObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMockObject.h; sourceTree = "<group>"; };
 		4945F49F167C0B7700BA2516 /* OCMockRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMockRecorder.h; sourceTree = "<group>"; };
+		4945F4A2167C2BDF00BA2516 /* MacAddressUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MacAddressUtil.h; path = utils/MacAddressUtil.h; sourceTree = "<group>"; };
+		4945F4A3167C2BDF00BA2516 /* MacAddressUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MacAddressUtil.m; path = utils/MacAddressUtil.m; sourceTree = "<group>"; };
 		494FFFD0167606A400C7748D /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		49A47FB116781E5F00CEA398 /* DataExchangeDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataExchangeDelegate.h; sourceTree = "<group>"; };
 		49A8247A16633E06004D358E /* Liren-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Liren-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -696,6 +699,15 @@
 			path = OCMock;
 			sourceTree = "<group>";
 		};
+		4945F4A1167C2B7600BA2516 /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				4945F4A2167C2BDF00BA2516 /* MacAddressUtil.h */,
+				4945F4A3167C2BDF00BA2516 /* MacAddressUtil.m */,
+			);
+			name = utils;
+			sourceTree = "<group>";
+		};
 		49A47FAF16781E2C00CEA398 /* delegates */ = {
 			isa = PBXGroup;
 			children = (
@@ -744,6 +756,7 @@
 		49A8248416633E07004D358E /* Liren-ios */ = {
 			isa = PBXGroup;
 			children = (
+				4945F4A1167C2B7600BA2516 /* utils */,
 				49A47FAF16781E2C00CEA398 /* delegates */,
 				B69397DD1675E0480022A04A /* controllers */,
 				49A8248D16633E07004D358E /* AppDelegate.h */,
@@ -1708,6 +1721,7 @@
 				B6F89F6E1671E2F800BB9AAA /* ZXResult.m in Sources */,
 				B6F89F6F1671E2F800BB9AAA /* ZXResultPoint.m in Sources */,
 				B69397DA1675DFE70022A04A /* ScanViewController.m in Sources */,
+				4945F4A4167C2BDF00BA2516 /* MacAddressUtil.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1837,7 +1851,7 @@
 		49A824AF16633E07004D358E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer: xuehai zeng (U284U92R2M)";
 				GCC_OPTIMIZATION_LEVEL = s;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Liren-ios/Liren-ios-Prefix.pch";
@@ -1850,7 +1864,7 @@
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "2DB8411C-DF7A-4226-AD94-AE148939B34E";
 				VALID_ARCHS = "armv7s armv7";
 				WRAPPER_EXTENSION = app;
 			};
