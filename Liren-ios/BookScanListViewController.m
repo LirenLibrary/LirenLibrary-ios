@@ -42,12 +42,7 @@
         self.queue=q;
         [q release];
     }
-    [self.queue setMaxConcurrentOperationCount:10];
-    
-    [self addBook:[self buildBookObject:@"9787564129651" bookname:@"ABC"]];
-    [self addBook:[self buildBookObject:@"SN" bookname:@"DEF"]];
-    NSLog(@"Successed added %i books",[self.bookList count]);
-    
+    [self.queue setMaxConcurrentOperationCount:10];    
 }
 
 - (Book *) buildBookObject:(NSString *) sn bookname:(NSString *) bookname{
@@ -90,9 +85,8 @@
     static NSString *bookIdentifier = @"BookIndentifier";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:bookIdentifier];
     if(cell==nil){
-        NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:bookIdentifier];
-        [pool release];
+        [cell autorelease];
     }
     NSUInteger row = [indexPath row];
     cell.textLabel.text = [[self.bookList objectAtIndex:row]bookName];

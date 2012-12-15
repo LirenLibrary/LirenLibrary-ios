@@ -18,6 +18,7 @@
         BookScanListViewController *tmpBookScanListView = [[BookScanListViewController alloc]initWithNibName:@"BookScanListViewController" bundle:nil];
         self.bookScanListViewController = tmpBookScanListView;
         [tmpBookScanListView release];
+        [self.bookScanListViewController viewDidLoad];
     }
 }
 

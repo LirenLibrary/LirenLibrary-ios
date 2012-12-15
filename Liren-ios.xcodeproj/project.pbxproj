@@ -14,12 +14,15 @@
 		4945F4A0167C0B7700BA2516 /* libOCMock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4945F498167C0B7700BA2516 /* libOCMock.a */; };
 		4945F4A4167C2BDF00BA2516 /* MacAddressUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 4945F4A3167C2BDF00BA2516 /* MacAddressUtil.m */; };
 		494FFFD1167606A400C7748D /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 494FFFD0167606A400C7748D /* AVFoundation.framework */; };
+		497C19D3167C50AE00862C7A /* BookScanListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 497C19D1167C50AE00862C7A /* BookScanListViewController.m */; };
+		497C19D4167C50AE00862C7A /* BookScanListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 497C19D2167C50AE00862C7A /* BookScanListViewController.xib */; };
+		497C19D8167C50BF00862C7A /* Book.m in Sources */ = {isa = PBXBuildFile; fileRef = 497C19D7167C50BF00862C7A /* Book.m */; };
+		497C19DB167C50E400862C7A /* BookScanListViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 497C19DA167C50E400862C7A /* BookScanListViewControllerTests.m */; };
 		49A8247F16633E07004D358E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49A8247E16633E07004D358E /* UIKit.framework */; };
 		49A8248116633E07004D358E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49A8248016633E07004D358E /* Foundation.framework */; };
 		49A8248316633E07004D358E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49A8248216633E07004D358E /* CoreGraphics.framework */; };
 		49A8248916633E07004D358E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 49A8248716633E07004D358E /* InfoPlist.strings */; };
 		49A8248B16633E07004D358E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 49A8248A16633E07004D358E /* main.m */; };
-		49A8248F16633E07004D358E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 49A8248E16633E07004D358E /* AppDelegate.m */; };
 		49A8249116633E07004D358E /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 49A8249016633E07004D358E /* Default.png */; };
 		49A8249316633E07004D358E /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 49A8249216633E07004D358E /* Default@2x.png */; };
 		49A8249516633E07004D358E /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 49A8249416633E07004D358E /* Default-568h@2x.png */; };
@@ -28,6 +31,7 @@
 		49A8249F16633E07004D358E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49A8248016633E07004D358E /* Foundation.framework */; };
 		49A824A716633E07004D358E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 49A824A516633E07004D358E /* InfoPlist.strings */; };
 		49A824AA16633E07004D358E /* Liren_iosTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 49A824A916633E07004D358E /* Liren_iosTests.m */; };
+		49A91207167C4FF6009680D8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 49A91206167C4FF6009680D8 /* AppDelegate.m */; };
 		B69397DA1675DFE70022A04A /* ScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B69397D81675DFE70022A04A /* ScanViewController.m */; };
 		B69397DB1675DFE70022A04A /* ScanViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B69397D91675DFE70022A04A /* ScanViewController.xib */; };
 		B69397E11675E11D0022A04A /* ScanViewControllerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = B69397E01675E11D0022A04A /* ScanViewControllerTest.m */; };
@@ -239,6 +243,13 @@
 		4945F4A2167C2BDF00BA2516 /* MacAddressUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MacAddressUtil.h; path = utils/MacAddressUtil.h; sourceTree = "<group>"; };
 		4945F4A3167C2BDF00BA2516 /* MacAddressUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MacAddressUtil.m; path = utils/MacAddressUtil.m; sourceTree = "<group>"; };
 		494FFFD0167606A400C7748D /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		497C19D0167C50AE00862C7A /* BookScanListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookScanListViewController.h; sourceTree = "<group>"; };
+		497C19D1167C50AE00862C7A /* BookScanListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookScanListViewController.m; sourceTree = "<group>"; };
+		497C19D2167C50AE00862C7A /* BookScanListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BookScanListViewController.xib; sourceTree = "<group>"; };
+		497C19D6167C50BF00862C7A /* Book.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Book.h; sourceTree = "<group>"; };
+		497C19D7167C50BF00862C7A /* Book.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Book.m; sourceTree = "<group>"; };
+		497C19D9167C50E400862C7A /* BookScanListViewControllerTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookScanListViewControllerTests.h; sourceTree = "<group>"; };
+		497C19DA167C50E400862C7A /* BookScanListViewControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookScanListViewControllerTests.m; sourceTree = "<group>"; };
 		49A47FB116781E5F00CEA398 /* DataExchangeDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataExchangeDelegate.h; sourceTree = "<group>"; };
 		49A8247A16633E06004D358E /* Liren-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Liren-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		49A8247E16633E07004D358E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -248,8 +259,6 @@
 		49A8248816633E07004D358E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		49A8248A16633E07004D358E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		49A8248C16633E07004D358E /* Liren-ios-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Liren-ios-Prefix.pch"; sourceTree = "<group>"; };
-		49A8248D16633E07004D358E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		49A8248E16633E07004D358E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		49A8249016633E07004D358E /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		49A8249216633E07004D358E /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		49A8249416633E07004D358E /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
@@ -259,6 +268,8 @@
 		49A824A616633E07004D358E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		49A824A816633E07004D358E /* Liren_iosTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Liren_iosTests.h; sourceTree = "<group>"; };
 		49A824A916633E07004D358E /* Liren_iosTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Liren_iosTests.m; sourceTree = "<group>"; };
+		49A91205167C4FF6009680D8 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		49A91206167C4FF6009680D8 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		B69397D71675DFE70022A04A /* ScanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScanViewController.h; path = controllers/ScanViewController.h; sourceTree = "<group>"; };
 		B69397D81675DFE70022A04A /* ScanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ScanViewController.m; path = controllers/ScanViewController.m; sourceTree = "<group>"; };
 		B69397D91675DFE70022A04A /* ScanViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ScanViewController.xib; path = controllers/ScanViewController.xib; sourceTree = "<group>"; };
@@ -756,11 +767,13 @@
 		49A8248416633E07004D358E /* Liren-ios */ = {
 			isa = PBXGroup;
 			children = (
+				497C19D6167C50BF00862C7A /* Book.h */,
+				497C19D7167C50BF00862C7A /* Book.m */,
+				49A91205167C4FF6009680D8 /* AppDelegate.h */,
+				49A91206167C4FF6009680D8 /* AppDelegate.m */,
 				4945F4A1167C2B7600BA2516 /* utils */,
 				49A47FAF16781E2C00CEA398 /* delegates */,
 				B69397DD1675E0480022A04A /* controllers */,
-				49A8248D16633E07004D358E /* AppDelegate.h */,
-				49A8248E16633E07004D358E /* AppDelegate.m */,
 				49A8248516633E07004D358E /* Supporting Files */,
 			);
 			path = "Liren-ios";
@@ -803,6 +816,9 @@
 		B69397DD1675E0480022A04A /* controllers */ = {
 			isa = PBXGroup;
 			children = (
+				497C19D0167C50AE00862C7A /* BookScanListViewController.h */,
+				497C19D1167C50AE00862C7A /* BookScanListViewController.m */,
+				497C19D2167C50AE00862C7A /* BookScanListViewController.xib */,
 				B69397D71675DFE70022A04A /* ScanViewController.h */,
 				B69397D81675DFE70022A04A /* ScanViewController.m */,
 				B69397D91675DFE70022A04A /* ScanViewController.xib */,
@@ -813,6 +829,8 @@
 		B69397DE1675E0E40022A04A /* controllers */ = {
 			isa = PBXGroup;
 			children = (
+				497C19D9167C50E400862C7A /* BookScanListViewControllerTests.h */,
+				497C19DA167C50E400862C7A /* BookScanListViewControllerTests.m */,
 				B69397DF1675E11D0022A04A /* ScanViewControllerTest.h */,
 				B69397E01675E11D0022A04A /* ScanViewControllerTest.m */,
 			);
@@ -1504,6 +1522,7 @@
 				49A8249316633E07004D358E /* Default@2x.png in Resources */,
 				49A8249516633E07004D358E /* Default-568h@2x.png in Resources */,
 				B69397DB1675DFE70022A04A /* ScanViewController.xib in Resources */,
+				497C19D4167C50AE00862C7A /* BookScanListViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1539,7 +1558,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				49A8248B16633E07004D358E /* main.m in Sources */,
-				49A8248F16633E07004D358E /* AppDelegate.m in Sources */,
 				B6F89EBC1671E2F800BB9AAA /* ZXAztecDecoder.m in Sources */,
 				B6F89EBD1671E2F800BB9AAA /* ZXAztecDetector.m in Sources */,
 				B6F89EBE1671E2F800BB9AAA /* ZXAztecDetectorResult.m in Sources */,
@@ -1722,6 +1740,9 @@
 				B6F89F6F1671E2F800BB9AAA /* ZXResultPoint.m in Sources */,
 				B69397DA1675DFE70022A04A /* ScanViewController.m in Sources */,
 				4945F4A4167C2BDF00BA2516 /* MacAddressUtil.m in Sources */,
+				49A91207167C4FF6009680D8 /* AppDelegate.m in Sources */,
+				497C19D3167C50AE00862C7A /* BookScanListViewController.m in Sources */,
+				497C19D8167C50BF00862C7A /* Book.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1731,6 +1752,7 @@
 			files = (
 				49A824AA16633E07004D358E /* Liren_iosTests.m in Sources */,
 				B69397E11675E11D0022A04A /* ScanViewControllerTest.m in Sources */,
+				497C19DB167C50E400862C7A /* BookScanListViewControllerTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
