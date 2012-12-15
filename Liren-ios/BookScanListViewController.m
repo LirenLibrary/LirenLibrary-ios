@@ -31,31 +31,47 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
+    self.title = @"立人捐书";
+    [self initNavigationBar];
+    
     if(self.bookList==nil){
         NSMutableArray *tmpArray = [[NSMutableArray alloc] initWithCapacity:0];
         self.bookList = tmpArray;   
         [tmpArray release];
     }
     
+    if(self.scanViewController==nil){
+        ScanViewController *svc=[[ScanViewController alloc] initWithNibName:@"ScanViewController" bundle:nil];
+        self.scanViewController=svc;
+        [svc release];
+    }
+    [self.scanViewController setDataExchangeDelegate:self];
+    
     if(self.queue==nil){
         NSOperationQueue *q=[[NSOperationQueue alloc] init];
         self.queue=q;
         [q release];
     }
-    [self.queue setMaxConcurrentOperationCount:10];    
+    [self.queue setMaxConcurrentOperationCount:10];
+    
+//    Book *b=[[Book alloc] init];
+//    [b setBookSN:@"9787111352211"];
+//    [self addBook:b];
+//    [b release];
 }
 
-- (Book *) buildBookObject:(NSString *) sn bookname:(NSString *) bookname{
-    Book *book = [[Book alloc]init];
-    [book setBookName:bookname];
-    [book setBookSN:sn];
-    return book;
+#pragma mark - UI method
+
+- (void) initNavigationBar{
+    UIBarButtonItem *scanButton = [[UIBarButtonItem alloc]initWithTitle:@"扫描" style:UIBarButtonItemStylePlain target:self action:@selector(startScanBook)];
+    self.navigationItem.leftBarButtonItem=scanButton;
+    [scanButton release];
 }
 
-- (void)viewDidUnload{
-    [self.bookList release];
-    [self.queue release];
+- (void) startScanBook{
+    [self presentModalViewController:self.scanViewController animated:YES];
 }
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -85,8 +101,7 @@
     static NSString *bookIdentifier = @"BookIndentifier";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:bookIdentifier];
     if(cell==nil){
-        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:bookIdentifier];
-        [cell autorelease];
+        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:bookIdentifier] autorelease];
     }
     NSUInteger row = [indexPath row];
     cell.textLabel.text = [[self.bookList objectAtIndex:row]bookName];
@@ -99,13 +114,12 @@
     
     NSURLRequest *request=[NSURLRequest requestWithURL:bookUrl cachePolicy:NSURLCacheStorageNotAllowed timeoutInterval:7.0f];
     
-    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *res, NSData *data, NSError *error) {
+    [NSURLConnection sendAsynchronousRequest:request queue:self.queue completionHandler:^(NSURLResponse *res, NSData *data, NSError *error) {
         dispatch_async(dispatch_get_main_queue(), ^{
-            
             NSLog(@"Get data from douban");
             NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
             if([json valueForKey:@"msg"]==nil){
-                book.bookName = [json valueForKey:@"subtitle"];
+                book.bookName = [json valueForKey:@"title"];
                 NSLog(@"Find Book:%@", book.bookName);
             }else{
                 book.bookName = @"没找到";
@@ -113,8 +127,25 @@
             }
             [self.tableView reloadData];
         });
-        
     }];
+}
+
+#pragma mark - DataExchange delete method
+-(void)putExchangedData:(NSObject *)dataObject{
+    //add the isbn scanned to the book list
+    NSString *isbnNumber=(NSString *)dataObject;
+    if(isbnNumber!=nil && isbnNumber.length>0){
+        Book *newBook=[[Book alloc] init];
+        [newBook setBookSN:isbnNumber];
+        [self addBook:newBook];
+        [newBook release];
+    }
+}
+
+-(void)dealloc{
+    [_bookList release];
+    [_queue release];
+    [super dealloc];
 }
 
 @end

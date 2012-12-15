@@ -14,22 +14,22 @@
 - (void)dealloc
 {
     [_window release];
-    [_scanViewController release];
+    [_bookScanListViewController release];
     [super dealloc];
 }
 
-- (void)initScanViewController
+- (void)initBookScanListViewController
 {   
-    if (self.scanViewController == nil) {
-        ScanViewController *svc = [[ScanViewController alloc] initWithNibName:@"ScanViewController" bundle:nil];
-        self.scanViewController = svc;
-        [svc release];
+    if(self.bookScanListViewController==nil){
+        BookScanListViewController *bslvc=[[BookScanListViewController alloc] initWithNibName:@"BookScanListViewController" bundle:nil];
+        self.bookScanListViewController = bslvc;
+        [bslvc release];
     }
 }
 
 - (void)initUINavigationController
 {
-    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:self.scanViewController];
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:self.bookScanListViewController];
     [self.window setRootViewController:nav];
     [nav autorelease];
 }
@@ -40,7 +40,7 @@
     
     [[UIApplication sharedApplication] registerForRemoteNotificationTypes:UIRemoteNotificationTypeSound|UIRemoteNotificationTypeAlert];
     
-    [self initScanViewController];
+    [self initBookScanListViewController];
     [self initUINavigationController];
     
     self.window.backgroundColor = [UIColor whiteColor];

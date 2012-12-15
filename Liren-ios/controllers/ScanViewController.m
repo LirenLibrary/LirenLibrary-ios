@@ -33,12 +33,27 @@
         [cap release];
     }
 
-    self.capture.delegate = self;
     self.capture.rotation = 90.0f;
     self.capture.camera = self.capture.back;
     self.capture.layer.frame = CGRectMake(60.0f, 100.0f, 200.0f, 150.0f);
     [self.view.layer addSublayer:self.capture.layer];
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    self.capture.delegate = self;
     [self.capture start];
+}
+
+-(void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    [self.capture setDelegate:nil];
+    [self.capture stop];
+}
+
+#pragma mark - UIAction method
+- (IBAction) cancelButtonPressed:(id)sender{
+    [self dismissModalViewControllerAnimated:YES];
 }
 
 - (void)didReceiveMemoryWarning
@@ -56,7 +71,14 @@
     self.lastBarCode = result.text;
     if (self.dataExchangeDelegate != nil) {
         [self.dataExchangeDelegate putExchangedData:self.lastBarCode];
+        [self dismissModalViewControllerAnimated:YES];
     }
+}
+
+-(void)dealloc{
+    [_capture release];
+    [_lastBarCode release];
+    [super dealloc];
 }
 
 @end

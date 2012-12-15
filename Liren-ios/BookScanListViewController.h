@@ -8,12 +8,16 @@
 
 #import <UIKit/UIKit.h>
 #import "Book.h"
+#import "DataExchangeDelegate.h"
+#import "ScanViewController.h"
 
-@interface BookScanListViewController : UIViewController <UITableViewDelegate,UITableViewDataSource>
+@interface BookScanListViewController : UIViewController <UITableViewDelegate,UITableViewDataSource, DataExchangeDelegate>
 @property (nonatomic,retain) NSMutableArray *bookList;
 @property(nonatomic, retain) NSOperationQueue *queue;
 @property (nonatomic,retain) IBOutlet UITableView *tableView;
+@property(nonatomic, retain) ScanViewController *scanViewController;
 
 - (void) addBook:(Book *) book;
 - (void) getBookDetail:(Book *) book;
+- (void) initNavigationBar;
 @end

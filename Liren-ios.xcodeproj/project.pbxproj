@@ -688,6 +688,15 @@
 			name = SDK;
 			sourceTree = "<group>";
 		};
+		490E73F7167C54310082C646 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				497C19D6167C50BF00862C7A /* Book.h */,
+				497C19D7167C50BF00862C7A /* Book.m */,
+			);
+			name = Modules;
+			sourceTree = "<group>";
+		};
 		4945F497167C0B7700BA2516 /* OCMock */ = {
 			isa = PBXGroup;
 			children = (
@@ -767,8 +776,7 @@
 		49A8248416633E07004D358E /* Liren-ios */ = {
 			isa = PBXGroup;
 			children = (
-				497C19D6167C50BF00862C7A /* Book.h */,
-				497C19D7167C50BF00862C7A /* Book.m */,
+				490E73F7167C54310082C646 /* Modules */,
 				49A91205167C4FF6009680D8 /* AppDelegate.h */,
 				49A91206167C4FF6009680D8 /* AppDelegate.m */,
 				4945F4A1167C2B7600BA2516 /* utils */,

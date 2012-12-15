@@ -19,4 +19,6 @@
 @property(nonatomic, retain) ZXCapture *capture;
 @property(nonatomic, assign) NSObject<DataExchangeDelegate> *dataExchangeDelegate;
 
+- (IBAction) cancelButtonPressed:(id)sender;
+
 @end
