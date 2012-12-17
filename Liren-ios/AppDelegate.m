@@ -9,6 +9,8 @@
 #import "AppDelegate.h"
 #import "MacAddressUtil.h"
 
+#define app_id_flurry   @"W8W2NK83XMV2DVFB48D8"
+
 @implementation AppDelegate
 
 - (void)dealloc
@@ -42,6 +44,9 @@
     
     [self initBookScanListViewController];
     [self initUINavigationController];
+    
+    //register the flurry sdk
+    [Flurry startSession:app_id_flurry];
     
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
