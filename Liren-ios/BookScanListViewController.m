@@ -9,6 +9,7 @@
 #import "BookScanListViewController.h"
 
 #define DOUBAN_ISBN_URL @"http://api.douban.com/v2/book/isbn/"
+#define TRACK_VIEW_NAME @"Track_BookScanListViewController"
 
 @interface BookScanListViewController ()
 
@@ -33,6 +34,7 @@
     
     self.title = @"立人捐书";
     [self initNavigationBar];
+    self.trackedViewName=TRACK_VIEW_NAME;
     
     if(self.bookList==nil){
         NSMutableArray *tmpArray = [[NSMutableArray alloc] initWithCapacity:0];

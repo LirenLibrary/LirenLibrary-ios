@@ -9,7 +9,7 @@
 #import "AppDelegate.h"
 #import "MacAddressUtil.h"
 
-#define app_id_flurry   @"W8W2NK83XMV2DVFB48D8"
+#define EXT_APPID_GOOGLE_ANALYSIS @"UA-37024844-1"
 
 @implementation AppDelegate
 
@@ -17,6 +17,7 @@
 {
     [_window release];
     [_bookScanListViewController release];
+    [_googleTracker release];
     [super dealloc];
 }
 
@@ -36,6 +37,13 @@
     [nav autorelease];
 }
 
+- (void) initGoogleAnalysis{
+    [GAI sharedInstance].debug = YES;
+    [GAI sharedInstance].dispatchInterval = 60*10;
+    [GAI sharedInstance].trackUncaughtExceptions = YES;
+    self.googleTracker = [[GAI sharedInstance] trackerWithTrackingId:EXT_APPID_GOOGLE_ANALYSIS];
+}
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
@@ -44,9 +52,7 @@
     
     [self initBookScanListViewController];
     [self initUINavigationController];
-    
-    //register the flurry sdk
-    [Flurry startSession:app_id_flurry];
+    [self initGoogleAnalysis];
     
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];

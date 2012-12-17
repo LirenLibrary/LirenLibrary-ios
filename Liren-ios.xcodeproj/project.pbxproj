@@ -10,8 +10,10 @@
 		490349D71671E06E0000C083 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 490349D61671E06E0000C083 /* CoreMedia.framework */; };
 		490349D91671E0720000C083 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 490349D81671E0720000C083 /* CoreVideo.framework */; };
 		490349DB1671E07E0000C083 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 490349DA1671E07E0000C083 /* ImageIO.framework */; };
-		490E7408167EB9C60082C646 /* libFlurry.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 490E7407167EB9C60082C646 /* libFlurry.a */; };
 		490E740D167EBF310082C646 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 490E740C167EBF310082C646 /* SystemConfiguration.framework */; };
+		490E741B167EDA850082C646 /* libGoogleAnalytics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 490E7419167EDA850082C646 /* libGoogleAnalytics.a */; };
+		490E741C167EDA850082C646 /* libGoogleAnalytics_debug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 490E741A167EDA850082C646 /* libGoogleAnalytics_debug.a */; };
+		4921E6B3167F479200728511 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4921E6B2167F479200728511 /* CoreData.framework */; };
 		4945F496167C09D800BA2516 /* libOCMock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4945F495167C09D800BA2516 /* libOCMock.a */; };
 		4945F4A0167C0B7700BA2516 /* libOCMock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4945F498167C0B7700BA2516 /* libOCMock.a */; };
 		4945F4A4167C2BDF00BA2516 /* MacAddressUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 4945F4A3167C2BDF00BA2516 /* MacAddressUtil.m */; };
@@ -234,9 +236,15 @@
 		490349D61671E06E0000C083 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		490349D81671E0720000C083 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		490349DA1671E07E0000C083 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
-		490E7406167EB9C60082C646 /* Flurry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Flurry.h; sourceTree = "<group>"; };
-		490E7407167EB9C60082C646 /* libFlurry.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFlurry.a; sourceTree = "<group>"; };
 		490E740C167EBF310082C646 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		490E7414167EDA850082C646 /* GAI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAI.h; sourceTree = "<group>"; };
+		490E7415167EDA850082C646 /* GAITrackedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAITrackedViewController.h; sourceTree = "<group>"; };
+		490E7416167EDA850082C646 /* GAITracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAITracker.h; sourceTree = "<group>"; };
+		490E7417167EDA850082C646 /* GAITransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAITransaction.h; sourceTree = "<group>"; };
+		490E7418167EDA850082C646 /* GAITransactionItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAITransactionItem.h; sourceTree = "<group>"; };
+		490E7419167EDA850082C646 /* libGoogleAnalytics.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleAnalytics.a; sourceTree = "<group>"; };
+		490E741A167EDA850082C646 /* libGoogleAnalytics_debug.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleAnalytics_debug.a; sourceTree = "<group>"; };
+		4921E6B2167F479200728511 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		4945F495167C09D800BA2516 /* libOCMock.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libOCMock.a; path = OCMock/libOCMock.a; sourceTree = "<group>"; };
 		4945F498167C0B7700BA2516 /* libOCMock.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libOCMock.a; sourceTree = "<group>"; };
 		4945F49A167C0B7700BA2516 /* NSNotificationCenter+OCMAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNotificationCenter+OCMAdditions.h"; sourceTree = "<group>"; };
@@ -658,6 +666,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4921E6B3167F479200728511 /* CoreData.framework in Frameworks */,
 				490E740D167EBF310082C646 /* SystemConfiguration.framework in Frameworks */,
 				4945F496167C09D800BA2516 /* libOCMock.a in Frameworks */,
 				494FFFD1167606A400C7748D /* AVFoundation.framework in Frameworks */,
@@ -668,7 +677,8 @@
 				49A8247F16633E07004D358E /* UIKit.framework in Frameworks */,
 				49A8248116633E07004D358E /* Foundation.framework in Frameworks */,
 				49A8248316633E07004D358E /* CoreGraphics.framework in Frameworks */,
-				490E7408167EB9C60082C646 /* libFlurry.a in Frameworks */,
+				490E741B167EDA850082C646 /* libGoogleAnalytics.a in Frameworks */,
+				490E741C167EDA850082C646 /* libGoogleAnalytics_debug.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -689,7 +699,7 @@
 		4903478D1671E0300000C083 /* SDK */ = {
 			isa = PBXGroup;
 			children = (
-				490E7405167EB9C60082C646 /* Flurry */,
+				490E7413167EDA850082C646 /* GALibrary */,
 				4945F497167C0B7700BA2516 /* OCMock */,
 				B6F89D2C1671E2F800BB9AAA /* ZXingObjC */,
 			);
@@ -705,13 +715,18 @@
 			name = Modules;
 			sourceTree = "<group>";
 		};
-		490E7405167EB9C60082C646 /* Flurry */ = {
+		490E7413167EDA850082C646 /* GALibrary */ = {
 			isa = PBXGroup;
 			children = (
-				490E7406167EB9C60082C646 /* Flurry.h */,
-				490E7407167EB9C60082C646 /* libFlurry.a */,
+				490E7414167EDA850082C646 /* GAI.h */,
+				490E7415167EDA850082C646 /* GAITrackedViewController.h */,
+				490E7416167EDA850082C646 /* GAITracker.h */,
+				490E7417167EDA850082C646 /* GAITransaction.h */,
+				490E7418167EDA850082C646 /* GAITransactionItem.h */,
+				490E7419167EDA850082C646 /* libGoogleAnalytics.a */,
+				490E741A167EDA850082C646 /* libGoogleAnalytics_debug.a */,
 			);
-			path = Flurry;
+			path = GALibrary;
 			sourceTree = "<group>";
 		};
 		4945F497167C0B7700BA2516 /* OCMock */ = {
@@ -776,6 +791,7 @@
 		49A8247D16633E07004D358E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4921E6B2167F479200728511 /* CoreData.framework */,
 				490E740C167EBF310082C646 /* SystemConfiguration.framework */,
 				4945F495167C09D800BA2516 /* libOCMock.a */,
 				494FFFD0167606A400C7748D /* AVFoundation.framework */,
@@ -1877,6 +1893,7 @@
 					"\"$(SRCROOT)/Liren-ios/ZBarSDK\"",
 					"\"$(SRCROOT)/OCMock\"",
 					"\"$(SRCROOT)/Flurry\"",
+					"\"$(SRCROOT)/GALibrary\"",
 				);
 				"LIBRARY_SEARCH_PATHS[arch=*]" = (
 					"$(inherited)",
@@ -1912,6 +1929,7 @@
 					"\"$(SRCROOT)/Liren-ios/ZBarSDK\"",
 					"\"$(SRCROOT)/OCMock\"",
 					"\"$(SRCROOT)/Flurry\"",
+					"\"$(SRCROOT)/GALibrary\"",
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
