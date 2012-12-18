@@ -17,7 +17,6 @@
 {
     [_window release];
     [_bookScanListViewController release];
-    [_googleTracker release];
     [super dealloc];
 }
 
@@ -41,7 +40,7 @@
     [GAI sharedInstance].debug = YES;
     [GAI sharedInstance].dispatchInterval = 60*10;
     [GAI sharedInstance].trackUncaughtExceptions = YES;
-    self.googleTracker = [[GAI sharedInstance] trackerWithTrackingId:EXT_APPID_GOOGLE_ANALYSIS];
+    [GAI sharedInstance].defaultTracker=[[GAI sharedInstance] trackerWithTrackingId:EXT_APPID_GOOGLE_ANALYSIS];
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions

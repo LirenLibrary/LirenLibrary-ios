@@ -12,6 +12,7 @@
 #import "ScanViewController.h"
 #import "GAI.h"
 #import "GAITrackedViewController.h"
+#import <objc/runtime.h>
 
 @interface BookScanListViewController : GAITrackedViewController <UITableViewDelegate,UITableViewDataSource, DataExchangeDelegate>
 @property (nonatomic,retain) NSMutableArray *bookList;

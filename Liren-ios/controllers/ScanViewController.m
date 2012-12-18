@@ -8,8 +8,6 @@
 
 #import "ScanViewController.h"
 
-#define TRACK_VIEW_NAME @"Track_ScanViewController"
-
 @interface ScanViewController () <ZXCaptureDelegate>
 
 @end
@@ -28,7 +26,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-//    self.trackedViewName=TRACK_VIEW_NAME;
+    self.trackedViewName=[NSString stringWithFormat:@"%s", class_getName(self.class)];
     
     if (self.capture == nil) {
         ZXCapture *cap = [[ZXCapture alloc] init];
