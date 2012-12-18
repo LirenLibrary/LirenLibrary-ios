@@ -28,7 +28,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.trackedViewName=TRACK_VIEW_NAME;
+//    self.trackedViewName=TRACK_VIEW_NAME;
     
     if (self.capture == nil) {
         ZXCapture *cap = [[ZXCapture alloc] init];
@@ -38,7 +38,7 @@
 
     self.capture.rotation = 90.0f;
     self.capture.camera = self.capture.back;
-    self.capture.layer.frame = CGRectMake(60.0f, 100.0f, 200.0f, 150.0f);
+    self.capture.layer.frame = CGRectMake(20.0f, 60.0f, 280.0f, 220.0f);
     [self.view.layer addSublayer:self.capture.layer];
 }
 

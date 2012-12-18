@@ -15,7 +15,7 @@
 #import "DataExchangeDelegate.h"
 #import "GAITrackedViewController.h"
 
-@interface ScanViewController : GAITrackedViewController
+@interface ScanViewController : UIViewController
 @property(nonatomic, retain) NSString *lastBarCode;
 @property(nonatomic, retain) ZXCapture *capture;
 @property(nonatomic, assign) NSObject<DataExchangeDelegate> *dataExchangeDelegate;
