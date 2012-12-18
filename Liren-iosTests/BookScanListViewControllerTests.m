@@ -48,7 +48,7 @@
 }
 
 
-- (void) testShouldDownloadFindBookNameFromDouban{
+- (void) testShouldDownloadFoundBookNameFromDouban{
     Book *book = [self buildBookObject:@"9787564129651" bookname:nil];
     [self.bookScanListViewController getBookDetail:book];
     //STAssertNotNil(book.bookName, @"Did not find the book Name");

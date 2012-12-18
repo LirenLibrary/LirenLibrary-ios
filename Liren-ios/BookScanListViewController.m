@@ -59,7 +59,7 @@
 #pragma mark - UI method
 
 - (void) initNavigationBar{
-    UIBarButtonItem *scanButton = [[UIBarButtonItem alloc]initWithTitle:@"扫描" style:UIBarButtonItemStylePlain target:self action:@selector(startScanBook)];
+    UIBarButtonItem *scanButton = [[UIBarButtonItem alloc]initWithTitle:@"扫描条码" style:UIBarButtonItemStylePlain target:self action:@selector(startScanBook)];
     self.navigationItem.leftBarButtonItem=scanButton;
     [scanButton release];
 }
