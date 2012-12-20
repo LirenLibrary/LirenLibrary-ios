@@ -14,5 +14,8 @@
 
 @property (strong, nonatomic) UIWindow *window;
 @property(nonatomic, retain) BookScanListViewController *bookScanListViewController;
+@property(nonatomic, retain) NSMutableDictionary *globalUserData;
+
+-(void)saveGlobalUserData;
 
 @end

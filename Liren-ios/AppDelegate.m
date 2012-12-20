@@ -10,6 +10,7 @@
 #import "MacAddressUtil.h"
 
 #define EXT_APPID_GOOGLE_ANALYSIS @"UA-37024844-1"
+#define KEY_USER_STATE  @"LirenLib-User-State"
 
 @implementation AppDelegate
 
@@ -17,6 +18,7 @@
 {
     [_window release];
     [_bookScanListViewController release];
+    [_globalUserData release];
     [super dealloc];
 }
 
@@ -49,6 +51,7 @@
     
     [[UIApplication sharedApplication] registerForRemoteNotificationTypes:UIRemoteNotificationTypeSound|UIRemoteNotificationTypeAlert];
     
+    [self restoreGlobalUserData];
     [self initBookScanListViewController];
     [self initUINavigationController];
     [self initGoogleAnalysis];
@@ -75,6 +78,9 @@
 {
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+    
+    //save user's state
+    [self saveGlobalUserData];
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
@@ -92,6 +98,21 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
-
+#pragma mark - util method
+-(void)saveGlobalUserData{
+    [[NSUserDefaults standardUserDefaults] setObject:self.globalUserData forKey:KEY_USER_STATE];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+-(void)restoreGlobalUserData{
+    NSMutableDictionary *tmpDic=[[NSUserDefaults standardUserDefaults] objectForKey:KEY_USER_STATE];
+	if(tmpDic!=nil){
+		self.globalUserData=tmpDic;
+	}
+    if(self.globalUserData==nil){
+        NSMutableDictionary *dic=[[NSMutableDictionary alloc]init];
+        self.globalUserData=dic;
+        [dic release];
+    }
+}
 
 @end
