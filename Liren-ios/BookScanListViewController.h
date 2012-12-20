@@ -10,6 +10,7 @@
 #import "Book.h"
 #import "DataExchangeDelegate.h"
 #import "ScanViewController.h"
+#import "SendScanedBooksViewController.h"
 #import "GAI.h"
 #import "GAITrackedViewController.h"
 #import <objc/runtime.h>
@@ -19,6 +20,7 @@
 @property(nonatomic, retain) NSOperationQueue *queue;
 @property (nonatomic,retain) IBOutlet UITableView *tableView;
 @property(nonatomic, retain) ScanViewController *scanViewController;
+@property(nonatomic, retain) SendScanedBooksViewController *sendScanedBooksViewController;
 
 - (void) addBook:(Book *) book;
 - (void) getBookDetail:(Book *) book;

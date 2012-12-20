@@ -48,6 +48,12 @@
     }
     [self.scanViewController setDataExchangeDelegate:self];
     
+    if(self.sendScanedBooksViewController==nil){
+        SendScanedBooksViewController *svc=[[SendScanedBooksViewController alloc] initWithNibName:@"SendScanedBooksViewController" bundle:nil];
+        self.sendScanedBooksViewController=svc;
+        [svc release];
+    }
+    
     if(self.queue==nil){
         NSOperationQueue *q=[[NSOperationQueue alloc] init];
         self.queue=q;
@@ -61,11 +67,17 @@
 - (void) initNavigationBar{
     UIBarButtonItem *scanButton = [[UIBarButtonItem alloc]initWithTitle:@"扫描条码" style:UIBarButtonItemStylePlain target:self action:@selector(startScanBook)];
     self.navigationItem.leftBarButtonItem=scanButton;
+    UIBarButtonItem *sendButton = [[UIBarButtonItem alloc]initWithTitle:@"发送书单" style:UIBarButtonItemStylePlain target:self action:@selector(sendScanedBooks)];
+    self.navigationItem.rightBarButtonItem=sendButton;
     [scanButton release];
 }
 
 - (void) startScanBook{
     [self presentModalViewController:self.scanViewController animated:YES];
+}
+
+- (void) sendScanedBooks{
+    [self presentModalViewController:self.sendScanedBooksViewController animated:YES];
 }
 
 - (void)didReceiveMemoryWarning

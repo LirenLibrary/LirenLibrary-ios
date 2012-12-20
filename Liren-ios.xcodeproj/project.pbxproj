@@ -14,6 +14,8 @@
 		490E741B167EDA850082C646 /* libGoogleAnalytics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 490E7419167EDA850082C646 /* libGoogleAnalytics.a */; };
 		490E741C167EDA850082C646 /* libGoogleAnalytics_debug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 490E741A167EDA850082C646 /* libGoogleAnalytics_debug.a */; };
 		4921E6B3167F479200728511 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4921E6B2167F479200728511 /* CoreData.framework */; };
+		49369883168324B800C743CB /* SendScanedBooksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49369881168324B800C743CB /* SendScanedBooksViewController.m */; };
+		49369884168324B800C743CB /* SendScanedBooksViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49369882168324B800C743CB /* SendScanedBooksViewController.xib */; };
 		4945F496167C09D800BA2516 /* libOCMock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4945F495167C09D800BA2516 /* libOCMock.a */; };
 		4945F4A4167C2BDF00BA2516 /* MacAddressUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 4945F4A3167C2BDF00BA2516 /* MacAddressUtil.m */; };
 		494FFFD1167606A400C7748D /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 494FFFD0167606A400C7748D /* AVFoundation.framework */; };
@@ -245,6 +247,9 @@
 		490E7419167EDA850082C646 /* libGoogleAnalytics.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleAnalytics.a; sourceTree = "<group>"; };
 		490E741A167EDA850082C646 /* libGoogleAnalytics_debug.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleAnalytics_debug.a; sourceTree = "<group>"; };
 		4921E6B2167F479200728511 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		49369880168324B800C743CB /* SendScanedBooksViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SendScanedBooksViewController.h; path = controllers/SendScanedBooksViewController.h; sourceTree = "<group>"; };
+		49369881168324B800C743CB /* SendScanedBooksViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SendScanedBooksViewController.m; path = controllers/SendScanedBooksViewController.m; sourceTree = "<group>"; };
+		49369882168324B800C743CB /* SendScanedBooksViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SendScanedBooksViewController.xib; path = controllers/SendScanedBooksViewController.xib; sourceTree = "<group>"; };
 		4945F495167C09D800BA2516 /* libOCMock.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libOCMock.a; path = OCMock/libOCMock.a; sourceTree = "<group>"; };
 		4945F4A2167C2BDF00BA2516 /* MacAddressUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MacAddressUtil.h; path = utils/MacAddressUtil.h; sourceTree = "<group>"; };
 		4945F4A3167C2BDF00BA2516 /* MacAddressUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MacAddressUtil.m; path = utils/MacAddressUtil.m; sourceTree = "<group>"; };
@@ -862,6 +867,9 @@
 				497C19D1167C50AE00862C7A /* BookScanListViewController.m */,
 				497C19D2167C50AE00862C7A /* BookScanListViewController.xib */,
 				B69397D71675DFE70022A04A /* ScanViewController.h */,
+				49369880168324B800C743CB /* SendScanedBooksViewController.h */,
+				49369881168324B800C743CB /* SendScanedBooksViewController.m */,
+				49369882168324B800C743CB /* SendScanedBooksViewController.xib */,
 				B69397D81675DFE70022A04A /* ScanViewController.m */,
 				B69397D91675DFE70022A04A /* ScanViewController.xib */,
 			);
@@ -1565,6 +1573,7 @@
 				49A8249516633E07004D358E /* Default-568h@2x.png in Resources */,
 				B69397DB1675DFE70022A04A /* ScanViewController.xib in Resources */,
 				497C19D4167C50AE00862C7A /* BookScanListViewController.xib in Resources */,
+				49369884168324B800C743CB /* SendScanedBooksViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1785,6 +1794,7 @@
 				49A91207167C4FF6009680D8 /* AppDelegate.m in Sources */,
 				497C19D3167C50AE00862C7A /* BookScanListViewController.m in Sources */,
 				497C19D8167C50BF00862C7A /* Book.m in Sources */,
+				49369883168324B800C743CB /* SendScanedBooksViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
