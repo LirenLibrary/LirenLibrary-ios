@@ -135,7 +135,7 @@
     }
 }
 
-- (void) getBookDetail:(Book *) book{
+- (void) getBookDetail:(Book *) book{    
     NSURL *bookUrl = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@", DOUBAN_ISBN_URL,book.bookSN]];
     NSLog(@"Started to get book details: %@ ",bookUrl);
     
