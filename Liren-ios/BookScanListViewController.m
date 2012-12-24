@@ -135,7 +135,9 @@
     }
 }
 
-- (void) getBookDetail:(Book *) book{    
+- (void) getBookDetail:(Book *) book{
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    
     NSURL *bookUrl = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@", DOUBAN_ISBN_URL,book.bookSN]];
     NSLog(@"Started to get book details: %@ ",bookUrl);
     
@@ -165,6 +167,8 @@
                 }
                 [self.tableView reloadData];
             }
+            
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
         });
     }];
 }
