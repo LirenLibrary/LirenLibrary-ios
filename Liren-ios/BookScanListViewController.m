@@ -66,10 +66,14 @@
 
 - (void) initNavigationBar{
     UIBarButtonItem *scanButton = [[UIBarButtonItem alloc]initWithTitle:@"扫描条码" style:UIBarButtonItemStylePlain target:self action:@selector(startScanBook)];
-    self.navigationItem.leftBarButtonItem=scanButton;
-    UIBarButtonItem *sendButton = [[UIBarButtonItem alloc]initWithTitle:@"发送书单" style:UIBarButtonItemStylePlain target:self action:@selector(sendScanedBooks)];
+//    self.navigationItem.leftBarButtonItem=scanButton;
+    UIBarButtonItem *sendButton = [[UIBarButtonItem alloc]initWithTitle:@"提交" style:UIBarButtonItemStylePlain target:self action:@selector(sendScanedBooks)];
     self.navigationItem.rightBarButtonItem=sendButton;
     [scanButton release];
+}
+
+- (IBAction) scanButtonPressed:(id)sender{
+    [self startScanBook];
 }
 
 - (void) startScanBook{

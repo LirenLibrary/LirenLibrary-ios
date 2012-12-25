@@ -7,7 +7,6 @@
 //
 
 #import "LandingViewController.h"
-#import "BookScanListViewController.h"
 
 @interface LandingViewController ()
 
@@ -20,6 +19,9 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"返回" style:UIBarButtonItemStylePlain target:nil action:nil];
+        self.navigationItem.backBarButtonItem = backButton;
+        [backButton release];
     }
     return self;
 }
@@ -30,7 +32,7 @@
     // Do any additional setup after loading the view from its nib.
     
     
-    self.title = @"立人捐书";
+    self.title = @"立人图书馆";
     
     if(self.bookScanViewController == nil){
         BookScanListViewController *svc = [[BookScanListViewController alloc] initWithNibName:@"BookScanListViewController" bundle:nil];
