@@ -31,9 +31,19 @@
     }
 }
 
+- (void)initLandingViewController
+{
+    if(self.landingViewController == nil) {
+        LandingViewController *lvc = [[LandingViewController alloc] initWithNibName:@"LandingViewController" bundle:nil];
+        self.landingViewController = lvc;
+        [lvc release];
+    }
+}
+
 - (void)initUINavigationController
 {
-    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:self.bookScanListViewController];
+//    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:self.bookScanListViewController];
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:self.landingViewController];
     [self.window setRootViewController:nav];
     [nav autorelease];
 }
