@@ -2,6 +2,7 @@
 *.swp
 *~.nib
 Liren-ios.xcodeproj/project.xcworkspace/xcuserdata/*
+Liren-ios.xcodeproj/xcuserdata
 build/
 *.pbxuser
 *.perspective
