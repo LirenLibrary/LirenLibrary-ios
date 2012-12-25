@@ -11,7 +11,6 @@
 		490349D91671E0720000C083 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 490349D81671E0720000C083 /* CoreVideo.framework */; };
 		490349DB1671E07E0000C083 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 490349DA1671E07E0000C083 /* ImageIO.framework */; };
 		490E740D167EBF310082C646 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 490E740C167EBF310082C646 /* SystemConfiguration.framework */; };
-		490E741B167EDA850082C646 /* libGoogleAnalytics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 490E7419167EDA850082C646 /* libGoogleAnalytics.a */; };
 		490E741C167EDA850082C646 /* libGoogleAnalytics_debug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 490E741A167EDA850082C646 /* libGoogleAnalytics_debug.a */; };
 		4921E6B3167F479200728511 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4921E6B2167F479200728511 /* CoreData.framework */; };
 		49369883168324B800C743CB /* SendScanedBooksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49369881168324B800C743CB /* SendScanedBooksViewController.m */; };
@@ -685,7 +684,6 @@
 				49A8247F16633E07004D358E /* UIKit.framework in Frameworks */,
 				49A8248116633E07004D358E /* Foundation.framework in Frameworks */,
 				49A8248316633E07004D358E /* CoreGraphics.framework in Frameworks */,
-				490E741B167EDA850082C646 /* libGoogleAnalytics.a in Frameworks */,
 				490E741C167EDA850082C646 /* libGoogleAnalytics_debug.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1878,7 +1876,7 @@
 				ONLY_ACTIVE_ARCH = NO;
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
-				VALID_ARCHS = "armv7 armv7s";
+				VALID_ARCHS = "armv7 armv7s i386";
 			};
 			name = Debug;
 		};
@@ -1901,7 +1899,7 @@
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
-				VALID_ARCHS = "armv7 armv7s";
+				VALID_ARCHS = "armv7 armv7s i386";
 			};
 			name = Release;
 		};
@@ -1928,14 +1926,11 @@
 					"\"$(SRCROOT)/OCMock\"",
 				);
 				ONLY_ACTIVE_ARCH = YES;
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					"$(FRANK_LDFLAGS)",
-				);
+				OTHER_LDFLAGS = "$(XCODE_TEST_LDFLAGS)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "40189F64-2D91-42BA-A4BF-C8FB8CDD32D4";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "40189F64-2D91-42BA-A4BF-C8FB8CDD32D4";
-				VALID_ARCHS = "armv7 armv7s";
+				VALID_ARCHS = "armv7 armv7s i386";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1956,10 +1951,11 @@
 					"\"$(SRCROOT)/GALibrary\"",
 				);
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "$(XCODE_TEST_LDFLAGS)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "F45FF4DB-CE06-4D8F-B5B0-DAC8CFC9CB0F";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "F45FF4DB-CE06-4D8F-B5B0-DAC8CFC9CB0F";
-				VALID_ARCHS = "armv7 armv7s";
+				VALID_ARCHS = "armv7 armv7s i386";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -1992,7 +1988,7 @@
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
-				VALID_ARCHS = "armv7 armv7s";
+				VALID_ARCHS = "armv7 armv7s i386";
 				WRAPPER_EXTENSION = octest;
 			};
 			name = Debug;
@@ -2020,7 +2016,7 @@
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
-				VALID_ARCHS = "armv7 armv7s";
+				VALID_ARCHS = "armv7 armv7s i386";
 				WRAPPER_EXTENSION = octest;
 			};
 			name = Release;
