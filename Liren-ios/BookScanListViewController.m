@@ -73,10 +73,6 @@
 }
 
 - (IBAction) scanButtonPressed:(id)sender{
-    [self startScanBook];
-}
-
-- (void) startScanBook{
     [self presentModalViewController:self.scanViewController animated:YES];
 }
 

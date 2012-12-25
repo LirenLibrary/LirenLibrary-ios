@@ -14,7 +14,6 @@
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-@property(nonatomic, retain) BookScanListViewController *bookScanListViewController;
 @property(nonatomic, retain) LandingViewController *landingViewController;
 @property(nonatomic, retain) NSMutableDictionary *globalUserData;
 

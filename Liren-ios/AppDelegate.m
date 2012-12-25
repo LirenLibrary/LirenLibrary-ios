@@ -17,19 +17,9 @@
 - (void)dealloc
 {
     [_window release];
-    [_bookScanListViewController release];
     [_landingViewController release];
     [_globalUserData release];
     [super dealloc];
-}
-
-- (void)initBookScanListViewController
-{   
-    if(self.bookScanListViewController==nil){
-        BookScanListViewController *bslvc=[[BookScanListViewController alloc] initWithNibName:@"BookScanListViewController" bundle:nil];
-        self.bookScanListViewController = bslvc;
-        [bslvc release];
-    }
 }
 
 - (void)initLandingViewController
@@ -43,7 +33,6 @@
 
 - (void)initUINavigationController
 {
-//    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:self.bookScanListViewController];
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:self.landingViewController];
     [self.window setRootViewController:nav];
     [nav autorelease];
@@ -63,7 +52,6 @@
     [[UIApplication sharedApplication] registerForRemoteNotificationTypes:UIRemoteNotificationTypeSound|UIRemoteNotificationTypeAlert];
     
     [self restoreGlobalUserData];
-    [self initBookScanListViewController];
     [self initLandingViewController];
     [self initUINavigationController];
     [self initGoogleAnalysis];
