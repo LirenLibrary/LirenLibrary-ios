@@ -7,6 +7,7 @@
 //
 
 #import "LandingViewController.h"
+#import "BookScanListViewController.h"
 
 @interface LandingViewController ()
 
@@ -27,12 +28,27 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    
+    self.title = @"立人捐书";
+    
+    if(self.bookScanViewController == nil){
+        BookScanListViewController *svc = [[BookScanListViewController alloc] initWithNibName:@"BookScanListViewController" bundle:nil];
+        self.bookScanViewController = svc;
+        [svc release];
+    }
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+
+#pragma mark - UI method
+- (IBAction) donateButtonPressed:(id)sender{
+    [self.navigationController pushViewController:self.bookScanViewController animated:YES];
 }
 
 @end

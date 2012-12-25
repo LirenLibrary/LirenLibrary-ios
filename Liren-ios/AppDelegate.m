@@ -18,6 +18,7 @@
 {
     [_window release];
     [_bookScanListViewController release];
+    [_landingViewController release];
     [_globalUserData release];
     [super dealloc];
 }
@@ -63,6 +64,7 @@
     
     [self restoreGlobalUserData];
     [self initBookScanListViewController];
+    [self initLandingViewController];
     [self initUINavigationController];
     [self initGoogleAnalysis];
     
