@@ -26,4 +26,5 @@
 - (void) addBook:(Book *) book;
 - (void) getBookDetail:(Book *) book;
 - (void) initNavigationBar;
+-(void)getBookDetailCallback:(NSError *)error withData:(NSData *)data withBook:(Book *)book;
 @end

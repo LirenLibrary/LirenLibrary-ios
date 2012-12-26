@@ -143,30 +143,7 @@
     
     [NSURLConnection sendAsynchronousRequest:request queue:self.queue completionHandler:^(NSURLResponse *res, NSData *data, NSError *error) {
         dispatch_async(dispatch_get_main_queue(), ^{
-            if(data==nil || error!=nil){
-                //got network error
-                UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"错误" message:@"连接网络失败了" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
-                [alert show];
-                [alert release];
-            }else{
-                NSLog(@"Get data from douban");
-                NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
-                if([json valueForKey:@"msg"]==nil){
-                    book.bookName = [json valueForKey:@"title"];
-                    [self.bookList addObject:book];
-                    NSLog(@"Find Book:%@", book.bookName);
-                }else{
-                    book.bookName = @"没找到";
-                    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"错误" message:@"没有找到这本书" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
-                    [alert show];
-                    [alert release];
-                    
-                    NSLog(@"Find Book:%@", book.bookName);
-                }
-                [self.tableView reloadData];
-            }
-            
-            [MBProgressHUD hideHUDForView:self.view animated:YES];
+            [self getBookDetailCallback:error withData:data withBook:book];
         });
     }];
 }
@@ -181,6 +158,33 @@
         [self addBook:newBook];
         [newBook release];
     }
+}
+
+-(void)getBookDetailCallback:(NSError *)error withData:(NSData *)data withBook:(Book *)book{
+    if(data==nil || error!=nil){
+        //got network error
+        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"错误" message:@"连接网络失败了" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+        [alert show];
+        [alert release];
+    }else{
+        NSLog(@"Get data from douban");
+        NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
+        if([json valueForKey:@"msg"]==nil){
+            book.bookName = [json valueForKey:@"title"];
+            [self.bookList addObject:book];
+            NSLog(@"Find Book:%@", book.bookName);
+        }else{
+            book.bookName = @"没找到";
+            UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"错误" message:@"没有找到这本书" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+            [alert show];
+            [alert release];
+            
+            NSLog(@"Find Book:%@", book.bookName);
+        }
+        [self.tableView reloadData];
+    }
+    
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
 }
 
 -(void)dealloc{
