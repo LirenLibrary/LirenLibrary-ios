@@ -44,7 +44,7 @@
     Book *book2 = [self buildBookObject:@"9787111352211" bookname:nil];
     [self.bookScanListViewController addBook:book2];
     [book release];
-    
+    STFail(@"a failed test");
 }
 
 
