@@ -222,6 +222,8 @@
 		B6F89F6D1671E2F800BB9AAA /* ZXMultiFormatWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = B6F89EB31671E2F800BB9AAA /* ZXMultiFormatWriter.m */; };
 		B6F89F6E1671E2F800BB9AAA /* ZXResult.m in Sources */ = {isa = PBXBuildFile; fileRef = B6F89EB61671E2F800BB9AAA /* ZXResult.m */; };
 		B6F89F6F1671E2F800BB9AAA /* ZXResultPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = B6F89EB91671E2F800BB9AAA /* ZXResultPoint.m */; };
+		D12254C11689E2B100A1B322 /* LandingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D12254BF1689E2B100A1B322 /* LandingViewController.m */; };
+		D12254C21689E2B100A1B322 /* LandingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D12254C01689E2B100A1B322 /* LandingViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -666,6 +668,9 @@
 		B6F89EB91671E2F800BB9AAA /* ZXResultPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXResultPoint.m; sourceTree = "<group>"; };
 		B6F89EBA1671E2F800BB9AAA /* ZXResultPointCallback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXResultPointCallback.h; sourceTree = "<group>"; };
 		B6F89EBB1671E2F800BB9AAA /* ZXWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXWriter.h; sourceTree = "<group>"; };
+		D12254BE1689E2B100A1B322 /* LandingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LandingViewController.h; path = controllers/LandingViewController.h; sourceTree = "<group>"; };
+		D12254BF1689E2B100A1B322 /* LandingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LandingViewController.m; path = controllers/LandingViewController.m; sourceTree = "<group>"; };
+		D12254C01689E2B100A1B322 /* LandingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LandingViewController.xib; path = controllers/LandingViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -877,12 +882,15 @@
 				497C19D0167C50AE00862C7A /* BookScanListViewController.h */,
 				497C19D1167C50AE00862C7A /* BookScanListViewController.m */,
 				497C19D2167C50AE00862C7A /* BookScanListViewController.xib */,
-				B69397D71675DFE70022A04A /* ScanViewController.h */,
 				49369880168324B800C743CB /* SendScanedBooksViewController.h */,
 				49369881168324B800C743CB /* SendScanedBooksViewController.m */,
 				49369882168324B800C743CB /* SendScanedBooksViewController.xib */,
+				B69397D71675DFE70022A04A /* ScanViewController.h */,
 				B69397D81675DFE70022A04A /* ScanViewController.m */,
 				B69397D91675DFE70022A04A /* ScanViewController.xib */,
+				D12254BE1689E2B100A1B322 /* LandingViewController.h */,
+				D12254BF1689E2B100A1B322 /* LandingViewController.m */,
+				D12254C01689E2B100A1B322 /* LandingViewController.xib */,
 			);
 			name = controllers;
 			sourceTree = "<group>";
@@ -1585,6 +1593,7 @@
 				B69397DB1675DFE70022A04A /* ScanViewController.xib in Resources */,
 				497C19D4167C50AE00862C7A /* BookScanListViewController.xib in Resources */,
 				49369884168324B800C743CB /* SendScanedBooksViewController.xib in Resources */,
+				D12254C21689E2B100A1B322 /* LandingViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1807,6 +1816,7 @@
 				497C19D8167C50BF00862C7A /* Book.m in Sources */,
 				49369883168324B800C743CB /* SendScanedBooksViewController.m in Sources */,
 				494861941687F63E00AD1CC8 /* MBProgressHUD.m in Sources */,
+				D12254C11689E2B100A1B322 /* LandingViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

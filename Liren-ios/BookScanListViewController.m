@@ -65,11 +65,9 @@
 #pragma mark - UI method
 
 - (void) initNavigationBar{
-    UIBarButtonItem *scanButton = [[UIBarButtonItem alloc]initWithTitle:@"扫描条码" style:UIBarButtonItemStylePlain target:self action:@selector(startScanBook)];
-//    self.navigationItem.leftBarButtonItem=scanButton;
-    UIBarButtonItem *sendButton = [[UIBarButtonItem alloc]initWithTitle:@"提交" style:UIBarButtonItemStylePlain target:self action:@selector(sendScanedBooks)];
-    self.navigationItem.rightBarButtonItem=sendButton;
-    [scanButton release];
+    UIBarButtonItem *submitButton = [[UIBarButtonItem alloc]initWithTitle:@"提交" style:UIBarButtonItemStylePlain target:self action:@selector(sendScanedBooks)];
+    self.navigationItem.rightBarButtonItem=submitButton;
+    [submitButton release];
 }
 
 - (IBAction) scanButtonPressed:(id)sender{
@@ -77,7 +75,7 @@
 }
 
 - (void) sendScanedBooks{
-    [self presentModalViewController:self.sendScanedBooksViewController animated:YES];
+    [self.navigationController pushViewController:self.sendScanedBooksViewController animated:YES];
 }
 
 - (void)didReceiveMemoryWarning
