@@ -20,6 +20,9 @@
 		494861941687F63E00AD1CC8 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 494861931687F63E00AD1CC8 /* MBProgressHUD.m */; };
 		494FFFD1167606A400C7748D /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 494FFFD0167606A400C7748D /* AVFoundation.framework */; };
 		4964FB67168BF14600CC6F3D /* EGORefreshTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4964FB66168BF14600CC6F3D /* EGORefreshTableHeaderView.m */; };
+		4964FBAE168BF9DB00CC6F3D /* libGoogleAnalytics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 490E7419167EDA850082C646 /* libGoogleAnalytics.a */; };
+		4964FBB1168C017D00CC6F3D /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4921E6B2167F479200728511 /* CoreData.framework */; };
+		4964FBB2168C018100CC6F3D /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 490E740C167EBF310082C646 /* SystemConfiguration.framework */; };
 		497C19D3167C50AE00862C7A /* BookScanListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 497C19D1167C50AE00862C7A /* BookScanListViewController.m */; };
 		497C19D4167C50AE00862C7A /* BookScanListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 497C19D2167C50AE00862C7A /* BookScanListViewController.xib */; };
 		497C19D8167C50BF00862C7A /* Book.m in Sources */ = {isa = PBXBuildFile; fileRef = 497C19D7167C50BF00862C7A /* Book.m */; };
@@ -714,6 +717,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4964FBB2168C018100CC6F3D /* SystemConfiguration.framework in Frameworks */,
+				4964FBB1168C017D00CC6F3D /* CoreData.framework in Frameworks */,
+				4964FBAE168BF9DB00CC6F3D /* libGoogleAnalytics.a in Frameworks */,
 				49A8249D16633E07004D358E /* SenTestingKit.framework in Frameworks */,
 				49A8249E16633E07004D358E /* UIKit.framework in Frameworks */,
 				49A8249F16633E07004D358E /* Foundation.framework in Frameworks */,
@@ -1928,7 +1934,7 @@
 				ONLY_ACTIVE_ARCH = NO;
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
-				VALID_ARCHS = "armv7 armv7s i386";
+				VALID_ARCHS = "armv7 armv7s";
 			};
 			name = Debug;
 		};
@@ -1951,7 +1957,7 @@
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
-				VALID_ARCHS = "armv7 armv7s i386";
+				VALID_ARCHS = "armv7 armv7s";
 			};
 			name = Release;
 		};
@@ -2030,6 +2036,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/OCMock\"",
+					"\"$(SRCROOT)/GALibrary\"",
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
@@ -2044,7 +2051,7 @@
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
-				VALID_ARCHS = "armv7 armv7s i386";
+				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = octest;
 			};
 			name = Debug;
@@ -2063,6 +2070,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/OCMock\"",
+					"\"$(SRCROOT)/GALibrary\"",
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
@@ -2072,7 +2080,7 @@
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
-				VALID_ARCHS = "armv7 armv7s i386";
+				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = octest;
 			};
 			name = Release;

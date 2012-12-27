@@ -39,7 +39,7 @@
 }
 
 - (void) initGoogleAnalysis{
-    [GAI sharedInstance].debug = YES;
+    [GAI sharedInstance].debug = NO;
     [GAI sharedInstance].dispatchInterval = 60*10;
     [GAI sharedInstance].trackUncaughtExceptions = YES;
     [GAI sharedInstance].defaultTracker=[[GAI sharedInstance] trackerWithTrackingId:EXT_APPID_GOOGLE_ANALYSIS];
