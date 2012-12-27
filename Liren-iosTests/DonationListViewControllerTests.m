@@ -7,6 +7,8 @@
 //
 
 #import "DonationListViewControllerTests.h"
+#import "GAI.h"
+#import "GAITrackedViewController.h"
 
 @implementation DonationListViewControllerTests
 
@@ -17,6 +19,13 @@
         [nlvc release];
     }
     [self.controller viewDidLoad];
+}
+
+-(void)testShouldExtendGAIControllerWhenCreated{
+    NSString *name=[NSString stringWithFormat:@"%s", class_getName(self.controller.class)];
+    STAssertNotNil(self.controller.trackedViewName, @"tracked view name can't be nil");
+    STAssertTrue(self.controller.trackedViewName.length>0, @"tracked view name can't be blank");
+    STAssertEqualObjects(self.controller.trackedViewName, name, @"tracked view name shoule be same with the class name");
 }
 
 -(void)testShouldInitAnEmptyDonationListWhenCreated{
