@@ -11,7 +11,6 @@
 		490349D91671E0720000C083 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 490349D81671E0720000C083 /* CoreVideo.framework */; };
 		490349DB1671E07E0000C083 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 490349DA1671E07E0000C083 /* ImageIO.framework */; };
 		490E740D167EBF310082C646 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 490E740C167EBF310082C646 /* SystemConfiguration.framework */; };
-		490E741C167EDA850082C646 /* libGoogleAnalytics_debug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 490E741A167EDA850082C646 /* libGoogleAnalytics_debug.a */; };
 		4921E6B3167F479200728511 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4921E6B2167F479200728511 /* CoreData.framework */; };
 		49369883168324B800C743CB /* SendScanedBooksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49369881168324B800C743CB /* SendScanedBooksViewController.m */; };
 		49369884168324B800C743CB /* SendScanedBooksViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49369882168324B800C743CB /* SendScanedBooksViewController.xib */; };
@@ -23,6 +22,7 @@
 		4964FBAE168BF9DB00CC6F3D /* libGoogleAnalytics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 490E7419167EDA850082C646 /* libGoogleAnalytics.a */; };
 		4964FBB1168C017D00CC6F3D /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4921E6B2167F479200728511 /* CoreData.framework */; };
 		4964FBB2168C018100CC6F3D /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 490E740C167EBF310082C646 /* SystemConfiguration.framework */; };
+		4964FBB3168C082C00CC6F3D /* libGoogleAnalytics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 490E7419167EDA850082C646 /* libGoogleAnalytics.a */; };
 		497C19D3167C50AE00862C7A /* BookScanListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 497C19D1167C50AE00862C7A /* BookScanListViewController.m */; };
 		497C19D4167C50AE00862C7A /* BookScanListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 497C19D2167C50AE00862C7A /* BookScanListViewController.xib */; };
 		497C19D8167C50BF00862C7A /* Book.m in Sources */ = {isa = PBXBuildFile; fileRef = 497C19D7167C50BF00862C7A /* Book.m */; };
@@ -698,6 +698,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4964FBB3168C082C00CC6F3D /* libGoogleAnalytics.a in Frameworks */,
 				4921E6B3167F479200728511 /* CoreData.framework in Frameworks */,
 				490E740D167EBF310082C646 /* SystemConfiguration.framework in Frameworks */,
 				4945F496167C09D800BA2516 /* libOCMock.a in Frameworks */,
@@ -709,7 +710,6 @@
 				49A8247F16633E07004D358E /* UIKit.framework in Frameworks */,
 				49A8248116633E07004D358E /* Foundation.framework in Frameworks */,
 				49A8248316633E07004D358E /* CoreGraphics.framework in Frameworks */,
-				490E741C167EDA850082C646 /* libGoogleAnalytics_debug.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1934,7 +1934,7 @@
 				ONLY_ACTIVE_ARCH = NO;
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
-				VALID_ARCHS = "armv7 armv7s";
+				VALID_ARCHS = "armv7 armv7s i386";
 			};
 			name = Debug;
 		};
@@ -1957,7 +1957,7 @@
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
-				VALID_ARCHS = "armv7 armv7s";
+				VALID_ARCHS = "armv7 armv7s i386";
 			};
 			name = Release;
 		};
