@@ -84,7 +84,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - Book List maintain
+#pragma mark - Book List management
 - (void)addBook:(Book *)book{
     Boolean find = false;
     for (Book *tmp in self.bookList) {
@@ -152,17 +152,6 @@
     }];
 }
 
-#pragma mark - DataExchange delete method
--(void)putExchangedData:(NSObject *)dataObject{
-    //add the isbn scanned to the book list
-    NSString *isbnNumber=(NSString *)dataObject;
-    if(isbnNumber!=nil && isbnNumber.length>0){
-        Book *newBook=[[Book alloc] init];
-        [newBook setBookSN:isbnNumber];
-        [self addBook:newBook];
-        [newBook release];
-    }
-}
 
 -(void)getBookDetailCallback:(NSError *)error withData:(NSData *)data withBook:(Book *)book{
     if(data==nil || error!=nil){
@@ -191,6 +180,21 @@
     [MBProgressHUD hideHUDForView:self.view animated:YES];
 }
 
+
+#pragma mark - DataExchange delete method
+-(void)putExchangedData:(NSObject *)dataObject{
+    //add the isbn scanned to the book list
+    NSString *isbnNumber=(NSString *)dataObject;
+    if(isbnNumber!=nil && isbnNumber.length>0){
+        Book *newBook=[[Book alloc] init];
+        [newBook setBookSN:isbnNumber];
+        [self addBook:newBook];
+        [newBook release];
+    }
+}
+
+
+#pragma mark - system method
 -(void)dealloc{
     [_bookList release];
     [_queue release];
