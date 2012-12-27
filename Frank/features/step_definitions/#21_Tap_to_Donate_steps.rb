@@ -7,7 +7,7 @@ end
 
 When /^I tap 捐赠 button$/ do
 	touch "view view:'UIRoundedRectButton' marked:'捐赠'"
-	sleep(1)
+	wait_for_nothing_to_be_animating
 end
 
 Then /^I should be on the BookScanListViewController$/ do
@@ -18,12 +18,12 @@ end
 
 When /^I tap 返回 button$/ do
 	touch "view:'UINavigationItemButtonView' marked:'返回'"
-	sleep(1)
+	wait_for_nothing_to_be_animating
 end
 
 When /^I tap 记录 button$/ do
 	touch "view view:'UIRoundedRectButton' marked:'记录'"
-	sleep(2)
+	wait_for_nothing_to_be_animating
 end
 
 Then /^I should be on the DonationListViewController$/ do
