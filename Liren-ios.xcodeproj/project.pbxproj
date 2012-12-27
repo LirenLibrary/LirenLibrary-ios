@@ -19,6 +19,7 @@
 		4945F4A4167C2BDF00BA2516 /* MacAddressUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 4945F4A3167C2BDF00BA2516 /* MacAddressUtil.m */; };
 		494861941687F63E00AD1CC8 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 494861931687F63E00AD1CC8 /* MBProgressHUD.m */; };
 		494FFFD1167606A400C7748D /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 494FFFD0167606A400C7748D /* AVFoundation.framework */; };
+		4964FB67168BF14600CC6F3D /* EGORefreshTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4964FB66168BF14600CC6F3D /* EGORefreshTableHeaderView.m */; };
 		497C19D3167C50AE00862C7A /* BookScanListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 497C19D1167C50AE00862C7A /* BookScanListViewController.m */; };
 		497C19D4167C50AE00862C7A /* BookScanListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 497C19D2167C50AE00862C7A /* BookScanListViewController.xib */; };
 		497C19D8167C50BF00862C7A /* Book.m in Sources */ = {isa = PBXBuildFile; fileRef = 497C19D7167C50BF00862C7A /* Book.m */; };
@@ -263,6 +264,8 @@
 		494861921687F63E00AD1CC8 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		494861931687F63E00AD1CC8 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		494FFFD0167606A400C7748D /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		4964FB65168BF14600CC6F3D /* EGORefreshTableHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGORefreshTableHeaderView.h; sourceTree = "<group>"; };
+		4964FB66168BF14600CC6F3D /* EGORefreshTableHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EGORefreshTableHeaderView.m; sourceTree = "<group>"; };
 		497C19D0167C50AE00862C7A /* BookScanListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookScanListViewController.h; sourceTree = "<group>"; };
 		497C19D1167C50AE00862C7A /* BookScanListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookScanListViewController.m; sourceTree = "<group>"; };
 		497C19D2167C50AE00862C7A /* BookScanListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BookScanListViewController.xib; sourceTree = "<group>"; };
@@ -724,6 +727,7 @@
 		4903478D1671E0300000C083 /* SDK */ = {
 			isa = PBXGroup;
 			children = (
+				4964FB64168BF14600CC6F3D /* EGORefreshTableHeader */,
 				494861911687F63E00AD1CC8 /* MBProgressHUD */,
 				49CD072F1680760300FEFBA0 /* OCMock */,
 				490E7413167EDA850082C646 /* GALibrary */,
@@ -775,6 +779,15 @@
 				494861931687F63E00AD1CC8 /* MBProgressHUD.m */,
 			);
 			path = MBProgressHUD;
+			sourceTree = "<group>";
+		};
+		4964FB64168BF14600CC6F3D /* EGORefreshTableHeader */ = {
+			isa = PBXGroup;
+			children = (
+				4964FB65168BF14600CC6F3D /* EGORefreshTableHeaderView.h */,
+				4964FB66168BF14600CC6F3D /* EGORefreshTableHeaderView.m */,
+			);
+			path = EGORefreshTableHeader;
 			sourceTree = "<group>";
 		};
 		49A47FAF16781E2C00CEA398 /* delegates */ = {
@@ -1844,6 +1857,7 @@
 				49E45644168B0FD50063BE58 /* DonationListViewController.m in Sources */,
 				49E45649168B10590063BE58 /* Donation.m in Sources */,
 				49E4564F168B167F0063BE58 /* AppConstant.m in Sources */,
+				4964FB67168BF14600CC6F3D /* EGORefreshTableHeaderView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
