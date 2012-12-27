@@ -38,6 +38,12 @@
         self.bookScanViewController = svc;
         [svc release];
     }
+    
+    if(self.donationListViewController==nil){
+        DonationListViewController *dlvc=[[DonationListViewController alloc] initWithNibName:@"DonationListViewController" bundle:nil];
+        self.donationListViewController=dlvc;
+        [dlvc release];
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -50,6 +56,16 @@
 #pragma mark - UI method
 - (IBAction) donateButtonPressed:(id)sender{
     [self.navigationController pushViewController:self.bookScanViewController animated:YES];
+}
+
+-(IBAction)historyButtonPressed:(id)sender{
+    [self.navigationController pushViewController:self.donationListViewController animated:YES];
+}
+
+-(void)dealloc{
+    [_bookScanViewController release];
+    [_donationListViewController release];
+    [super dealloc];
 }
 
 @end

@@ -9,6 +9,7 @@
 #import "DonationListViewController.h"
 #import "MacAddressUtil.h"
 #import "AppConstant.h"
+#import "MBProgressHUD.h"
 
 #define SERVICE_SUFFIX_LOAD_DONATION_LIST  @"/donation-by-device"
 
@@ -33,6 +34,11 @@
     [self initDonationList];
 }
 
+-(void)viewWillAppear:(BOOL)animated{
+    [self loadDonationListByDevice];
+    [super viewWillAppear:animated];
+}
+
 #pragma mark - util method
 -(void)initDonationList{
     if(self.donationList==nil){
@@ -43,6 +49,8 @@
 }
 
 -(void)loadDonationListByDevice{
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    
     NSString *deviceID=[MacAddressUtil macaddress];
     NSURL *url=[NSURL URLWithString:[NSString stringWithFormat:@"%@%@", SERVER_ADDRESS, SERVICE_SUFFIX_LOAD_DONATION_LIST]];
     
@@ -52,6 +60,7 @@
     [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
         dispatch_async(dispatch_get_main_queue(), ^{
             [self loadDonationListByDeviceCallback:data withError:error];
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
         });
     }];
 }
