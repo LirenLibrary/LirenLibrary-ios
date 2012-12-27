@@ -84,6 +84,7 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - Book List maintain
 - (void)addBook:(Book *)book{
     Boolean find = false;
     for (Book *tmp in self.bookList) {
@@ -102,14 +103,16 @@
 
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return [self.bookList count];
-}
-
 - (void) deleteBook:(int) index{
     [self.bookList removeObjectAtIndex:index];
     [self.tableView reloadData];
 }
+
+#pragma mark - TableView implementation
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return [self.bookList count];
+}
+
 
 - (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     static NSString *bookIdentifier = @"BookIndentifier";
@@ -133,6 +136,7 @@
     }
 }
 
+#pragma mark - Get book detail
 - (void) getBookDetail:(Book *) book{
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     
