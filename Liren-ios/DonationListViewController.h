@@ -9,13 +9,24 @@
 
 #import <UIKit/UIKit.h>
 #import "Donation.h"
+#import "EGORefreshTableHeaderView.h"
+#import "MacAddressUtil.h"
+#import "AppConstant.h"
+#import "MBProgressHUD.h"
+#import "GAI.h"
+#import "GAITrackedViewController.h"
+#import <objc/runtime.h>
 
-@interface DonationListViewController : UIViewController
+@interface DonationListViewController : GAITrackedViewController <EGORefreshTableHeaderDelegate>{
+    BOOL LOADING_DONATION_LIST;
+}
 
 @property(nonatomic, retain) NSMutableArray *donationList;
+@property(nonatomic, retain) EGORefreshTableHeaderView *refreshHeaderView;
+@property(nonatomic, retain) IBOutlet UITableView *tableView;
+@property(nonatomic, retain) NSOperationQueue *queue;
 
 -(void)initDonationList;
-
 -(void)loadDonationListByDevice;
 -(void)loadDonationListByDeviceCallback:(NSData *)data withError:(NSError *)error;
 
