@@ -6,3 +6,7 @@ build/
 *.perspective
 *.perspectivev3
 Frank/frankified_build/*.*
+functional-test-reports/*.*
+functional-test-reports/TEST-features-#21_Tap_to_Donate.xml
+
+Liren-ios.xcodeproj/project.xcworkspace/xcuserdata/twer.xcuserdatad/UserInterfaceState.xcuserstate

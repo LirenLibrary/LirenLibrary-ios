@@ -12,4 +12,9 @@
 
 extern const NSString *SERVER_ADDRESS;
 
+extern const NSString *DONATION_STATUS_NEW;
+extern const NSString *DONATION_STATUS_APPROVED;
+extern const NSString *DONATION_STATUS_REJECTED;
+extern const NSString *DONATION_STATUS_RECEIVED;
+
 @end
