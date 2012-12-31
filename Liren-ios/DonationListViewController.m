@@ -33,6 +33,7 @@
 {
     [super viewDidLoad];
     self.trackedViewName=[NSString stringWithFormat:@"%s", class_getName(self.class)];
+    
     [self initDonationList];
     [self initOperationQueue];
     [self buildRefreshHeaderView];
@@ -139,6 +140,10 @@
 
 #pragma mark - TableView implementation
 -(void)buildTableCell:(UITableViewCell *)cell withDonation:(Donation *)donation{
+    cell.selectionStyle=UITableViewCellSelectionStyleNone;
+    cell.accessoryType=UITableViewCellAccessoryDisclosureIndicator;
+    cell.contentView.backgroundColor=[UIColor colorWithRed:247.0f/255.0f green:244.0f/255.0f blue:239.0f/255.0f alpha:1.0f];
+    
     UILabel *statusLabel=[[UILabel alloc] initWithFrame:CGRectMake(20, 8, 70, 30)];
     [statusLabel setBackgroundColor:[UIColor clearColor]];
     [statusLabel setTag:tag_view_cell_status];
@@ -168,7 +173,7 @@
     [timeLabel setText:[dateFormatter stringFromDate:donation.donationTime]];
     [timeLabel setBackgroundColor:[UIColor clearColor]];
     [dateFormatter release];
-    [timeLabel setTextColor:[UIColor blackColor]];
+    [timeLabel setTextColor:[UIColor colorWithRed:67.0f/255.0f green:64.0f/255.0f blue:62.0f/255.0f alpha:1.0f]];
     [timeLabel setFont:[UIFont boldSystemFontOfSize:16.0f]];
     [cell addSubview:timeLabel];
     [timeLabel release];
@@ -176,7 +181,7 @@
     UILabel *bookCountLabel=[[UILabel alloc] initWithFrame:CGRectMake(240, 8, 60, 30)];
     [bookCountLabel setTag:tag_view_cell_book_count];
     [bookCountLabel setBackgroundColor:[UIColor clearColor]];
-    [bookCountLabel setTextColor:[UIColor blackColor]];
+    [bookCountLabel setTextColor:timeLabel.textColor];
     [bookCountLabel setFont:[UIFont boldSystemFontOfSize:16.0f]];
     [bookCountLabel setText:[NSString stringWithFormat:@"%d本", donation.bookCount.intValue]];
     [cell addSubview:bookCountLabel];
@@ -199,13 +204,14 @@
         }
     }
     
-    cell.selectionStyle=UITableViewCellSelectionStyleGray;
-    cell.accessoryType=UITableViewCellAccessoryDisclosureIndicator;
-    
     Donation *donation=[self.donationList objectAtIndex:indexPath.row];
     [self buildTableCell:cell withDonation:donation];
     
     return cell;
+}
+
+- (void) tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
+    cell.backgroundColor = cell.contentView.backgroundColor;
 }
 
 -(void)dealloc{
