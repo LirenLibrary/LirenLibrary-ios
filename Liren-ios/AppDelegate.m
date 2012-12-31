@@ -61,15 +61,15 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
-    
-    if (nil == [self.globalUserData objectForKey:KEY_NOTIFICATION_STATUS]) {
-        [[UIApplication sharedApplication] registerForRemoteNotificationTypes:UIRemoteNotificationTypeSound|UIRemoteNotificationTypeAlert];
-    }
 
     [self restoreGlobalUserData];
     [self initLandingViewController];
     [self initUINavigationController];
     [self initGoogleAnalysis];
+    
+    if (nil == [self.globalUserData objectForKey:KEY_NOTIFICATION_STATUS]) {
+        [[UIApplication sharedApplication] registerForRemoteNotificationTypes:UIRemoteNotificationTypeSound|UIRemoteNotificationTypeAlert];
+    }
     
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
@@ -77,10 +77,8 @@
 }
 
 - (NSString *)formatDeviceToken:(NSData *)deviceToken {
-    NSString *token = [[NSString alloc] initWithData:deviceToken encoding:NSUTF8StringEncoding];
-    token=[token stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"<>"]];
-    [token stringByReplacingOccurrencesOfString:@" " withString:@""];
-    [token autorelease];
+    NSString *token=[[deviceToken description] stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"<>"]];
+    token=[token stringByReplacingOccurrencesOfString:@" " withString:@""];
     NSLog(@"%@", token);
     return token;
 }
