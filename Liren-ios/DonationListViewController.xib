@@ -35,7 +35,7 @@
 				<reference key="NSNextResponder"/>
 				<int key="NSvFlags">274</int>
 				<array class="NSMutableArray" key="NSSubviews">
-					<object class="IBUITableView" id="339097483">
+					<object class="IBUITableView" id="240902655">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">274</int>
 						<string key="NSFrameSize">{320, 548}</string>
@@ -103,14 +103,14 @@
 					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">tableView</string>
 						<reference key="source" ref="372490531"/>
-						<reference key="destination" ref="339097483"/>
+						<reference key="destination" ref="240902655"/>
 					</object>
 					<int key="connectionID">10</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">dataSource</string>
-						<reference key="source" ref="339097483"/>
+						<reference key="source" ref="240902655"/>
 						<reference key="destination" ref="372490531"/>
 					</object>
 					<int key="connectionID">8</int>
@@ -118,7 +118,7 @@
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">delegate</string>
-						<reference key="source" ref="339097483"/>
+						<reference key="source" ref="240902655"/>
 						<reference key="destination" ref="372490531"/>
 					</object>
 					<int key="connectionID">9</int>
@@ -136,7 +136,7 @@
 						<int key="objectID">1</int>
 						<reference key="object" ref="191373211"/>
 						<array class="NSMutableArray" key="children">
-							<reference ref="339097483"/>
+							<reference ref="240902655"/>
 						</array>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -153,7 +153,7 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">7</int>
-						<reference key="object" ref="339097483"/>
+						<reference key="object" ref="240902655"/>
 						<reference key="parent" ref="191373211"/>
 					</object>
 				</array>

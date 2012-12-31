@@ -87,6 +87,8 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             [self loadDonationListByDeviceCallback:data withError:error];
             [MBProgressHUD hideHUDForView:self.view animated:YES];
+            LOADING_DONATION_LIST=NO;
+            [self.refreshHeaderView egoRefreshScrollViewDataSourceDidFinishedLoading:self.tableView];
         });
     }];
 }
@@ -107,9 +109,7 @@
         [self.donationList addObject:donation];
         [donation release];
     }
-    LOADING_DONATION_LIST=NO;
     [self.tableView reloadData];
-    [self.refreshHeaderView egoRefreshScrollViewDataSourceDidFinishedLoading:self.tableView];
 }
 
 #pragma mark - RefreshHeaderView Delegate
