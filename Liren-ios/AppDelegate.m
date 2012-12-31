@@ -11,11 +11,14 @@
 
 #define EXT_APPID_GOOGLE_ANALYSIS @"UA-37024844-1"
 #define KEY_USER_STATE  @"LirenLib-User-State"
+#define KEY_NOTIFICATION_STATUS @"notification_status"
+#define SERVICE_SUFFIX_SUBMIT_DEVICE @"/device/new"
 
 @implementation AppDelegate
 
 - (void)dealloc
 {
+    [_queue release];
     [_window release];
     [_landingViewController release];
     [_globalUserData release];
@@ -49,8 +52,10 @@
 {
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     
-    [[UIApplication sharedApplication] registerForRemoteNotificationTypes:UIRemoteNotificationTypeSound|UIRemoteNotificationTypeAlert];
-    
+    if (nil == [self.globalUserData objectForKey:KEY_NOTIFICATION_STATUS]) {
+        [[UIApplication sharedApplication] registerForRemoteNotificationTypes:UIRemoteNotificationTypeSound|UIRemoteNotificationTypeAlert];
+    }
+
     [self restoreGlobalUserData];
     [self initLandingViewController];
     [self initUINavigationController];
@@ -61,10 +66,43 @@
     return YES;
 }
 
+- (NSString *)formatDeviceToken:(NSData *)deviceToken {
+    NSString *token = [[NSString alloc] initWithData:deviceToken encoding:NSUTF8StringEncoding];
+    token=[token stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"<>"]];
+    [token stringByReplacingOccurrencesOfString:@" " withString:@""];
+    [token autorelease];
+    NSLog(@"%@", token);
+    return token;
+}
+
+- (void)postDeviceInfo:(NSData *)postData withUrl:(NSURL *)submitDeviceUrl {    
+    NSMutableURLRequest *request=[NSMutableURLRequest requestWithURL:submitDeviceUrl cachePolicy:NSURLCacheStorageNotAllowed timeoutInterval:7.0f];
+    [request setHTTPMethod:@"POST"];
+    NSString *macAddress = [MacAddressUtil macaddress];
+    [request addValue:macAddress forHTTPHeaderField:@"device_id"];
+    [request setHTTPBody:postData];
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
+        NSData *data=[NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
+        if(data!=nil){
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self.globalUserData setValue:[NSNumber numberWithBool:YES] forKey:KEY_NOTIFICATION_STATUS];
+                [self saveGlobalUserData];
+            });
+        }
+    });
+}
+
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
-    NSString *devToken = [[deviceToken description] stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"<>"]];
-    devToken = [devToken stringByReplacingOccurrencesOfString:@" " withString:@""];
-    NSLog(@"content---%@",deviceToken);
+    NSString *token = [self formatDeviceToken:deviceToken];
+    NSDictionary *dataDictionary = [[NSDictionary alloc]initWithObjectsAndKeys:@"device_token",token, nil];
+    NSError *error = nil;
+    NSData *postData = [NSJSONSerialization dataWithJSONObject:dataDictionary options:NSJSONWritingPrettyPrinted error:&error];
+    
+    if ([postData length] > 0 && error == nil) {
+        NSURL *submitDeviceUrl=[NSURL URLWithString:[NSString stringWithFormat:@"%@%@", SERVER_ADDRESS, SERVICE_SUFFIX_SUBMIT_DEVICE]];
+        [self postDeviceInfo:postData withUrl:submitDeviceUrl];
+    }
     
 }
 

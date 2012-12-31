@@ -10,12 +10,14 @@
 #import "BookScanListViewController.h"
 #import "LandingViewController.h"
 #import "GAI.h"
+#import "MacAddressUtil.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 @property(nonatomic, retain) LandingViewController *landingViewController;
 @property(nonatomic, retain) NSMutableDictionary *globalUserData;
+@property(nonatomic, retain) NSOperationQueue *queue;
 
 -(void)saveGlobalUserData;
 
