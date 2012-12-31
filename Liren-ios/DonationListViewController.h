@@ -17,7 +17,7 @@
 #import "GAITrackedViewController.h"
 #import <objc/runtime.h>
 
-@interface DonationListViewController : GAITrackedViewController <EGORefreshTableHeaderDelegate>{
+@interface DonationListViewController : GAITrackedViewController <EGORefreshTableHeaderDelegate, UITableViewDataSource, UITableViewDelegate>{
     BOOL LOADING_DONATION_LIST;
 }
 
