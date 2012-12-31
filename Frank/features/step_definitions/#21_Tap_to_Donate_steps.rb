@@ -13,7 +13,6 @@ end
 Then /^I should be on the BookScanListViewController$/ do
 	check_element_exists "view view:'UIRoundedRectButton' marked:'扫描'"
 	check_element_exists "view view:'UITableView' marked:'Empty list'"
-	check_element_exists "view view:'UINavigationItemView' marked:'立人捐书'"
 end
 
 When /^I tap 返回 button$/ do
