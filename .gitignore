@@ -6,3 +6,4 @@ build/
 *.perspective
 *.perspectivev3
 Frank/frankified_build/*.*
+functional-test-reports/*.*
