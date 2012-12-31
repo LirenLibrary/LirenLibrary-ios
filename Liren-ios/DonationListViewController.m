@@ -33,6 +33,7 @@
 {
     [super viewDidLoad];
     self.trackedViewName=[NSString stringWithFormat:@"%s", class_getName(self.class)];
+    
     [self initDonationList];
     [self initOperationQueue];
     [self buildRefreshHeaderView];

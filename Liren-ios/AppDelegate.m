@@ -47,6 +47,8 @@
     [nav.navigationBar addSubview:navBack];
     [navBack release];
     
+    nav.navigationBar.tintColor = [UIColor colorWithRed:194.0f/255.0f green:90.0f/255.0f blue:46.0f/255.0f alpha:1.0f];
+    
     [self.window setRootViewController:nav];
     [nav autorelease];
 }
