@@ -6,12 +6,12 @@
 //  Copyright (c) 2012 com.thoughtworks.liren. All rights reserved.
 //
 
-#import "ScanViewControllerTest.h"
+#import "ScanViewControllerTests.h"
 #import "ScanViewController.h"
 #import "DataExchangeDelegate.h"
 #import "ZXResult.h"
 
-@implementation ScanViewControllerTest
+@implementation ScanViewControllerTests
 
 
 - (void)testPutExchangedData {

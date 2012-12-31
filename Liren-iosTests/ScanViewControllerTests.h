@@ -10,6 +10,6 @@
 #import "OCMock.h"
 #import "OCMockObject.h"
 
-@interface ScanViewControllerTest : SenTestCase
+@interface ScanViewControllerTests : SenTestCase
 
 @end

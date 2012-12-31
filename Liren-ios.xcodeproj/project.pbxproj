@@ -12,6 +12,7 @@
 		490349DB1671E07E0000C083 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 490349DA1671E07E0000C083 /* ImageIO.framework */; };
 		490E740D167EBF310082C646 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 490E740C167EBF310082C646 /* SystemConfiguration.framework */; };
 		4921E6B3167F479200728511 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4921E6B2167F479200728511 /* CoreData.framework */; };
+		492FB2B716917A21005CE9D4 /* AppDelegateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 492FB2B616917A21005CE9D4 /* AppDelegateTests.m */; };
 		49369883168324B800C743CB /* SendScanedBooksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49369881168324B800C743CB /* SendScanedBooksViewController.m */; };
 		49369884168324B800C743CB /* SendScanedBooksViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49369882168324B800C743CB /* SendScanedBooksViewController.xib */; };
 		4945F496167C09D800BA2516 /* libOCMock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4945F495167C09D800BA2516 /* libOCMock.a */; };
@@ -59,7 +60,7 @@
 		49E4564F168B167F0063BE58 /* AppConstant.m in Sources */ = {isa = PBXBuildFile; fileRef = 49E4564E168B167F0063BE58 /* AppConstant.m */; };
 		B69397DA1675DFE70022A04A /* ScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B69397D81675DFE70022A04A /* ScanViewController.m */; };
 		B69397DB1675DFE70022A04A /* ScanViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B69397D91675DFE70022A04A /* ScanViewController.xib */; };
-		B69397E11675E11D0022A04A /* ScanViewControllerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = B69397E01675E11D0022A04A /* ScanViewControllerTest.m */; };
+		B69397E11675E11D0022A04A /* ScanViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B69397E01675E11D0022A04A /* ScanViewControllerTests.m */; };
 		B69397E31675F43B0022A04A /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B69397E21675F43B0022A04A /* QuartzCore.framework */; };
 		B6F89EBC1671E2F800BB9AAA /* ZXAztecDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = B6F89D301671E2F800BB9AAA /* ZXAztecDecoder.m */; };
 		B6F89EBD1671E2F800BB9AAA /* ZXAztecDetector.m in Sources */ = {isa = PBXBuildFile; fileRef = B6F89D331671E2F800BB9AAA /* ZXAztecDetector.m */; };
@@ -268,6 +269,8 @@
 		490E7419167EDA850082C646 /* libGoogleAnalytics.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleAnalytics.a; sourceTree = "<group>"; };
 		490E741A167EDA850082C646 /* libGoogleAnalytics_debug.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleAnalytics_debug.a; sourceTree = "<group>"; };
 		4921E6B2167F479200728511 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		492FB2B516917A21005CE9D4 /* AppDelegateTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegateTests.h; sourceTree = "<group>"; };
+		492FB2B616917A21005CE9D4 /* AppDelegateTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegateTests.m; sourceTree = "<group>"; };
 		49369880168324B800C743CB /* SendScanedBooksViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SendScanedBooksViewController.h; path = controllers/SendScanedBooksViewController.h; sourceTree = "<group>"; };
 		49369881168324B800C743CB /* SendScanedBooksViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SendScanedBooksViewController.m; path = controllers/SendScanedBooksViewController.m; sourceTree = "<group>"; };
 		49369882168324B800C743CB /* SendScanedBooksViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SendScanedBooksViewController.xib; path = controllers/SendScanedBooksViewController.xib; sourceTree = "<group>"; };
@@ -335,8 +338,8 @@
 		B69397D71675DFE70022A04A /* ScanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScanViewController.h; path = controllers/ScanViewController.h; sourceTree = "<group>"; };
 		B69397D81675DFE70022A04A /* ScanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ScanViewController.m; path = controllers/ScanViewController.m; sourceTree = "<group>"; };
 		B69397D91675DFE70022A04A /* ScanViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ScanViewController.xib; path = controllers/ScanViewController.xib; sourceTree = "<group>"; };
-		B69397DF1675E11D0022A04A /* ScanViewControllerTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScanViewControllerTest.h; sourceTree = "<group>"; };
-		B69397E01675E11D0022A04A /* ScanViewControllerTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScanViewControllerTest.m; sourceTree = "<group>"; };
+		B69397DF1675E11D0022A04A /* ScanViewControllerTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScanViewControllerTests.h; sourceTree = "<group>"; };
+		B69397E01675E11D0022A04A /* ScanViewControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScanViewControllerTests.m; sourceTree = "<group>"; };
 		B69397E21675F43B0022A04A /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		B6F89D2F1671E2F800BB9AAA /* ZXAztecDecoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXAztecDecoder.h; sourceTree = "<group>"; };
 		B6F89D301671E2F800BB9AAA /* ZXAztecDecoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXAztecDecoder.m; sourceTree = "<group>"; };
@@ -924,6 +927,8 @@
 				49A824A816633E07004D358E /* Liren_iosTests.h */,
 				49A824A916633E07004D358E /* Liren_iosTests.m */,
 				49A824A316633E07004D358E /* Supporting Files */,
+				492FB2B516917A21005CE9D4 /* AppDelegateTests.h */,
+				492FB2B616917A21005CE9D4 /* AppDelegateTests.m */,
 			);
 			path = "Liren-iosTests";
 			sourceTree = "<group>";
@@ -986,8 +991,8 @@
 			children = (
 				497C19D9167C50E400862C7A /* BookScanListViewControllerTests.h */,
 				497C19DA167C50E400862C7A /* BookScanListViewControllerTests.m */,
-				B69397DF1675E11D0022A04A /* ScanViewControllerTest.h */,
-				B69397E01675E11D0022A04A /* ScanViewControllerTest.m */,
+				B69397DF1675E11D0022A04A /* ScanViewControllerTests.h */,
+				B69397E01675E11D0022A04A /* ScanViewControllerTests.m */,
 				49E4564A168B11A40063BE58 /* DonationListViewControllerTests.h */,
 				49E4564B168B11A40063BE58 /* DonationListViewControllerTests.m */,
 			);
@@ -1928,9 +1933,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				49A824AA16633E07004D358E /* Liren_iosTests.m in Sources */,
-				B69397E11675E11D0022A04A /* ScanViewControllerTest.m in Sources */,
+				B69397E11675E11D0022A04A /* ScanViewControllerTests.m in Sources */,
 				497C19DB167C50E400862C7A /* BookScanListViewControllerTests.m in Sources */,
 				49E4564C168B11A40063BE58 /* DonationListViewControllerTests.m in Sources */,
+				492FB2B716917A21005CE9D4 /* AppDelegateTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

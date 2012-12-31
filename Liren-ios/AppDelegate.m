@@ -83,22 +83,28 @@
     return token;
 }
 
-- (void)postDeviceInfo:(NSData *)postData withUrl:(NSURL *)submitDeviceUrl {    
+- (NSData *)postDeviceSubmit:(NSURL *)submitDeviceUrl withHeaderField:(NSString *)deviceId withPostData:(NSData *)postData {
     NSMutableURLRequest *request=[NSMutableURLRequest requestWithURL:submitDeviceUrl cachePolicy:NSURLCacheStorageNotAllowed timeoutInterval:7.0f];
     [request setHTTPMethod:@"POST"];
-    NSString *macAddress = [MacAddressUtil macaddress];
-    [request addValue:macAddress forHTTPHeaderField:@"device_id"];
+    [request addValue:deviceId forHTTPHeaderField:@"device_id"];
     [request setHTTPBody:postData];
     
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
-        NSData *data=[NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
-        if(data!=nil){
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [self.globalUserData setValue:[NSNumber numberWithBool:YES] forKey:KEY_NOTIFICATION_STATUS];
-                [self saveGlobalUserData];
-            });
-        }
-    });
+    NSHTTPURLResponse *response=nil;
+    NSData *data=[NSURLConnection sendSynchronousRequest:request returningResponse:&response error:nil];
+    if(response.statusCode>=200 && response.statusCode<300) return data;
+    else return nil;
+}
+
+- (void)deviceInfoSubmittedCallback:(NSURL *)submitDeviceUrl postData:(NSData *)postData {
+    NSData *data;
+    NSString *macAddress = [MacAddressUtil macaddress];
+    data = [self postDeviceSubmit:submitDeviceUrl withHeaderField:macAddress withPostData:postData];
+    if(data!=nil){
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.globalUserData setValue:[NSNumber numberWithBool:YES] forKey:KEY_NOTIFICATION_STATUS];
+            [self saveGlobalUserData];
+        });
+    }
 }
 
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
@@ -106,10 +112,13 @@
     NSDictionary *dataDictionary = [[NSDictionary alloc]initWithObjectsAndKeys:@"device_token",token, nil];
     NSError *error = nil;
     NSData *postData = [NSJSONSerialization dataWithJSONObject:dataDictionary options:NSJSONWritingPrettyPrinted error:&error];
+    [dataDictionary release];
     
     if ([postData length] > 0 && error == nil) {
         NSURL *submitDeviceUrl=[NSURL URLWithString:[NSString stringWithFormat:@"%@%@", SERVER_ADDRESS, SERVICE_SUFFIX_SUBMIT_DEVICE]];
-        [self postDeviceInfo:postData withUrl:submitDeviceUrl];
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
+            [self deviceInfoSubmittedCallback:submitDeviceUrl postData:postData];
+        });
     }
     
 }

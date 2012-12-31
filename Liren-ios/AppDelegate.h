@@ -20,5 +20,6 @@
 @property(nonatomic, retain) NSOperationQueue *queue;
 
 -(void)saveGlobalUserData;
+-(NSData *)postDeviceSubmit:(NSURL *)submitDeviceUrl withHeaderField:(NSString *)deviceId withPostData:(NSData *)postData;
 
 @end
