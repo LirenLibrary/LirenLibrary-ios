@@ -31,8 +31,6 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
 
-    self.title = @"立人图书馆";
-
     if(self.bookScanViewController == nil){
         BookScanListViewController *svc = [[BookScanListViewController alloc] initWithNibName:@"BookScanListViewController" bundle:nil];
         self.bookScanViewController = svc;

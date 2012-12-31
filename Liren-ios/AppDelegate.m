@@ -34,6 +34,16 @@
 - (void)initUINavigationController
 {
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:self.landingViewController];
+    
+    for(UIView *view in nav.navigationBar.subviews){
+        [view removeFromSuperview];
+    }
+    
+    UIImageView *navBack=[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"nav-back.png"]];
+    [navBack setFrame:CGRectMake(0, 0, nav.navigationBar.frame.size.width, nav.navigationBar.frame.size.height)];
+    [nav.navigationBar addSubview:navBack];
+    [navBack release];
+    
     [self.window setRootViewController:nav];
     [nav autorelease];
 }
