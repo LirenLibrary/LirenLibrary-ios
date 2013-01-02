@@ -7,7 +7,13 @@ build/
 *.perspectivev3
 Frank/frankified_build/*.*
 Frank/frankified_build/*
+Frank/frankified_build/Frankified.app/*
+Frank/frankified_build/Liren-ios.app/*
 functional-test-reports/*.*
 functional-test-reports/TEST-features-#21_Tap_to_Donate.xml
 Liren-ios.xcodeproj/xcuserdata/twer.xcuserdatad/xcdebugger/Breakpoints.xcbkptlist
 Liren-ios.xcodeproj/project.xcworkspace/xcuserdata/twer.xcuserdatad/UserInterfaceState.xcuserstate
+
+Frank/frankified_build/Frankified.app/Info.plist
+
+Frank/frankified_build/Liren-ios.app/Info.plist
