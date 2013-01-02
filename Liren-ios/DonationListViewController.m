@@ -86,8 +86,18 @@
     
     [NSURLConnection sendAsynchronousRequest:request queue:self.queue completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
         dispatch_async(dispatch_get_main_queue(), ^{
-            [self loadDonationListByDeviceCallback:data withError:error];
             [MBProgressHUD hideHUDForView:self.view animated:YES];
+            if(data==nil || error!=nil){
+                MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+                hud.mode = MBProgressHUDModeText;
+                hud.labelText = @"联网失败";
+                hud.margin = 10.f;
+                hud.yOffset = 80.f;
+                hud.removeFromSuperViewOnHide = YES;
+                [hud hide:YES afterDelay:1];
+            }else{
+                [self loadDonationListByDeviceCallback:data withError:error];
+            }
             LOADING_DONATION_LIST=NO;
             [self.refreshHeaderView egoRefreshScrollViewDataSourceDidFinishedLoading:self.tableView];
         });
