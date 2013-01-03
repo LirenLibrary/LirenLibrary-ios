@@ -92,12 +92,14 @@
         [hintView setFrame:CGRectMake(48, 245, 188, 124)];
         [self.view addSubview:hintView];
         [hintView release];
+        [self.tableView setAlpha:0.0f];
     }
 }
 
 -(void)removeStartHintView{
     if([self.view viewWithTag:TAG_VIEW_START_HINT] != nil){
         [[self.view viewWithTag:TAG_VIEW_START_HINT] removeFromSuperview];
+        [self.tableView setAlpha:1.0f];
     }
 }
 
@@ -143,7 +145,6 @@
     return [self.bookList count];
 }
 
-
 - (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     static NSString *bookIdentifier = @"BookIndentifier";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:bookIdentifier];
@@ -155,7 +156,7 @@
     cell.contentView.backgroundColor=[AppConstant getColorTableCellBackground];
     cell.textLabel.text = [[self.bookList objectAtIndex:row]bookName];
     cell.textLabel.textColor=[AppConstant getColorTableCellTitleText];
-    cell.accessoryType=UITableViewCellAccessoryDisclosureIndicator;
+    cell.accessoryType=UITableViewCellAccessoryNone;
     cell.selectionStyle=UITableViewCellSelectionStyleNone;
     
     return cell;
