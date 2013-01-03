@@ -11,7 +11,6 @@ When /^I tap 捐赠 button$/ do
 end
 
 Then /^I should be on the BookScanListViewController$/ do
-	check_element_exists "view view:'UIRoundedRectButton' marked:'扫描'"
 	check_element_exists "view view:'UITableView' marked:'Empty list'"
 end
 
