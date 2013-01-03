@@ -9,6 +9,7 @@
 #import "BookScanListViewController.h"
 
 #define DOUBAN_ISBN_URL @"http://api.douban.com/v2/book/isbn/"
+#define TAG_VIEW_START_HINT 1001
 
 @interface BookScanListViewController ()
 
@@ -64,7 +65,7 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    [self.navigationItem.titleView setAlpha:0.0f];
+    [self showStartHintView];
 }
 
 #pragma mark - UI method
@@ -80,6 +81,24 @@
         [self.navigationItem.rightBarButtonItem setEnabled:NO];
     }
     [submitButton release];
+}
+
+-(void)showStartHintView{
+    if(self.bookList.count==0){
+        if([self.view viewWithTag:TAG_VIEW_START_HINT] != nil) return;
+        
+        UIImageView *hintView=[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"scan-placeholder_03.png"]];
+        [hintView setTag: TAG_VIEW_START_HINT];
+        [hintView setFrame:CGRectMake(48, 245, 188, 124)];
+        [self.view addSubview:hintView];
+        [hintView release];
+    }
+}
+
+-(void)removeStartHintView{
+    if([self.view viewWithTag:TAG_VIEW_START_HINT] != nil){
+        [[self.view viewWithTag:TAG_VIEW_START_HINT] removeFromSuperview];
+    }
 }
 
 - (IBAction) scanButtonPressed:(id)sender{
@@ -112,7 +131,6 @@
         [alert show];
         [alert release];
     }
-
 }
 
 - (void) deleteBook:(int) index{
@@ -152,6 +170,7 @@
         [self deleteBook:indexPath.row];
         if(self.bookList.count==0){
             [self.navigationItem.rightBarButtonItem setEnabled:NO];
+            [self showStartHintView];
         }
     }
 }
@@ -190,6 +209,7 @@
             book.bookName = [json valueForKey:@"title"];
             [self.bookList addObject:book];
             [self.navigationItem.rightBarButtonItem setEnabled:YES];
+            [self removeStartHintView];
             NSLog(@"Find Book:%@", book.bookName);
         }else{
             book.bookName = @"没找到";

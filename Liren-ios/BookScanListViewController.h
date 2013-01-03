@@ -28,5 +28,8 @@
 - (void) getBookDetail:(Book *) book;
 - (void) initUI;
 - (void) initNavigationBar;
+-(void)showStartHintView;
+-(void)removeStartHintView;
+
 -(void)getBookDetailCallback:(NSError *)error withData:(NSData *)data withBook:(Book *)book;
 @end
