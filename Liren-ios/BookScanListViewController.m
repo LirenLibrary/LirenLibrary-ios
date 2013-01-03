@@ -31,8 +31,6 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    self.title = @"立人捐书";
-    [self initNavigationBar];
     self.trackedViewName=[NSString stringWithFormat:@"%s", class_getName(self.class)];
     
     if(self.bookList==nil){
@@ -40,6 +38,8 @@
         self.bookList = tmpArray;   
         [tmpArray release];
     }
+    
+    [self initNavigationBar];
     
     if(self.scanViewController==nil){
         ScanViewController *svc=[[ScanViewController alloc] initWithNibName:@"ScanViewController" bundle:nil];
@@ -62,11 +62,18 @@
     [self.queue setMaxConcurrentOperationCount:10];
 }
 
-#pragma mark - UI method
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self.navigationItem.titleView setAlpha:0.0f];
+}
 
+#pragma mark - UI method
 - (void) initNavigationBar{
     UIBarButtonItem *submitButton = [[UIBarButtonItem alloc]initWithTitle:@"提交" style:UIBarButtonItemStylePlain target:self action:@selector(sendScanedBooks)];
     self.navigationItem.rightBarButtonItem=submitButton;
+    if(self.bookList.count==0){
+        [self.navigationItem.rightBarButtonItem setEnabled:NO];
+    }
     [submitButton release];
 }
 
@@ -133,6 +140,9 @@
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
     if(editingStyle==UITableViewCellEditingStyleDelete){
         [self deleteBook:indexPath.row];
+        if(self.bookList.count==0){
+            [self.navigationItem.rightBarButtonItem setEnabled:NO];
+        }
     }
 }
 
@@ -165,6 +175,7 @@
         if([json valueForKey:@"msg"]==nil){
             book.bookName = [json valueForKey:@"title"];
             [self.bookList addObject:book];
+            [self.navigationItem.rightBarButtonItem setEnabled:YES];
             NSLog(@"Find Book:%@", book.bookName);
         }else{
             book.bookName = @"没找到";
@@ -192,7 +203,6 @@
         [newBook release];
     }
 }
-
 
 #pragma mark - system method
 -(void)dealloc{

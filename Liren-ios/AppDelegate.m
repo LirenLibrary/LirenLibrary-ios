@@ -38,14 +38,7 @@
 {
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:self.landingViewController];
     
-    for(UIView *view in nav.navigationBar.subviews){
-        [view removeFromSuperview];
-    }
-    
-    UIImageView *navBack=[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"nav-back.png"]];
-    [navBack setFrame:CGRectMake(0, 0, nav.navigationBar.frame.size.width, nav.navigationBar.frame.size.height)];
-    [nav.navigationBar addSubview:navBack];
-    [navBack release];
+    [nav.navigationBar setBackgroundImage:[UIImage imageNamed:@"nav-back.png"] forBarMetrics:UIBarMetricsDefault];
     
     nav.navigationBar.tintColor = [UIColor colorWithRed:194.0f/255.0f green:90.0f/255.0f blue:46.0f/255.0f alpha:1.0f];
     
