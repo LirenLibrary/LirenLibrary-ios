@@ -26,6 +26,7 @@
 @property(nonatomic, retain) IBOutlet UITableView *tableView;
 @property(nonatomic, retain) NSOperationQueue *queue;
 
+-(void)initUI;
 -(void)initDonationList;
 -(void)loadDonationListByDevice;
 -(void)loadDonationListByDeviceCallback:(NSData *)data withError:(NSError *)error;

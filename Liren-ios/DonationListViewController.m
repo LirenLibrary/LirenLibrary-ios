@@ -34,6 +34,7 @@
     [super viewDidLoad];
     self.trackedViewName=[NSString stringWithFormat:@"%s", class_getName(self.class)];
     
+    [self initUI];
     [self initDonationList];
     [self initOperationQueue];
     [self buildRefreshHeaderView];
@@ -45,6 +46,9 @@
 }
 
 #pragma mark - util method
+-(void)initUI{
+    [self.view setBackgroundColor:[AppConstant getColorViewBackground]];
+}
 -(void)initDonationList{
     if(self.donationList==nil){
         NSMutableArray *array=[[NSMutableArray alloc] init];
@@ -152,7 +156,7 @@
 -(void)buildTableCell:(UITableViewCell *)cell withDonation:(Donation *)donation{
     cell.selectionStyle=UITableViewCellSelectionStyleNone;
     cell.accessoryType=UITableViewCellAccessoryDisclosureIndicator;
-    cell.contentView.backgroundColor=[UIColor colorWithRed:247.0f/255.0f green:244.0f/255.0f blue:239.0f/255.0f alpha:1.0f];
+    cell.contentView.backgroundColor=[AppConstant getColorTableCellBackground];
     
     UILabel *statusLabel=[[UILabel alloc] initWithFrame:CGRectMake(20, 8, 70, 30)];
     [statusLabel setBackgroundColor:[UIColor clearColor]];
@@ -162,16 +166,16 @@
     
     if([DONATION_STATUS_NEW isEqualToString:donation.donationStatus.uppercaseString]){
         [statusLabel setText:@"[审核中]"];
-        [statusLabel setTextColor:[UIColor colorWithRed:184.0f/255.0f green:165.0f/255.0f blue:79.0f/255.0f alpha:1.0f]];
+        [statusLabel setTextColor:[AppConstant getColorDonationStatusNew]];
     }else if([DONATION_STATUS_APPROVED isEqualToString:donation.donationStatus.uppercaseString]){
         [statusLabel setText:@"[可寄送]"];
-        [statusLabel setTextColor:[UIColor colorWithRed:162.0f/255.0f green:208.0f/255.0f blue:38.0f/255.0f alpha:1.0f]];
+        [statusLabel setTextColor:[AppConstant getColorDonationStatusApproved]];
     }else if([DONATION_STATUS_REJECTED isEqualToString:donation.donationStatus.uppercaseString]){
         [statusLabel setText:@"[已拒绝]"];
-        [statusLabel setTextColor:[UIColor colorWithRed:204.0f/255.0f green:60.0f/255.0f blue:53.0f/255.0f alpha:1.0f]];
+        [statusLabel setTextColor:[AppConstant getColorDonationStatusRejected]];
     }else if([DONATION_STATUS_RECEIVED isEqualToString:donation.donationStatus.uppercaseString]){
         [statusLabel setText:@"[已收到]"];
-        [statusLabel setTextColor:[UIColor colorWithRed:131.0f/255.0f green:131.0f/255.0f blue:130.0f/255.0f alpha:1.0f]];
+        [statusLabel setTextColor:[AppConstant getColorDonationStatusReceived]];
     }
     [cell addSubview:statusLabel];
     [statusLabel release];
@@ -183,7 +187,7 @@
     [timeLabel setText:[dateFormatter stringFromDate:donation.donationTime]];
     [timeLabel setBackgroundColor:[UIColor clearColor]];
     [dateFormatter release];
-    [timeLabel setTextColor:[UIColor colorWithRed:67.0f/255.0f green:64.0f/255.0f blue:62.0f/255.0f alpha:1.0f]];
+    [timeLabel setTextColor:[AppConstant getColorTableCellTitleText]];
     [timeLabel setFont:[UIFont boldSystemFontOfSize:16.0f]];
     [cell addSubview:timeLabel];
     [timeLabel release];

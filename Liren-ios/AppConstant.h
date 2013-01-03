@@ -17,4 +17,12 @@ extern const NSString *DONATION_STATUS_APPROVED;
 extern const NSString *DONATION_STATUS_REJECTED;
 extern const NSString *DONATION_STATUS_RECEIVED;
 
++(UIColor *)getColorViewBackground;
++(UIColor *)getColorTableCellTitleText;
++(UIColor *)getColorTableCellBackground;
++(UIColor *)getColorDonationStatusNew;
++(UIColor *)getColorDonationStatusApproved;
++(UIColor *)getColorDonationStatusRejected;
++(UIColor *)getColorDonationStatusReceived;
+
 @end

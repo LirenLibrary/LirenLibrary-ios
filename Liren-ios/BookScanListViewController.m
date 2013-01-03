@@ -39,7 +39,7 @@
         [tmpArray release];
     }
     
-    [self initNavigationBar];
+    [self initUI];
     
     if(self.scanViewController==nil){
         ScanViewController *svc=[[ScanViewController alloc] initWithNibName:@"ScanViewController" bundle:nil];
@@ -68,6 +68,11 @@
 }
 
 #pragma mark - UI method
+- (void) initUI{
+    [self initNavigationBar];
+    [self.view setBackgroundColor:[AppConstant getColorViewBackground]];
+}
+
 - (void) initNavigationBar{
     UIBarButtonItem *submitButton = [[UIBarButtonItem alloc]initWithTitle:@"提交" style:UIBarButtonItemStylePlain target:self action:@selector(sendScanedBooks)];
     self.navigationItem.rightBarButtonItem=submitButton;
@@ -128,7 +133,12 @@
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:bookIdentifier] autorelease];
     }
     NSUInteger row = [indexPath row];
+    
+    cell.contentView.backgroundColor=[AppConstant getColorTableCellBackground];
     cell.textLabel.text = [[self.bookList objectAtIndex:row]bookName];
+    cell.textLabel.textColor=[AppConstant getColorTableCellTitleText];
+    cell.accessoryType=UITableViewCellAccessoryDisclosureIndicator;
+    cell.selectionStyle=UITableViewCellSelectionStyleNone;
     
     return cell;
 }
@@ -144,6 +154,10 @@
             [self.navigationItem.rightBarButtonItem setEnabled:NO];
         }
     }
+}
+
+- (void) tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
+    cell.backgroundColor = cell.contentView.backgroundColor;
 }
 
 #pragma mark - Get book detail
