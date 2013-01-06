@@ -11,6 +11,11 @@
 		490349D91671E0720000C083 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 490349D81671E0720000C083 /* CoreVideo.framework */; };
 		490349DB1671E07E0000C083 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 490349DA1671E07E0000C083 /* ImageIO.framework */; };
 		490E740D167EBF310082C646 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 490E740C167EBF310082C646 /* SystemConfiguration.framework */; };
+		492054B11699AB7F004BD224 /* thanks_03.png in Resources */ = {isa = PBXBuildFile; fileRef = 492054B01699AB7F004BD224 /* thanks_03.png */; };
+		492054B51699AB91004BD224 /* submit-buttom_03@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 492054B31699AB91004BD224 /* submit-buttom_03@2x.png */; };
+		492054B61699AB91004BD224 /* back-button_03.png in Resources */ = {isa = PBXBuildFile; fileRef = 492054B41699AB91004BD224 /* back-button_03.png */; };
+		492054B81699AD13004BD224 /* BookScanListViewController in Resources */ = {isa = PBXBuildFile; fileRef = 492054B71699AD13004BD224 /* BookScanListViewController */; };
+		492054BA1699AF07004BD224 /* submit-buttom_03.png in Resources */ = {isa = PBXBuildFile; fileRef = 492054B91699AF07004BD224 /* submit-buttom_03.png */; };
 		4921E6B3167F479200728511 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4921E6B2167F479200728511 /* CoreData.framework */; };
 		492FB2B716917A21005CE9D4 /* AppDelegateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 492FB2B616917A21005CE9D4 /* AppDelegateTests.m */; };
 		49369883168324B800C743CB /* SendScanedBooksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49369881168324B800C743CB /* SendScanedBooksViewController.m */; };
@@ -273,6 +278,11 @@
 		490E7418167EDA850082C646 /* GAITransactionItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAITransactionItem.h; sourceTree = "<group>"; };
 		490E7419167EDA850082C646 /* libGoogleAnalytics.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleAnalytics.a; sourceTree = "<group>"; };
 		490E741A167EDA850082C646 /* libGoogleAnalytics_debug.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleAnalytics_debug.a; sourceTree = "<group>"; };
+		492054B01699AB7F004BD224 /* thanks_03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = thanks_03.png; sourceTree = "<group>"; };
+		492054B31699AB91004BD224 /* submit-buttom_03@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "submit-buttom_03@2x.png"; sourceTree = "<group>"; };
+		492054B41699AB91004BD224 /* back-button_03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back-button_03.png"; sourceTree = "<group>"; };
+		492054B71699AD13004BD224 /* BookScanListViewController */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = BookScanListViewController; sourceTree = "<group>"; };
+		492054B91699AF07004BD224 /* submit-buttom_03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "submit-buttom_03.png"; sourceTree = "<group>"; };
 		4921E6B2167F479200728511 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		492FB2B516917A21005CE9D4 /* AppDelegateTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegateTests.h; sourceTree = "<group>"; };
 		492FB2B616917A21005CE9D4 /* AppDelegateTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegateTests.m; sourceTree = "<group>"; };
@@ -842,6 +852,9 @@
 		49A10C9C1691527E00EF1A54 /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				492054B91699AF07004BD224 /* submit-buttom_03.png */,
+				492054B31699AB91004BD224 /* submit-buttom_03@2x.png */,
+				492054B41699AB91004BD224 /* back-button_03.png */,
 				49A10C9D1691527E00EF1A54 /* button1_03.png */,
 				49A10C9E1691527E00EF1A54 /* button2_03.png */,
 				49A10C9F1691527E00EF1A54 /* button3_03.png */,
@@ -850,6 +863,7 @@
 				49A10CA21691527E00EF1A54 /* scan-button_03.png */,
 				49A10CA31691527E00EF1A54 /* scan-placeholder_03.png */,
 				49A10CA41691527E00EF1A54 /* sorry-banner_03.png */,
+				492054B01699AB7F004BD224 /* thanks_03.png */,
 				49A10CA51691527E00EF1A54 /* thank-you-banner_03.png */,
 				4938D7B01695279700360290 /* nav-back.png */,
 				4938D7AD1695274900360290 /* nav-back@2x.png */,
@@ -984,6 +998,7 @@
 			children = (
 				497C19D0167C50AE00862C7A /* BookScanListViewController.h */,
 				497C19D1167C50AE00862C7A /* BookScanListViewController.m */,
+				492054B71699AD13004BD224 /* BookScanListViewController */,
 				497C19D2167C50AE00862C7A /* BookScanListViewController.xib */,
 				49369880168324B800C743CB /* SendScanedBooksViewController.h */,
 				49369881168324B800C743CB /* SendScanedBooksViewController.m */,
@@ -1718,6 +1733,11 @@
 				4938D7B11695279700360290 /* nav-back.png in Resources */,
 				498631FD1696ECE100D4F6E6 /* Icon.png in Resources */,
 				498632001696ECE500D4F6E6 /* Icon@2x.png in Resources */,
+				492054B11699AB7F004BD224 /* thanks_03.png in Resources */,
+				492054B51699AB91004BD224 /* submit-buttom_03@2x.png in Resources */,
+				492054B61699AB91004BD224 /* back-button_03.png in Resources */,
+				492054B81699AD13004BD224 /* BookScanListViewController in Resources */,
+				492054BA1699AF07004BD224 /* submit-buttom_03.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

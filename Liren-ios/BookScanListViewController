@@ -74,13 +74,19 @@
     [self.view setBackgroundColor:[AppConstant getColorViewBackground]];
 }
 
-- (void) initNavigationBar{    
-    UIButton *sendButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [sendButton setFrame:CGRectMake(0.0f, 0.0f, 48.0f, 30.0f)];
-    [sendButton addTarget:self action:@selector(sendScanedBooks) forControlEvents:UIControlEventTouchUpInside];
-    [sendButton setImage:[UIImage imageNamed:@"submit-buttom_03.png"] forState:UIControlStateNormal];
-    UIBarButtonItem *sendBarButton = [[UIBarButtonItem alloc] initWithCustomView:sendButton];
-    self.navigationItem.rightBarButtonItem = sendBarButton;
+- (void) initNavigationBar{
+    [self.navigationItem setHidesBackButton:YES];
+    
+    UIBarButtonItem *backButton=[[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"back-button_03.png"] style:UIBarButtonItemStylePlain target:self action:@selector(backButtonPressed:)];
+    self.navigationItem.leftBarButtonItem=backButton;
+    [backButton release];
+    
+    UIBarButtonItem *submitButton = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"submit-buttom_03.png"] style:UIBarButtonItemStylePlain target:self action:@selector(sendScanedBooks)];
+    self.navigationItem.rightBarButtonItem=submitButton;
+    if(self.bookList.count==0){
+        [self.navigationItem.rightBarButtonItem setEnabled:NO];
+    }
+    [submitButton release];
 }
 
 -(void)showStartHintView{
@@ -101,6 +107,10 @@
         [[self.view viewWithTag:TAG_VIEW_START_HINT] removeFromSuperview];
         [self.tableView setAlpha:1.0f];
     }
+}
+
+-(IBAction)backButtonPressed:(id)sender{
+    [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
 - (IBAction) scanButtonPressed:(id)sender{
