@@ -74,13 +74,22 @@
     [self.view setBackgroundColor:[AppConstant getColorViewBackground]];
 }
 
-- (void) initNavigationBar{    
-    UIButton *sendButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [sendButton setFrame:CGRectMake(0.0f, 0.0f, 48.0f, 30.0f)];
-    [sendButton addTarget:self action:@selector(sendScanedBooks) forControlEvents:UIControlEventTouchUpInside];
-    [sendButton setImage:[UIImage imageNamed:@"submit-buttom_03.png"] forState:UIControlStateNormal];
-    UIBarButtonItem *sendBarButton = [[UIBarButtonItem alloc] initWithCustomView:sendButton];
-    self.navigationItem.rightBarButtonItem = sendBarButton;
+- (void) initNavigationBar{
+    if(self.doneBarButton == nil){
+        UIButton *sendButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        [sendButton setFrame:CGRectMake(0.0f, 0.0f, 48.0f, 30.0f)];
+        [sendButton addTarget:self action:@selector(sendScanedBooks) forControlEvents:UIControlEventTouchUpInside];
+        [sendButton setImage:[UIImage imageNamed:@"submit-buttom_03.png"] forState:UIControlStateNormal];
+        UIBarButtonItem *barButton = [[UIBarButtonItem alloc] initWithCustomView:sendButton];
+        self.doneBarButton = barButton;
+        [barButton release];
+    }
+    
+    if(self.bookList.count>0){
+        self.navigationItem.rightBarButtonItem = self.doneBarButton;
+    }else{
+        self.navigationItem.rightBarButtonItem = nil;
+    }
 }
 
 -(void)showStartHintView{
@@ -170,7 +179,7 @@
     if(editingStyle==UITableViewCellEditingStyleDelete){
         [self deleteBook:indexPath.row];
         if(self.bookList.count==0){
-            [self.navigationItem.rightBarButtonItem setEnabled:NO];
+            self.navigationItem.rightBarButtonItem=nil;
             [self showStartHintView];
         }
     }
@@ -209,7 +218,7 @@
         if([json valueForKey:@"msg"]==nil){
             book.bookName = [json valueForKey:@"title"];
             [self.bookList addObject:book];
-            [self.navigationItem.rightBarButtonItem setEnabled:YES];
+            self.navigationItem.rightBarButtonItem=self.doneBarButton;
             [self removeStartHintView];
             NSLog(@"Find Book:%@", book.bookName);
         }else{
@@ -243,6 +252,7 @@
 -(void)dealloc{
     [_bookList release];
     [_queue release];
+    [_doneBarButton release];
     [super dealloc];
 }
 

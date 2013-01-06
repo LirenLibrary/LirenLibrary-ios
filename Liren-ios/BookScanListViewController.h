@@ -23,6 +23,7 @@
 @property (nonatomic,retain) IBOutlet UITableView *tableView;
 @property(nonatomic, retain) ScanViewController *scanViewController;
 @property(nonatomic, retain) SendScanedBooksViewController *sendScanedBooksViewController;
+@property(nonatomic, retain) UIBarButtonItem *doneBarButton;
 
 - (void) addBook:(Book *) book;
 - (void) getBookDetail:(Book *) book;
