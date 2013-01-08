@@ -31,6 +31,9 @@
 		4964FBB1168C017D00CC6F3D /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4921E6B2167F479200728511 /* CoreData.framework */; };
 		4964FBB2168C018100CC6F3D /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 490E740C167EBF310082C646 /* SystemConfiguration.framework */; };
 		4964FBB3168C082C00CC6F3D /* libGoogleAnalytics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 490E7419167EDA850082C646 /* libGoogleAnalytics.a */; };
+		49713C62169C350500581816 /* DonationDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49713C60169C350500581816 /* DonationDetailViewController.m */; };
+		49713C63169C350500581816 /* DonationDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49713C61169C350500581816 /* DonationDetailViewController.xib */; };
+		49713C67169C377A00581816 /* DonationDetailViewControllerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 49713C66169C377A00581816 /* DonationDetailViewControllerTest.m */; };
 		497C19D3167C50AE00862C7A /* BookScanListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 497C19D1167C50AE00862C7A /* BookScanListViewController.m */; };
 		497C19D4167C50AE00862C7A /* BookScanListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 497C19D2167C50AE00862C7A /* BookScanListViewController.xib */; };
 		497C19D8167C50BF00862C7A /* Book.m in Sources */ = {isa = PBXBuildFile; fileRef = 497C19D7167C50BF00862C7A /* Book.m */; };
@@ -299,6 +302,11 @@
 		494FFFD0167606A400C7748D /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		4964FB65168BF14600CC6F3D /* EGORefreshTableHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGORefreshTableHeaderView.h; sourceTree = "<group>"; };
 		4964FB66168BF14600CC6F3D /* EGORefreshTableHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EGORefreshTableHeaderView.m; sourceTree = "<group>"; };
+		49713C5F169C350500581816 /* DonationDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DonationDetailViewController.h; sourceTree = "<group>"; };
+		49713C60169C350500581816 /* DonationDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DonationDetailViewController.m; sourceTree = "<group>"; };
+		49713C61169C350500581816 /* DonationDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DonationDetailViewController.xib; sourceTree = "<group>"; };
+		49713C65169C377A00581816 /* DonationDetailViewControllerTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DonationDetailViewControllerTest.h; sourceTree = "<group>"; };
+		49713C66169C377A00581816 /* DonationDetailViewControllerTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DonationDetailViewControllerTest.m; sourceTree = "<group>"; };
 		497C19D0167C50AE00862C7A /* BookScanListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookScanListViewController.h; sourceTree = "<group>"; };
 		497C19D1167C50AE00862C7A /* BookScanListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookScanListViewController.m; sourceTree = "<group>"; };
 		497C19D2167C50AE00862C7A /* BookScanListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BookScanListViewController.xib; sourceTree = "<group>"; };
@@ -1012,6 +1020,9 @@
 				49E45641168B0FD50063BE58 /* DonationListViewController.h */,
 				49E45642168B0FD50063BE58 /* DonationListViewController.m */,
 				49E45643168B0FD50063BE58 /* DonationListViewController.xib */,
+				49713C5F169C350500581816 /* DonationDetailViewController.h */,
+				49713C60169C350500581816 /* DonationDetailViewController.m */,
+				49713C61169C350500581816 /* DonationDetailViewController.xib */,
 			);
 			name = controllers;
 			sourceTree = "<group>";
@@ -1025,6 +1036,8 @@
 				B69397E01675E11D0022A04A /* ScanViewControllerTests.m */,
 				49E4564A168B11A40063BE58 /* DonationListViewControllerTests.h */,
 				49E4564B168B11A40063BE58 /* DonationListViewControllerTests.m */,
+				49713C65169C377A00581816 /* DonationDetailViewControllerTest.h */,
+				49713C66169C377A00581816 /* DonationDetailViewControllerTest.m */,
 			);
 			name = controllers;
 			sourceTree = "<group>";
@@ -1738,6 +1751,7 @@
 				492054B61699AB91004BD224 /* back-button_03.png in Resources */,
 				492054B81699AD13004BD224 /* BookScanListViewController in Resources */,
 				492054BA1699AF07004BD224 /* submit-buttom_03.png in Resources */,
+				49713C63169C350500581816 /* DonationDetailViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1965,6 +1979,7 @@
 				49E45649168B10590063BE58 /* Donation.m in Sources */,
 				49E4564F168B167F0063BE58 /* AppConstant.m in Sources */,
 				4964FB67168BF14600CC6F3D /* EGORefreshTableHeaderView.m in Sources */,
+				49713C62169C350500581816 /* DonationDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1977,6 +1992,7 @@
 				497C19DB167C50E400862C7A /* BookScanListViewControllerTests.m in Sources */,
 				49E4564C168B11A40063BE58 /* DonationListViewControllerTests.m in Sources */,
 				492FB2B716917A21005CE9D4 /* AppDelegateTests.m in Sources */,
+				49713C67169C377A00581816 /* DonationDetailViewControllerTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

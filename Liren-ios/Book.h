@@ -11,4 +11,7 @@
 @interface Book : NSObject
 @property (nonatomic, retain) NSString *bookSN;
 @property (nonatomic, retain) NSString *bookName;
+@property (nonatomic, retain) NSString *bookStatus;
+
+-(id)initWithDictionary:(NSDictionary*)book;
 @end

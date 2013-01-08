@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Book.h"
 
 @interface Donation : NSObject
 
@@ -14,5 +15,12 @@
 @property(nonatomic, retain) NSDate *donationTime;
 @property(nonatomic, retain) NSString *donationStatus;
 @property(nonatomic, retain) NSNumber *bookCount;
+@property(nonatomic, retain) NSString *postAddress;
+@property(nonatomic, retain) NSString *postReceiver;
+@property(nonatomic, retain) NSString *postCode;
+@property(nonatomic, retain) NSString *postReceiverMobile;
+@property(nonatomic, retain) NSMutableArray *books;
+
+-(id) initWithJsonString:(NSData *)json;
 
 @end

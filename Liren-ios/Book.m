@@ -13,7 +13,18 @@
 -(void)dealloc{
     [_bookSN release];
     [_bookName release];
+    [_bookStatus release];
     [super dealloc];
+}
+
+-(id)initWithDictionary:(NSDictionary*)book{
+    self = [super init];
+    if (self != nil) {
+        self.bookSN = [book objectForKey:@"book_isbn"];
+        self.bookName = [book objectForKey:@"book_name"];
+        self.bookStatus = [book objectForKey:@"book_status"];
+    }
+    return self;
 }
 
 @end
