@@ -47,7 +47,8 @@
 #pragma mark - UI method
 
 - (void) initNavigationBar{
-    UIBarButtonItem *finishButton = [[UIBarButtonItem alloc]initWithTitle:@"完成" style:UIBarButtonItemStylePlain target:nil action:nil];
+    self.navigationItem.hidesBackButton=YES;
+    UIBarButtonItem *finishButton = [[UIBarButtonItem alloc]initWithTitle:@"完成" style:UIBarButtonItemStylePlain target:self action:@selector(finish)];
     self.navigationItem.rightBarButtonItem=finishButton;
     [finishButton release];
 }
@@ -59,6 +60,9 @@
     [statusView release];
 }
 
+- (void) finish{
+    [self.navigationController popToRootViewControllerAnimated:YES];
+}
 
 #pragma mark - TableView implementation
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
