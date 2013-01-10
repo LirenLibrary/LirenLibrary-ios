@@ -38,7 +38,7 @@
 					<object class="IBUIButton" id="52109673">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{58, 165}, {81, 70}}</string>
+						<string key="NSFrame">{{60, 165}, {70, 70}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="157564410"/>
@@ -76,7 +76,7 @@
 					<object class="IBUIButton" id="157564410">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{178, 165}, {77, 70}}</string>
+						<string key="NSFrame">{{190, 165}, {70, 70}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView"/>
@@ -226,17 +226,20 @@
 				<object class="IBPartialClassDescription">
 					<string key="className">LandingViewController</string>
 					<string key="superclassName">GAITrackedViewController</string>
-					<object class="NSMutableDictionary" key="actions">
-						<string key="NS.key.0">donateButtonPressed:</string>
-						<string key="NS.object.0">id</string>
-					</object>
-					<object class="NSMutableDictionary" key="actionInfosByName">
-						<string key="NS.key.0">donateButtonPressed:</string>
-						<object class="IBActionInfo" key="NS.object.0">
+					<dictionary class="NSMutableDictionary" key="actions">
+						<string key="donateButtonPressed:">id</string>
+						<string key="historyButtonPressed:">id</string>
+					</dictionary>
+					<dictionary class="NSMutableDictionary" key="actionInfosByName">
+						<object class="IBActionInfo" key="donateButtonPressed:">
 							<string key="name">donateButtonPressed:</string>
 							<string key="candidateClassName">id</string>
 						</object>
-					</object>
+						<object class="IBActionInfo" key="historyButtonPressed:">
+							<string key="name">historyButtonPressed:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+					</dictionary>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
 						<string key="minorKey">./Classes/LandingViewController.h</string>
