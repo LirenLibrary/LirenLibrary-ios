@@ -31,6 +31,12 @@
     [self initNavigationBar];
 }
 
+
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self showSendStatusView];
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -43,6 +49,13 @@
     UIBarButtonItem *finishButton = [[UIBarButtonItem alloc]initWithTitle:@"完成" style:UIBarButtonItemStylePlain target:self action:nil];
     self.navigationItem.rightBarButtonItem=finishButton;
     [finishButton release];
+}
+
+-(void)showSendStatusView{
+    UIImageView *statusView=[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"thank-you-banner_03.png"]];
+    [statusView setFrame:CGRectMake(8, 10, 304, 110)];
+    [self.view addSubview:statusView];
+    [statusView release];
 }
 
 @end
