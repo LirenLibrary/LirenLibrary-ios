@@ -54,6 +54,10 @@
         self.sendScanedBooksViewController=svc;
         [svc release];
     }
+    NSMutableArray *tmpArray = [[NSMutableArray alloc] initWithCapacity:0];
+    [self.sendScanedBooksViewController setBookList:tmpArray];
+    [tmpArray release];
+    [self setDataExchangeDelegate:self.sendScanedBooksViewController];
     
     if(self.queue==nil){
         NSOperationQueue *q=[[NSOperationQueue alloc] init];
@@ -117,7 +121,10 @@
 }
 
 - (void) sendScanedBooks{
-    [self.navigationController pushViewController:self.sendScanedBooksViewController animated:YES];
+    if (self.dataExchangeDelegate != nil) {
+        [self.dataExchangeDelegate putExchangedData:self.bookList];
+        [self.navigationController pushViewController:self.sendScanedBooksViewController animated:YES];
+    }
 }
 
 - (void)didReceiveMemoryWarning
