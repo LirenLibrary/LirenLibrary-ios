@@ -151,7 +151,10 @@
         [booksArray addObject:bookDictionary];
     }
     NSError *writeError = nil;
-    return [NSJSONSerialization dataWithJSONObject:booksArray options:NSJSONWritingPrettyPrinted error:&writeError];
+    NSDictionary* requestDictionary = [NSDictionary dictionaryWithObject:booksArray forKey:@"books"];
+    NSData *requestData = [NSJSONSerialization dataWithJSONObject:requestDictionary options:NSJSONWritingPrettyPrinted error:&writeError];
+    NSLog(@"JSON Output: %@", [[NSString alloc] initWithData:requestData encoding:NSUTF8StringEncoding]);
+    return requestData;
 }
 
 -(void)getSendScanedBooksCallback:(NSError *)error withData:(NSData *)data
