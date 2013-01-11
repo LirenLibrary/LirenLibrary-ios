@@ -52,9 +52,15 @@
 
 - (void) initNavigationBar{
     self.navigationItem.hidesBackButton=YES;
-    UIBarButtonItem *finishButton = [[UIBarButtonItem alloc]initWithTitle:@"完成" style:UIBarButtonItemStylePlain target:self action:@selector(finish)];
-    self.navigationItem.rightBarButtonItem=finishButton;
-    [finishButton release];
+    
+    UIButton *sendButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [sendButton setFrame:CGRectMake(0.0f, 0.0f, 48.0f, 30.0f)];
+    [sendButton addTarget:self action:@selector(finish) forControlEvents:UIControlEventTouchUpInside];
+    [sendButton setImage:[UIImage imageNamed:@"submit-buttom_03.png"] forState:UIControlStateNormal];
+    UIBarButtonItem *barButton = [[UIBarButtonItem alloc] initWithCustomView:sendButton];
+    
+    self.navigationItem.rightBarButtonItem=barButton;
+    [barButton release];
 }
 
 -(void)showSendStatusView{
