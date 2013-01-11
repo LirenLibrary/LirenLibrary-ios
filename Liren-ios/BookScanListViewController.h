@@ -16,7 +16,6 @@
 #import <objc/runtime.h>
 #import "MBProgressHUD.h"
 #import "AppConstant.h"
-#import "Donation.h"
 
 @interface BookScanListViewController : GAITrackedViewController <UITableViewDelegate,UITableViewDataSource, DataExchangeDelegate>
 @property (nonatomic,retain) NSMutableArray *bookList;

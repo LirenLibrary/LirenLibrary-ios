@@ -134,13 +134,26 @@
     NSURL *newDonationUrl = [NSURL URLWithString:[NSString stringWithFormat:@"%@", SEND_DONATION_URL]];
     NSLog(@"Started to send book request: %@ ",newDonationUrl);
     
-    NSURLRequest *request=[NSURLRequest requestWithURL:newDonationUrl cachePolicy:NSURLCacheStorageNotAllowed timeoutInterval:7.0f];
+    NSMutableURLRequest *request=[NSMutableURLRequest requestWithURL:newDonationUrl cachePolicy:NSURLCacheStorageNotAllowed timeoutInterval:7.0f];
+    [request setHTTPMethod:@"POST"];
+    [request setHTTPBody:[self requestBody]];
     
     [NSURLConnection sendAsynchronousRequest:request queue:self.queue completionHandler:^(NSURLResponse *res, NSData *data, NSError *error) {
         dispatch_async(dispatch_get_main_queue(), ^{
             [self getSendScanedBooksCallback:error withData:data];
         });
     }];
+}
+
+-(NSData *)requestBody
+{
+    NSMutableArray *booksArray = [[NSMutableArray alloc]initWithCapacity:self.bookList.count];
+    for (Book *book in self.bookList) {
+        NSDictionary *bookDictionary = [NSDictionary dictionaryWithObjectsAndKeys:book.bookSN,@"ISBN",book.bookName,@"title", nil];
+        [booksArray addObject:bookDictionary];
+    }
+    NSError *writeError = nil;
+    return [NSJSONSerialization dataWithJSONObject:booksArray options:NSJSONWritingPrettyPrinted error:&writeError];
 }
 
 -(void)getSendScanedBooksCallback:(NSError *)error withData:(NSData *)data
