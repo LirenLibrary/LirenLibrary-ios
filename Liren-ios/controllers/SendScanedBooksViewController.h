@@ -7,7 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Book.h"
+#import "DataExchangeDelegate.h"
+#import "GAI.h"
+#import "GAITrackedViewController.h"
+#import "AppConstant.h"
 
-@interface SendScanedBooksViewController : UIViewController
+@interface SendScanedBooksViewController : GAITrackedViewController <UITableViewDelegate,UITableViewDataSource, DataExchangeDelegate>
 
+@property (nonatomic,retain) NSMutableArray *bookList;
+@property (nonatomic,retain) IBOutlet UITableView *tableView;
 @end

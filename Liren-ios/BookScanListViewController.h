@@ -24,6 +24,7 @@
 @property(nonatomic, retain) ScanViewController *scanViewController;
 @property(nonatomic, retain) SendScanedBooksViewController *sendScanedBooksViewController;
 @property(nonatomic, retain) UIBarButtonItem *doneBarButton;
+@property(nonatomic, assign) NSObject<DataExchangeDelegate> *dataExchangeDelegate;
 
 - (void) addBook:(Book *) book;
 - (void) getBookDetail:(Book *) book;
