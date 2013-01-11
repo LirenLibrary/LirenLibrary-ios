@@ -29,6 +29,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self initUI];
     // Do any additional setup after loading the view from its nib.
 
     if(self.bookScanViewController == nil){
@@ -50,6 +51,10 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - util method
+-(void)initUI{
+    [self.view setBackgroundColor:[AppConstant getColorViewBackground]];
+}
 
 #pragma mark - UI method
 - (IBAction) donateButtonPressed:(id)sender{

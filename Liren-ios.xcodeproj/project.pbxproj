@@ -14,7 +14,6 @@
 		492054B11699AB7F004BD224 /* thanks_03.png in Resources */ = {isa = PBXBuildFile; fileRef = 492054B01699AB7F004BD224 /* thanks_03.png */; };
 		492054B51699AB91004BD224 /* submit-buttom_03@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 492054B31699AB91004BD224 /* submit-buttom_03@2x.png */; };
 		492054B61699AB91004BD224 /* back-button_03.png in Resources */ = {isa = PBXBuildFile; fileRef = 492054B41699AB91004BD224 /* back-button_03.png */; };
-		492054B81699AD13004BD224 /* BookScanListViewController in Resources */ = {isa = PBXBuildFile; fileRef = 492054B71699AD13004BD224 /* BookScanListViewController */; };
 		492054BA1699AF07004BD224 /* submit-buttom_03.png in Resources */ = {isa = PBXBuildFile; fileRef = 492054B91699AF07004BD224 /* submit-buttom_03.png */; };
 		4921E6B3167F479200728511 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4921E6B2167F479200728511 /* CoreData.framework */; };
 		492FB2B716917A21005CE9D4 /* AppDelegateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 492FB2B616917A21005CE9D4 /* AppDelegateTests.m */; };
@@ -284,7 +283,6 @@
 		492054B01699AB7F004BD224 /* thanks_03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = thanks_03.png; sourceTree = "<group>"; };
 		492054B31699AB91004BD224 /* submit-buttom_03@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "submit-buttom_03@2x.png"; sourceTree = "<group>"; };
 		492054B41699AB91004BD224 /* back-button_03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back-button_03.png"; sourceTree = "<group>"; };
-		492054B71699AD13004BD224 /* BookScanListViewController */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = BookScanListViewController; sourceTree = "<group>"; };
 		492054B91699AF07004BD224 /* submit-buttom_03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "submit-buttom_03.png"; sourceTree = "<group>"; };
 		4921E6B2167F479200728511 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		492FB2B516917A21005CE9D4 /* AppDelegateTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegateTests.h; sourceTree = "<group>"; };
@@ -1006,7 +1004,6 @@
 			children = (
 				497C19D0167C50AE00862C7A /* BookScanListViewController.h */,
 				497C19D1167C50AE00862C7A /* BookScanListViewController.m */,
-				492054B71699AD13004BD224 /* BookScanListViewController */,
 				497C19D2167C50AE00862C7A /* BookScanListViewController.xib */,
 				49369880168324B800C743CB /* SendScanedBooksViewController.h */,
 				49369881168324B800C743CB /* SendScanedBooksViewController.m */,
@@ -1749,7 +1746,6 @@
 				492054B11699AB7F004BD224 /* thanks_03.png in Resources */,
 				492054B51699AB91004BD224 /* submit-buttom_03@2x.png in Resources */,
 				492054B61699AB91004BD224 /* back-button_03.png in Resources */,
-				492054B81699AD13004BD224 /* BookScanListViewController in Resources */,
 				492054BA1699AF07004BD224 /* submit-buttom_03.png in Resources */,
 				49713C63169C350500581816 /* DonationDetailViewController.xib in Resources */,
 			);
