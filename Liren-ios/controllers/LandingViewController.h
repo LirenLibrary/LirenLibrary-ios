@@ -19,4 +19,6 @@
 
 - (IBAction) donateButtonPressed:(id)sender;
 
+- (IBAction) historyButtonPressed:(id)sender;
+
 @end
