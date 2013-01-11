@@ -26,11 +26,15 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self initUI];
     // Do any additional setup after loading the view from its nib.
     
     [self initNavigationBar];
 }
 
+-(void)initUI{
+    [self.view setBackgroundColor:[AppConstant getColorViewBackground]];
+}
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];

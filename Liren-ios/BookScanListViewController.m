@@ -9,6 +9,7 @@
 #import "BookScanListViewController.h"
 
 #define DOUBAN_ISBN_URL @"http://api.douban.com/v2/book/isbn/"
+#define SEND_DONATION_URL @"http://10.17.7.2:9091/donation/new"
 #define TAG_VIEW_START_HINT 1001
 
 @interface BookScanListViewController ()
@@ -88,12 +89,14 @@
         self.doneBarButton = barButton;
         [barButton release];
     }
-    
+    self.navigationItem.rightBarButtonItem = self.doneBarButton;
+    /*
     if(self.bookList.count>0){
         self.navigationItem.rightBarButtonItem = self.doneBarButton;
     }else{
         self.navigationItem.rightBarButtonItem = nil;
     }
+     */
 }
 
 -(void)showStartHintView{
@@ -120,8 +123,56 @@
     [self presentModalViewController:self.scanViewController animated:YES];
 }
 
-- (void) sendScanedBooks{
-    if (self.dataExchangeDelegate != nil) {
+- (void) sendScanedBooks
+{
+    [self sendScanedBooksRequest];
+}
+
+-(void)sendScanedBooksRequest
+{
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    NSURL *newDonationUrl = [NSURL URLWithString:[NSString stringWithFormat:@"%@", SEND_DONATION_URL]];
+    NSLog(@"Started to send book request: %@ ",newDonationUrl);
+    
+    NSURLRequest *request=[NSURLRequest requestWithURL:newDonationUrl cachePolicy:NSURLCacheStorageNotAllowed timeoutInterval:7.0f];
+    
+    [NSURLConnection sendAsynchronousRequest:request queue:self.queue completionHandler:^(NSURLResponse *res, NSData *data, NSError *error) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self getSendScanedBooksCallback:error withData:data];
+        });
+    }];
+}
+
+-(void)getSendScanedBooksCallback:(NSError *)error withData:(NSData *)data
+{
+    if(data==nil || error!=nil){
+        //got network error
+        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"错误" message:@"连接网络失败了" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+        [alert show];
+        [alert release];
+    }else{
+        NSLog(@"Get data from server");
+        NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
+        if([json valueForKey:@"msg"]==nil){
+            NSString *donationID = [json valueForKey:@"donation_id"];
+            NSLog(@"New Donation:%@", donationID);
+            if(donationID != nil){
+                [self sendScanedBooksSuccess];
+            }
+        }else{
+            UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"错误" message:@"发送不成功" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+            [alert show];
+            [alert release];
+            
+        }
+        [self.tableView reloadData];
+    } 
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
+}
+
+-(void) sendScanedBooksSuccess
+{
+    if (self.dataExchangeDelegate) {
         [self.dataExchangeDelegate putExchangedData:self.bookList];
         [self.navigationController pushViewController:self.sendScanedBooksViewController animated:YES];
     }
