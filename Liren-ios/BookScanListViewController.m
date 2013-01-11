@@ -89,14 +89,12 @@
         self.doneBarButton = barButton;
         [barButton release];
     }
-    self.navigationItem.rightBarButtonItem = self.doneBarButton;
-    /*
+    
     if(self.bookList.count>0){
         self.navigationItem.rightBarButtonItem = self.doneBarButton;
     }else{
         self.navigationItem.rightBarButtonItem = nil;
     }
-     */
 }
 
 -(void)showStartHintView{
