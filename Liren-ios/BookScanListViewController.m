@@ -9,7 +9,7 @@
 #import "BookScanListViewController.h"
 
 #define DOUBAN_ISBN_URL @"http://api.douban.com/v2/book/isbn/"
-#define SEND_DONATION_URL @"http://10.17.7.2:9091/donation/new"
+#define SEND_DONATION_URL @"http://10.17.7.2:9080/lirenlibrary/api/donations/new"
 #define TAG_VIEW_START_HINT 1001
 
 @interface BookScanListViewController ()
@@ -132,9 +132,14 @@
     NSURL *newDonationUrl = [NSURL URLWithString:[NSString stringWithFormat:@"%@", SEND_DONATION_URL]];
     NSLog(@"Started to send book request: %@ ",newDonationUrl);
     
+    NSString *deviceID=[MacAddressUtil macaddress];
     NSMutableURLRequest *request=[NSMutableURLRequest requestWithURL:newDonationUrl cachePolicy:NSURLCacheStorageNotAllowed timeoutInterval:7.0f];
     [request setHTTPMethod:@"POST"];
     [request setHTTPBody:[self requestBody]];
+    [request addValue:deviceID forHTTPHeaderField:@"device_id"];
+    [request addValue:@"application/vnd.liren-donation-submit-response+json; charset=UTF-8" forHTTPHeaderField:@"Accept"];
+    [request addValue:@"application/vnd.liren-donation-submit-request+json; charset=UTF-8" forHTTPHeaderField:@"Content-Type"];
+    [request addValue:@"v1" forHTTPHeaderField:@"Version"];
     
     [NSURLConnection sendAsynchronousRequest:request queue:self.queue completionHandler:^(NSURLResponse *res, NSData *data, NSError *error) {
         dispatch_async(dispatch_get_main_queue(), ^{
