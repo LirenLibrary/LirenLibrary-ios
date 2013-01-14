@@ -87,7 +87,6 @@
     }
     NSUInteger row = [indexPath row];
     
-    cell.contentView.backgroundColor=[AppConstant getColorTableCellBackground];
     cell.textLabel.text = [[self.bookList objectAtIndex:row] bookName];
     cell.textLabel.textColor=[AppConstant getColorTableCellTitleText];
     cell.accessoryType=UITableViewCellAccessoryNone;
@@ -98,10 +97,6 @@
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath{
     return NO;
-}
-
-- (void) tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
-    cell.backgroundColor = cell.contentView.backgroundColor;
 }
 
 #pragma mark - DataExchange delete method
