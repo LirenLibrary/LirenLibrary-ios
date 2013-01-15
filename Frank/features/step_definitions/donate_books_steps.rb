@@ -7,7 +7,7 @@ When /^I tap the liren App icon on my iPhone$/ do
 end
 
 Then /^I should be see the Home page with 捐赠 and 记录 buttons$/ do
-	check_element_exists "view view:'UIButton' marked:'button1_03.png'"
+	check_element_exists "view view:'UIButton' marked:'button1 03'"
 	#check_element_exists "view view:'UIRoundedRectButton' marked:'记录'"
 end
 
