@@ -9,7 +9,6 @@
 #import "BookScanListViewController.h"
 
 #define DOUBAN_ISBN_URL @"http://api.douban.com/v2/book/isbn/"
-#define SEND_DONATION_URL @"http://10.17.7.2:9080/lirenlibrary/api/donations/new"
 #define TAG_VIEW_START_HINT 1001
 
 @interface BookScanListViewController ()
@@ -129,7 +128,7 @@
 -(void)sendScanedBooksRequest
 {
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    NSURL *newDonationUrl = [NSURL URLWithString:[NSString stringWithFormat:@"%@", SEND_DONATION_URL]];
+    NSURL *newDonationUrl = [NSURL URLWithString:[NSString stringWithFormat:@"%@/donations/new", SERVER_ADDRESS]];
     NSLog(@"Started to send book request: %@ ",newDonationUrl);
     
     NSString *deviceID=[MacAddressUtil macaddress];
