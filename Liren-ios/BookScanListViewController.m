@@ -194,6 +194,8 @@
     if (self.dataExchangeDelegate) {
         [self.dataExchangeDelegate putExchangedData:self.bookList];
         [self.navigationController pushViewController:self.sendScanedBooksViewController animated:YES];
+        [self.bookList removeAllObjects];
+        self.navigationItem.rightBarButtonItem = nil;
     }
 }
 
