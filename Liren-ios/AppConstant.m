@@ -10,7 +10,7 @@
 
 @implementation AppConstant
 
-const NSString *SERVER_ADDRESS=@"http://10.17.7.2:9091";
+const NSString *SERVER_ADDRESS=@"http://42.96.146.72:9080/lirenlibrary/api";
 
 const NSString *DONATION_STATUS_NEW=@"NEW";
 const NSString *DONATION_STATUS_APPROVED=@"APPROVED";

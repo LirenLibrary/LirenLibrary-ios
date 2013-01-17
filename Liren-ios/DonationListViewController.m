@@ -8,7 +8,7 @@
 
 #import "DonationListViewController.h"
 
-#define SERVICE_SUFFIX_LOAD_DONATION_LIST  @"/donation-by-device"
+#define SERVICE_SUFFIX_LOAD_DONATION_LIST  @"/donations/device"
 #define tag_view_cell_root          1000
 #define tag_view_cell_book_count    tag_view_cell_root+1
 #define tag_view_cell_status        tag_view_cell_root+2
@@ -88,6 +88,10 @@
     NSMutableURLRequest *request=[NSMutableURLRequest requestWithURL:url cachePolicy:NSURLCacheStorageNotAllowed timeoutInterval:10.0f];
     [request addValue:deviceID forHTTPHeaderField:@"device_id"];
     
+    [request addValue:@"application/vnd.liren-donations+json; charset=UTF-8" forHTTPHeaderField:@"Accept"];
+    [request addValue:@"application/vnd.liren-donations+json; charset=UTF-8" forHTTPHeaderField:@"Content-Type"];
+    [request addValue:@"v1" forHTTPHeaderField:@"Version"];
+    
     [NSURLConnection sendAsynchronousRequest:request queue:self.queue completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
         dispatch_async(dispatch_get_main_queue(), ^{
             [MBProgressHUD hideHUDForView:self.view animated:YES];
@@ -119,8 +123,8 @@
         donation.donationID=[item objectForKey:@"donation_id"];
         donation.donationStatus=[item objectForKey:@"donation_status"];
         NSNumber *donationTimestamp=[item objectForKey:@"donation_time"];
-        donation.donationTime = [NSDate dateWithTimeIntervalSince1970:donationTimestamp.longValue];
-        donation.bookCount=[item objectForKey:@"donation_book_count"];
+        donation.donationTime = [NSDate dateWithTimeIntervalSince1970:donationTimestamp.doubleValue];
+        donation.bookCount=[item objectForKey:@"donation_item_count"];
         [self.donationList addObject:donation];
         [donation release];
     }
