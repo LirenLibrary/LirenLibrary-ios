@@ -123,8 +123,7 @@
         donation.donationID=[item objectForKey:@"donation_id"];
         donation.donationStatus=[item objectForKey:@"donation_status"];
         NSNumber *donationTimestamp=[item objectForKey:@"donation_time"];
-        double timestamp = donationTimestamp.doubleValue / 1000.0f;
-        donation.donationTime = [NSDate dateWithTimeIntervalSince1970:timestamp];
+        donation.donationTime = [NSDate dateWithTimeIntervalSince1970:donationTimestamp.doubleValue];
         donation.bookCount=[item objectForKey:@"donation_item_count"];
         [self.donationList addObject:donation];
         [donation release];
