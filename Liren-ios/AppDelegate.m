@@ -12,7 +12,7 @@
 #define EXT_APPID_GOOGLE_ANALYSIS @"UA-37024844-1"
 #define KEY_USER_STATE  @"LirenLib-User-State"
 #define KEY_NOTIFICATION_STATUS @"notification_status"
-#define SERVICE_SUFFIX_SUBMIT_DEVICE @"/device/new"
+#define SERVICE_SUFFIX_SUBMIT_DEVICE @"/devices/register"
 
 @implementation AppDelegate
 
@@ -84,6 +84,10 @@
     [request addValue:deviceId forHTTPHeaderField:@"device_id"];
     [request setHTTPBody:postData];
     
+    [request addValue:@"application/vnd.liren-device-register-request+json; charset=UTF-8" forHTTPHeaderField:@"Accept"];
+    [request addValue:@"application/vnd.liren-device-register-request+json; charset=UTF-8" forHTTPHeaderField:@"Content-Type"];
+    [request addValue:@"v1" forHTTPHeaderField:@"Version"];
+    
     NSHTTPURLResponse *response=nil;
     NSData *data=[NSURLConnection sendSynchronousRequest:request returningResponse:&response error:nil];
     if(response.statusCode>=200 && response.statusCode<300) return data;
@@ -104,7 +108,7 @@
 
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
     NSString *token = [self formatDeviceToken:deviceToken];
-    NSDictionary *dataDictionary = [[NSDictionary alloc]initWithObjectsAndKeys:@"device_token",token, nil];
+    NSDictionary *dataDictionary = [[NSDictionary alloc]initWithObjectsAndKeys:token, @"device_token", nil];
     NSError *error = nil;
     NSData *postData = [NSJSONSerialization dataWithJSONObject:dataDictionary options:NSJSONWritingPrettyPrinted error:&error];
     [dataDictionary release];
