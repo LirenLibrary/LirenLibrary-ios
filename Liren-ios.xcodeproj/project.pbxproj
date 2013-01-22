@@ -65,6 +65,8 @@
 		49A824AA16633E07004D358E /* Liren_iosTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 49A824A916633E07004D358E /* Liren_iosTests.m */; };
 		49A91207167C4FF6009680D8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 49A91206167C4FF6009680D8 /* AppDelegate.m */; };
 		49CD07381680760300FEFBA0 /* libOCMock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 49CD07301680760300FEFBA0 /* libOCMock.a */; };
+		49D692C416AE26D5005B6FCE /* done-buttom.png in Resources */ = {isa = PBXBuildFile; fileRef = 49D692C216AE26D5005B6FCE /* done-buttom.png */; };
+		49D692C516AE26D5005B6FCE /* done-buttom@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 49D692C316AE26D5005B6FCE /* done-buttom@2x.png */; };
 		49E45644168B0FD50063BE58 /* DonationListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49E45642168B0FD50063BE58 /* DonationListViewController.m */; };
 		49E45645168B0FD50063BE58 /* DonationListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49E45643168B0FD50063BE58 /* DonationListViewController.xib */; };
 		49E45649168B10590063BE58 /* Donation.m in Sources */ = {isa = PBXBuildFile; fileRef = 49E45648168B10590063BE58 /* Donation.m */; };
@@ -352,6 +354,8 @@
 		49CD07351680760300FEFBA0 /* OCMock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMock.h; sourceTree = "<group>"; };
 		49CD07361680760300FEFBA0 /* OCMockObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMockObject.h; sourceTree = "<group>"; };
 		49CD07371680760300FEFBA0 /* OCMockRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMockRecorder.h; sourceTree = "<group>"; };
+		49D692C216AE26D5005B6FCE /* done-buttom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "done-buttom.png"; sourceTree = "<group>"; };
+		49D692C316AE26D5005B6FCE /* done-buttom@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "done-buttom@2x.png"; sourceTree = "<group>"; };
 		49E45641168B0FD50063BE58 /* DonationListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DonationListViewController.h; sourceTree = "<group>"; };
 		49E45642168B0FD50063BE58 /* DonationListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DonationListViewController.m; sourceTree = "<group>"; };
 		49E45643168B0FD50063BE58 /* DonationListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DonationListViewController.xib; sourceTree = "<group>"; };
@@ -858,6 +862,8 @@
 		49A10C9C1691527E00EF1A54 /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				49D692C216AE26D5005B6FCE /* done-buttom.png */,
+				49D692C316AE26D5005B6FCE /* done-buttom@2x.png */,
 				492054B91699AF07004BD224 /* submit-buttom_03.png */,
 				492054B31699AB91004BD224 /* submit-buttom_03@2x.png */,
 				492054B41699AB91004BD224 /* back-button_03.png */,
@@ -1748,6 +1754,8 @@
 				492054B61699AB91004BD224 /* back-button_03.png in Resources */,
 				492054BA1699AF07004BD224 /* submit-buttom_03.png in Resources */,
 				49713C63169C350500581816 /* DonationDetailViewController.xib in Resources */,
+				49D692C416AE26D5005B6FCE /* done-buttom.png in Resources */,
+				49D692C516AE26D5005B6FCE /* done-buttom@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
