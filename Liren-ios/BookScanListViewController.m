@@ -156,8 +156,8 @@
     }
     NSError *writeError = nil;
     NSDictionary* requestDictionary = [NSDictionary dictionaryWithObject:booksArray forKey:@"books"];
+    [booksArray release];
     NSData *requestData = [NSJSONSerialization dataWithJSONObject:requestDictionary options:NSJSONWritingPrettyPrinted error:&writeError];
-    NSLog(@"JSON Output: %@", [[NSString alloc] initWithData:requestData encoding:NSUTF8StringEncoding]);
     return requestData;
 }
 

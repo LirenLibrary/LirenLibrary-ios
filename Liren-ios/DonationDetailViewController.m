@@ -37,8 +37,9 @@
 
 #pragma mark - network callback method
 -(void) queryDonationRequestCallback:(NSData *)data{
-    self.donation = [[Donation alloc]initWithJsonString:data];
-    
+    Donation *donation = [[Donation alloc]initWithJsonString:data];
+    self.donation = donation;
+    [donation release];
 }
 
 -(void) dealloc{
