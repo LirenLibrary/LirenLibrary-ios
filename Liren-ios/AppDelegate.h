@@ -11,6 +11,7 @@
 #import "LandingViewController.h"
 #import "GAI.h"
 #import "MacAddressUtil.h"
+#import "DonationListViewController.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
@@ -18,8 +19,10 @@
 @property(nonatomic, retain) LandingViewController *landingViewController;
 @property(nonatomic, retain) NSMutableDictionary *globalUserData;
 @property(nonatomic, retain) NSOperationQueue *queue;
+@property(nonatomic, retain) DonationListViewController *donationListViewController;
 
 -(void)saveGlobalUserData;
 -(NSData *)postDeviceSubmit:(NSURL *)submitDeviceUrl withHeaderField:(NSString *)deviceId withPostData:(NSData *)postData;
+-(void)handleRemotePush:(NSDictionary *)launchOptions;
 
 @end

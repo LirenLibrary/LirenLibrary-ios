@@ -22,6 +22,7 @@
     [_window release];
     [_landingViewController release];
     [_globalUserData release];
+    [_donationListViewController release];
     [super dealloc];
 }
 
@@ -53,6 +54,21 @@
     [GAI sharedInstance].defaultTracker=[[GAI sharedInstance] trackerWithTrackingId:EXT_APPID_GOOGLE_ANALYSIS];
 }
 
+-(void)handleRemotePush:(NSDictionary *)launchOptions{
+    [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
+    
+    NSDictionary *remoteNotif = [launchOptions objectForKey: UIApplicationLaunchOptionsRemoteNotificationKey];
+    if (remoteNotif) {
+        if(self.donationListViewController == nil){
+            DonationListViewController *dlvc=[[DonationListViewController alloc] initWithNibName:@"DonationListViewController" bundle:nil];
+            self.donationListViewController = dlvc;
+            [dlvc release];
+        }
+        UINavigationController *nav = (UINavigationController *)self.window.rootViewController;
+        [nav pushViewController:self.donationListViewController animated:YES];
+    }
+}
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
@@ -65,6 +81,8 @@
     if (nil == [self.globalUserData objectForKey:KEY_NOTIFICATION_STATUS]) {
         [[UIApplication sharedApplication] registerForRemoteNotificationTypes:UIRemoteNotificationTypeSound|UIRemoteNotificationTypeAlert];
     }
+    
+    [self handleRemotePush:launchOptions];
     
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
