@@ -20,9 +20,9 @@
 -(id)initWithDictionary:(NSDictionary*)book{
     self = [super init];
     if (self != nil) {
-        self.bookSN = [book objectForKey:@"book_isbn"];
-        self.bookName = [book objectForKey:@"book_name"];
-        self.bookStatus = [book objectForKey:@"book_status"];
+        self.bookSN = [book objectForKey:@"ISBN"];
+        self.bookName = [book objectForKey:@"title"];
+        self.bookStatus = [book objectForKey:@"status"];
     }
     return self;
 }

@@ -19,6 +19,7 @@
     [_postCode release];
     [_postReceiver release];
     [_postReceiverMobile release];
+    [_postSpecification release];
     [_books release];
     [super dealloc];
 }
@@ -45,6 +46,7 @@
         self.postReceiver = [jsonData objectForKey:@"post_receiver"];
         self.postCode = [jsonData objectForKey:@"post_code"];
         self.postReceiverMobile = [jsonData objectForKey:@"post_receiver_mobile"];
+        self.postSpecification = [jsonData objectForKey:@"post_specification"];
         
         NSArray *bookArray = [jsonData objectForKey:@"books"];
         for (NSDictionary *book in bookArray) {

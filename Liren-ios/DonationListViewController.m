@@ -33,7 +33,6 @@
 {
     [super viewDidLoad];
     self.trackedViewName=[NSString stringWithFormat:@"%s", class_getName(self.class)];
-    
     [self initUI];
     [self initDonationList];
     [self initOperationQueue];
@@ -43,6 +42,10 @@
 -(void)viewWillAppear:(BOOL)animated{
     [self loadDonationListByDevice];
     [super viewWillAppear:animated];
+}
+-(void)viewDidDisappear:(BOOL)animated{
+    [super viewDidDisappear:animated];
+    [MBProgressHUD hideAllHUDsForView:self.view animated:NO];
 }
 
 #pragma mark - util method
@@ -230,6 +233,17 @@
 
 - (void) tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
     cell.backgroundColor = cell.contentView.backgroundColor;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    Donation *selectedDonation = [self.donationList objectAtIndex:indexPath.row];
+    if(self.donationDetailViewController == nil){
+        DonationDetailViewController *ddvc = [[DonationDetailViewController alloc] initWithNibName:@"DonationDetailViewController" bundle:nil];
+        self.donationDetailViewController = ddvc;
+        [ddvc release];
+    }
+    [self.donationDetailViewController setDonation:selectedDonation];
+    [self.navigationController pushViewController:self.donationDetailViewController animated:YES];
 }
 
 -(void)dealloc{

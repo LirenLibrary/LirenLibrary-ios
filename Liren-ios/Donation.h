@@ -19,6 +19,7 @@
 @property(nonatomic, retain) NSString *postReceiver;
 @property(nonatomic, retain) NSString *postCode;
 @property(nonatomic, retain) NSString *postReceiverMobile;
+@property(nonatomic, retain) NSString *postSpecification;
 @property(nonatomic, retain) NSMutableArray *books;
 
 -(id) initWithJsonString:(NSData *)json;

@@ -16,6 +16,7 @@
 #import "GAI.h"
 #import "GAITrackedViewController.h"
 #import <objc/runtime.h>
+#import "DonationDetailViewController.h"
 
 @interface DonationListViewController : GAITrackedViewController <EGORefreshTableHeaderDelegate, UITableViewDataSource, UITableViewDelegate>{
     BOOL LOADING_DONATION_LIST;
@@ -25,6 +26,7 @@
 @property(nonatomic, retain) EGORefreshTableHeaderView *refreshHeaderView;
 @property(nonatomic, retain) IBOutlet UITableView *tableView;
 @property(nonatomic, retain) NSOperationQueue *queue;
+@property(nonatomic, retain) DonationDetailViewController *donationDetailViewController;
 
 -(void)initUI;
 -(void)initDonationList;
