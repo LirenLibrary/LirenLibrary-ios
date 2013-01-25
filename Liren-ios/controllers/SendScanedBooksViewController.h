@@ -12,6 +12,7 @@
 #import "GAI.h"
 #import "GAITrackedViewController.h"
 #import "AppConstant.h"
+#import <objc/runtime.h>
 
 @interface SendScanedBooksViewController : GAITrackedViewController <UITableViewDelegate,UITableViewDataSource, DataExchangeDelegate>
 

@@ -29,6 +29,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.trackedViewName=[NSString stringWithFormat:@"%s", class_getName(self.class)];
     [self initUI];
     // Do any additional setup after loading the view from its nib.
 
