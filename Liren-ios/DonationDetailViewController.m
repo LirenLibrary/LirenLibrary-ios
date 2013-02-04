@@ -43,6 +43,7 @@
 
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
+    [self.postSpecificationView setUserInteractionEnabled:NO];
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
         [self queryDonationRequest];
     });
@@ -89,6 +90,7 @@
         [self.donationStatusImage setFrame:CGRectMake(9, self.donationStatusImage.frame.origin.y, 302, 219)];
         
         self.postSpecificationView.text = self.donation.postSpecification;
+        self.postSpecificationView.userInteractionEnabled=YES;
         self.donationIDLabel.text = self.donation.donationID;
     }
     if([DONATION_STATUS_REJECTED isEqualToString:self.donation.donationStatus]){

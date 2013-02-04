@@ -36,8 +36,8 @@
 
     self.capture.rotation = 90.0f;
     self.capture.camera = self.capture.back;
-    self.capture.layer.frame = CGRectMake(20.0f, 60.0f, 280.0f, 220.0f);
-    [self.view.layer addSublayer:self.capture.layer];
+    self.capture.layer.frame = self.view.frame;
+    [self.view.layer insertSublayer:self.capture.layer atIndex:0];
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -64,7 +64,6 @@
 }
 
 - (void)captureResult:(ZXCapture *)capture result:(ZXResult *)result {
-    NSLog(@"%@", result.text);
     self.lastBarCode = result.text;
     if (self.dataExchangeDelegate != nil) {
         [self.dataExchangeDelegate putExchangedData:self.lastBarCode];
