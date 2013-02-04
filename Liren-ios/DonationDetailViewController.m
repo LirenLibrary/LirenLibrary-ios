@@ -61,6 +61,7 @@
 
 #pragma mark - util method
 - (void) initUI{
+    [self.navigationItem.backBarButtonItem setTitle:@"返回"];
     [self.view setBackgroundColor:[AppConstant getColorViewBackground]];
 }
 -(void) queryDonationRequest{
@@ -194,6 +195,11 @@
 
 - (void) tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
     cell.backgroundColor = cell.contentView.backgroundColor;
+}
+
+#pragma mark - UITextView delegate
+- (BOOL)textViewShouldBeginEditing:(UITextView *)textView{
+    return NO;
 }
 
 -(void) dealloc{

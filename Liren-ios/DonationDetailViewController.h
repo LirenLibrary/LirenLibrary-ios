@@ -15,7 +15,7 @@
 #import "GAITrackedViewController.h"
 #import <objc/runtime.h>
 
-@interface DonationDetailViewController : GAITrackedViewController <UITableViewDataSource>
+@interface DonationDetailViewController : GAITrackedViewController <UITableViewDataSource, UITextViewDelegate>
 
 @property (nonatomic, retain) Donation *donation;
 @property (nonatomic, retain) IBOutlet UIImageView *donationStatusImage;

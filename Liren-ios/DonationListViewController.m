@@ -32,6 +32,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.title=@"返回";
+    UIView *tv=[[UIView alloc] initWithFrame:CGRectZero];
+    self.navigationItem.titleView = tv;
+    [tv release];
     self.trackedViewName=[NSString stringWithFormat:@"%s", class_getName(self.class)];
     [self initUI];
     [self initDonationList];

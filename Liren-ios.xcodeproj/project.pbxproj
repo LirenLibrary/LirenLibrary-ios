@@ -54,7 +54,6 @@
 		49A8247F16633E07004D358E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49A8247E16633E07004D358E /* UIKit.framework */; };
 		49A8248116633E07004D358E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49A8248016633E07004D358E /* Foundation.framework */; };
 		49A8248316633E07004D358E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49A8248216633E07004D358E /* CoreGraphics.framework */; };
-		49A8248916633E07004D358E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 49A8248716633E07004D358E /* InfoPlist.strings */; };
 		49A8248B16633E07004D358E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 49A8248A16633E07004D358E /* main.m */; };
 		49A8249116633E07004D358E /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 49A8249016633E07004D358E /* Default.png */; };
 		49A8249316633E07004D358E /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 49A8249216633E07004D358E /* Default@2x.png */; };
@@ -62,7 +61,6 @@
 		49A8249D16633E07004D358E /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49A8249C16633E07004D358E /* SenTestingKit.framework */; };
 		49A8249E16633E07004D358E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49A8247E16633E07004D358E /* UIKit.framework */; };
 		49A8249F16633E07004D358E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49A8248016633E07004D358E /* Foundation.framework */; };
-		49A824A716633E07004D358E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 49A824A516633E07004D358E /* InfoPlist.strings */; };
 		49A824AA16633E07004D358E /* Liren_iosTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 49A824A916633E07004D358E /* Liren_iosTests.m */; };
 		49A91207167C4FF6009680D8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 49A91206167C4FF6009680D8 /* AppDelegate.m */; };
 		49CD07381680760300FEFBA0 /* libOCMock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 49CD07301680760300FEFBA0 /* libOCMock.a */; };
@@ -335,7 +333,6 @@
 		49A8248016633E07004D358E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		49A8248216633E07004D358E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		49A8248616633E07004D358E /* Liren-ios-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Liren-ios-Info.plist"; sourceTree = "<group>"; };
-		49A8248816633E07004D358E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		49A8248A16633E07004D358E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		49A8248C16633E07004D358E /* Liren-ios-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Liren-ios-Prefix.pch"; sourceTree = "<group>"; };
 		49A8249016633E07004D358E /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
@@ -344,7 +341,6 @@
 		49A8249B16633E07004D358E /* Liren-iosTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Liren-iosTests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		49A8249C16633E07004D358E /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		49A824A416633E07004D358E /* Liren-iosTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Liren-iosTests-Info.plist"; sourceTree = "<group>"; };
-		49A824A616633E07004D358E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		49A824A816633E07004D358E /* Liren_iosTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Liren_iosTests.h; sourceTree = "<group>"; };
 		49A824A916633E07004D358E /* Liren_iosTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Liren_iosTests.m; sourceTree = "<group>"; };
 		49A91205167C4FF6009680D8 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -954,7 +950,6 @@
 			isa = PBXGroup;
 			children = (
 				49A8248616633E07004D358E /* Liren-ios-Info.plist */,
-				49A8248716633E07004D358E /* InfoPlist.strings */,
 				49A8248A16633E07004D358E /* main.m */,
 				49A8248C16633E07004D358E /* Liren-ios-Prefix.pch */,
 				49A8249016633E07004D358E /* Default.png */,
@@ -981,7 +976,6 @@
 			isa = PBXGroup;
 			children = (
 				49A824A416633E07004D358E /* Liren-iosTests-Info.plist */,
-				49A824A516633E07004D358E /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -1728,7 +1722,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				49A8248916633E07004D358E /* InfoPlist.strings in Resources */,
 				49A8249116633E07004D358E /* Default.png in Resources */,
 				49A8249316633E07004D358E /* Default@2x.png in Resources */,
 				49A8249516633E07004D358E /* Default-568h@2x.png in Resources */,
@@ -1767,7 +1760,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				49A824A716633E07004D358E /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2013,25 +2005,6 @@
 			targetProxy = 49A824A016633E07004D358E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		49A8248716633E07004D358E /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				49A8248816633E07004D358E /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		49A824A516633E07004D358E /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				49A824A616633E07004D358E /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		49A824AB16633E07004D358E /* Debug */ = {
