@@ -10,12 +10,12 @@
 
 @implementation AppConstant
 
-const NSString *SERVER_ADDRESS=@"http://42.96.146.72:9080/lirenlibrary/api";
+const NSString *SERVER_ADDRESS=@"http://42.121.57.157:8080/lirenlibrary/api";
 
 const NSString *DONATION_STATUS_NEW=@"NEW";
 const NSString *DONATION_STATUS_APPROVED=@"APPROVED";
 const NSString *DONATION_STATUS_REJECTED=@"REJECTED";
-const NSString *DONATION_STATUS_RECEIVED=@"BOOK_RECEIVED";
+const NSString *DONATION_STATUS_RECEIVED=@"NOTIFIED";
 
 #pragma mark - color constant
 +(UIColor *)getColorViewBackground{

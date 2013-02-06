@@ -124,7 +124,6 @@
             [hud hide:YES afterDelay:1];
         }else{
             NSString *s = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-            NSLog(@"%@", s);
             [s release];
             Donation *donation = [[Donation alloc]initWithJsonString:data];
             self.donation = donation;
