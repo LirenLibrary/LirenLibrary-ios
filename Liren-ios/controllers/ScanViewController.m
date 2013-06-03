@@ -6,6 +6,8 @@
 //  Copyright (c) 2012 com.thoughtworks.liren. All rights reserved.
 //
 
+#define TORCH_LEVEL 0.5
+
 #import "ScanViewController.h"
 
 @interface ScanViewController () <ZXCaptureDelegate>
@@ -53,8 +55,16 @@
 }
 
 #pragma mark - UIAction method
+
 - (IBAction) cancelButtonPressed:(id)sender{
     [self dismissModalViewControllerAnimated:YES];
+}
+
+- (IBAction)toggleTorch:(id)sender {
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
+        if (![self.capture hasTorch]) return;
+        self.capture.torch = !self.capture.torch;
+    });
 }
 
 - (void)didReceiveMemoryWarning
