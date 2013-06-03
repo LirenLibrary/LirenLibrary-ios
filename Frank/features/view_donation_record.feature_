@@ -44,3 +44,8 @@ Scenario: View the “已拒绝” donation record
   Given I already donated 2 books: "民主的细节" and "钢铁是怎样炼成的"
   When I tap the donation record 
   Then I can see the books displayed in red
+
+Scenario: View the donation details
+  Given I have seen all my donations
+  When I tap the first record
+  Then I can see the donation details
