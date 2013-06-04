@@ -78,12 +78,12 @@
 
 -(void)turnOnTorch{
     [self changeTorchMode:AVCaptureTorchModeOn];
-    [self.torchToggleButton setTitle:@"On" forState:UIControlStateNormal];
+    [self.torchToggleButton setImage:[UIImage imageNamed:@"torch_mode_on.png"] forState:UIControlStateNormal];
 }
 
 -(void)turnOffTorch{
     [self changeTorchMode:AVCaptureTorchModeOff];
-    [self.torchToggleButton setTitle:@"Off" forState:UIControlStateNormal];
+    [self.torchToggleButton setImage:[UIImage imageNamed:@"torch_mode_off.png"] forState:UIControlStateNormal];
 }
 
 -(void)changeTorchMode:(AVCaptureTorchMode) mode{
