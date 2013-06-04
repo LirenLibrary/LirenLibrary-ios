@@ -13,7 +13,7 @@
 
 @interface ScanViewController () <ZXCaptureDelegate>
 
-@property (retain, nonatomic) IBOutlet UIButton *button;
+@property (retain, nonatomic) IBOutlet UIButton *torchToggleButton;
 @end
 
 @implementation ScanViewController
@@ -63,20 +63,36 @@
 }
 
 - (IBAction)toggleTorch:(id)sender {
+    if([self isTorchOn]){
+        [self turnOffTorch];
+    }else{
+        [self turnOnTorch];
+    }
+}
+
+-(BOOL)isTorchOn{
+    AVCaptureDevice *device = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
+    if ([device hasTorch] == NO) return NO;
+    return device.torchMode == AVCaptureTorchModeOn;
+}
+
+-(void)turnOnTorch{
+    [self changeTorchMode:AVCaptureTorchModeOn];
+    [self.torchToggleButton setTitle:@"On" forState:UIControlStateNormal];
+}
+
+-(void)turnOffTorch{
+    [self changeTorchMode:AVCaptureTorchModeOff];
+    [self.torchToggleButton setTitle:@"Off" forState:UIControlStateNormal];
+}
+
+-(void)changeTorchMode:(AVCaptureTorchMode) mode{
     AVCaptureDevice *device = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
     
     if ([device hasTorch] == NO) return;
-    
     [device lockForConfiguration:nil];
-        
-    if (device.torchMode == AVCaptureTorchModeOff) {
-        [device setTorchModeOnWithLevel:TORCH_LEVEL error:nil];
-        [self.button setTitle:@"On" forState:UIControlStateNormal];
-    }
-    else if (device.torchMode == AVCaptureTorchModeOn) {
-        [device setTorchMode:AVCaptureTorchModeOff];
-        [self.button setTitle:@"Off" forState:UIControlStateNormal];
-    }
+    
+    [device setTorchMode:mode];
     
     [device unlockForConfiguration];
 }
@@ -98,12 +114,12 @@
 -(void)dealloc{
     [_capture release];
     [_lastBarCode release];
-    [_button release];
+    [_torchToggleButton release];
     [super dealloc];
 }
 
 - (void)viewDidUnload {
-    [self setButton:nil];
+    [self setTorchToggleButton:nil];
     [super viewDidUnload];
 }
 @end
