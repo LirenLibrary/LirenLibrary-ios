@@ -9,9 +9,11 @@
 #define TORCH_LEVEL 0.5
 
 #import "ScanViewController.h"
+#import <AVFoundation/AVFoundation.h>
 
 @interface ScanViewController () <ZXCaptureDelegate>
 
+@property (retain, nonatomic) IBOutlet UIButton *button;
 @end
 
 @implementation ScanViewController
@@ -61,10 +63,22 @@
 }
 
 - (IBAction)toggleTorch:(id)sender {
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
-        if (![self.capture hasTorch]) return;
-        self.capture.torch = !self.capture.torch;
-    });
+    AVCaptureDevice *device = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
+    
+    if ([device hasTorch] == NO) return;
+    
+    [device lockForConfiguration:nil];
+        
+    if (device.torchMode == AVCaptureTorchModeOff) {
+        [device setTorchModeOnWithLevel:TORCH_LEVEL error:nil];
+        [self.button setTitle:@"On" forState:UIControlStateNormal];
+    }
+    else if (device.torchMode == AVCaptureTorchModeOn) {
+        [device setTorchMode:AVCaptureTorchModeOff];
+        [self.button setTitle:@"Off" forState:UIControlStateNormal];
+    }
+    
+    [device unlockForConfiguration];
 }
 
 - (void)didReceiveMemoryWarning
@@ -84,7 +98,12 @@
 -(void)dealloc{
     [_capture release];
     [_lastBarCode release];
+    [_button release];
     [super dealloc];
 }
 
+- (void)viewDidUnload {
+    [self setButton:nil];
+    [super viewDidUnload];
+}
 @end

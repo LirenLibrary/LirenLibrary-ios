@@ -656,7 +656,7 @@ ZXAV(didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer)
       case AVCaptureTorchModeOn:
         input.device.torchMode = AVCaptureTorchModeOff;
         break;
-      }
+      }	
       [input.device unlockForConfiguration];
     });
 }
