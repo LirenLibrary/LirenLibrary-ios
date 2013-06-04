@@ -42,6 +42,16 @@
     self.capture.camera = self.capture.back;
     self.capture.layer.frame = self.view.frame;
     [self.view.layer insertSublayer:self.capture.layer atIndex:0];
+    
+    [self forbidTorchToggleButtonOnDevicesWithoutTorch];
+}
+
+-(void)forbidTorchToggleButtonOnDevicesWithoutTorch{
+    AVCaptureDevice *device = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
+    if ([device hasTorch] == NO){
+        self.torchToggleButton.enabled = NO;
+        self.torchToggleButton.alpha = 0.0f;
+    }
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -72,7 +82,6 @@
 
 -(BOOL)isTorchOn{
     AVCaptureDevice *device = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
-    if ([device hasTorch] == NO) return NO;
     return device.torchMode == AVCaptureTorchModeOn;
 }
 
